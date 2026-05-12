@@ -1,0 +1,962 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Political Integrity (Misinformation Accountability) Bill — New Zealand</title>
+<meta name="description" content="A draft New Zealand Member's Bill to hold MPs accountable for deliberately lying to the public. Read the bill, see what's changing, and leave a public comment." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        serif: ['Fraunces', 'Georgia', 'serif'],
+        sans:  ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        ink:    '#13161B',
+        paper:  '#FAF8F4',
+        rule:   '#E7E2D6',
+        flame:  '#D2541F',
+        amber:  '#E5A024',
+        deep:   '#1F2A33',
+      },
+      maxWidth: { 'prose-wide': '72ch' },
+    }
+  }
+}
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-feature-settings: "ss01","ss02","cv11"; }
+  .display { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; letter-spacing: -0.02em; }
+  .display-tight { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; letter-spacing: -0.035em; }
+  .pad-rule { background-image: linear-gradient(to right, #E7E2D6 50%, transparent 50%); background-size: 14px 1px; background-repeat: repeat-x; background-position: bottom; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .chev { transform: rotate(90deg); }
+  .chev { transition: transform .2s ease; }
+  .ribbon { background: repeating-linear-gradient(135deg, #D2541F 0 14px, #E5A024 14px 28px); }
+  .pill { border: 1px solid currentColor; }
+  /* Bill text styling */
+  .bill-text h3 { font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; margin-top:1.75rem; margin-bottom:0.5rem; color:#1F2A33; letter-spacing:-0.01em; }
+  .bill-text p { margin-top:0.55rem; line-height:1.7; color:#2A3038; }
+  .bill-text blockquote { border-left:3px solid #E5A024; margin:0.75rem 0 0.75rem 0.25rem; padding:0.25rem 0 0.25rem 0.9rem; color:#3A4049; font-style:italic; }
+  .bill-text hr { margin: 2rem 0; border:0; border-top:1px dashed #E7E2D6; }
+  .bill-text .clause { display:block; font-family:'Fraunces',serif; font-weight:600; color:#13161B; }
+  .bill-text .sub { padding-left:1rem; }
+  .bill-text .sub2 { padding-left:2rem; }
+</style>
+</head>
+
+<body class="bg-paper text-ink font-sans antialiased">
+
+<!-- ============================================================ -->
+<!-- NAV                                                          -->
+<!-- ============================================================ -->
+<header class="sticky top-0 z-40 border-b border-rule bg-paper/85 backdrop-blur supports-[backdrop-filter]:bg-paper/70">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3.5">
+    <a href="#top" class="flex items-center gap-2.5">
+      <span class="ribbon block h-5 w-5 rounded-sm" aria-hidden="true"></span>
+      <span class="display-tight text-lg font-semibold leading-none">Honest Politics&nbsp;NZ</span>
+    </a>
+    <nav class="hidden gap-6 text-sm md:flex">
+      <a href="#tldr"      class="text-ink/70 hover:text-ink">What's changing</a>
+      <a href="#how"       class="text-ink/70 hover:text-ink">How it works</a>
+      <a href="#bill"      class="text-ink/70 hover:text-ink">The bill</a>
+      <a href="#overseas"  class="text-ink/70 hover:text-ink">Overseas</a>
+      <a href="#comments"  class="text-ink/70 hover:text-ink">Comments</a>
+    </nav>
+    <a href="#comments" class="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-paper hover:bg-deep">
+      Have your say <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- HERO                                                         -->
+<!-- ============================================================ -->
+<section id="top" class="relative overflow-hidden">
+  <div class="mx-auto max-w-6xl px-5 pt-16 pb-20 md:pt-24 md:pb-28">
+    <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/60 px-3 py-1 text-xs font-medium tracking-wide text-ink/70 uppercase">
+      <span class="block h-1.5 w-1.5 rounded-full bg-flame"></span>
+      Draft Member's Bill · New Zealand · 2026
+    </div>
+
+    <h1 class="display-tight text-4xl font-semibold leading-[1.02] text-ink sm:text-6xl md:text-7xl">
+      Politicians shouldn't get<br>
+      a free pass to <span class="italic text-flame">lie</span>.
+    </h1>
+
+    <p class="mt-8 max-w-prose-wide text-lg leading-relaxed text-ink/75 md:text-xl">
+      The <strong class="font-semibold text-ink">Political Integrity (Misinformation Accountability) Bill</strong>
+      would make it possible — for the first time — to hold New Zealand MPs accountable
+      when they deliberately mislead the public. Not for honest mistakes. Not for opinions.
+      For deliberate, knowing lies.
+    </p>
+
+    <div class="mt-10 flex flex-wrap items-center gap-3">
+      <a href="#tldr" class="inline-flex items-center gap-1.5 rounded-full bg-ink px-5 py-3 text-sm font-medium text-paper hover:bg-deep">
+        See what's changing <span aria-hidden="true">→</span>
+      </a>
+      <a href="#bill" class="inline-flex items-center gap-1.5 rounded-full border border-ink/20 px-5 py-3 text-sm font-medium text-ink hover:bg-white">
+        Read the full bill
+      </a>
+      <a href="#comments" class="inline-flex items-center gap-1.5 px-3 py-3 text-sm font-medium text-ink/70 underline-offset-4 hover:underline">
+        Leave a public comment
+      </a>
+    </div>
+
+    <!-- key facts strip -->
+    <dl class="mt-16 grid grid-cols-1 gap-x-10 gap-y-10 border-t border-rule pt-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <dt class="text-xs uppercase tracking-wider text-ink/60">Correction window</dt>
+        <dd class="display mt-1 text-3xl font-semibold">48&nbsp;hours</dd>
+        <p class="mt-1 text-sm leading-relaxed text-ink/65">to fix an honest mistake — no penalty applies.</p>
+      </div>
+      <div>
+        <dt class="text-xs uppercase tracking-wider text-ink/60">Penalty ladder</dt>
+        <dd class="display mt-1 text-3xl font-semibold">5&nbsp;steps</dd>
+        <p class="mt-1 text-sm leading-relaxed text-ink/65">warning → censure → fine → prosecution.</p>
+      </div>
+      <div>
+        <dt class="text-xs uppercase tracking-wider text-ink/60">Independent watchdog</dt>
+        <dd class="display mt-1 text-3xl font-semibold">7-year&nbsp;term</dd>
+        <p class="mt-1 text-sm leading-relaxed text-ink/65">non-renewable, so the Commissioner has no incentive to please anyone.</p>
+      </div>
+      <div>
+        <dt class="text-xs uppercase tracking-wider text-ink/60">Built-in safeguards</dt>
+        <dd class="display mt-1 text-3xl font-semibold">10-yr&nbsp;sunset</dd>
+        <p class="mt-1 text-sm leading-relaxed text-ink/65">mandatory review at 3 years; the Act auto-expires at 10 unless Parliament renews it.</p>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- THE PROBLEM                                                  -->
+<!-- ============================================================ -->
+<section class="border-y border-rule bg-white/60">
+  <div class="mx-auto max-w-6xl px-5 py-20 md:py-24">
+    <div class="grid gap-12 md:grid-cols-12">
+      <div class="md:col-span-4">
+        <p class="text-xs uppercase tracking-widest text-flame">01 — The problem</p>
+        <h2 class="display-tight mt-3 text-3xl font-semibold leading-tight md:text-4xl">
+          Right now, MPs can lie to you almost without consequence.
+        </h2>
+      </div>
+      <div class="md:col-span-8 space-y-5 text-lg leading-relaxed text-ink/80">
+        <p><strong>Inside Parliament</strong> — parliamentary privilege gives MPs absolute immunity for anything they say in the House. The existing rule against "deliberately misleading Parliament" has such a high bar it's almost never enforced. MPs can simply "correct" the record afterwards.</p>
+        <p><strong>Outside Parliament</strong> — Section 199A of the Electoral Act 1993 prohibits false statements to influence voters, but <em>only on the 2 days before election day</em>. For the rest of the 3-year term, MPs can say whatever they want on social media, in press conferences, in campaign material. No legal consequence.</p>
+        <p>Meanwhile, national security surveys in 2022 and 2023 found misinformation and disinformation rank among the <strong>top national security threats</strong> New Zealanders are concerned about.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- INTEGRITY — every other job has consequences for lying       -->
+<!-- ============================================================ -->
+<section id="integrity" class="scroll-mt-20">
+  <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+    <div class="max-w-3xl">
+      <p class="text-xs uppercase tracking-widest text-flame">02 — Integrity is the standard</p>
+      <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
+        In every other job, lying has consequences. Politicians are the one exception.
+      </h2>
+      <p class="mt-5 text-lg text-ink/75">
+        New Zealand law is built on the idea that when other people rely on your word — your patients, your clients, your employer, the court, the shareholders — dishonesty carries real consequences. Right across the workforce, integrity isn't optional. It's the baseline.
+      </p>
+      <p class="mt-3 text-lg text-ink/75">
+        Politicians, of all people, hold the most power and command the broadest public trust. They should be held to <em>at least</em> the same standard as the rest of us — not less.
+      </p>
+    </div>
+
+    <!-- if/then ladder -->
+    <div class="mt-14 overflow-hidden rounded-2xl border border-rule bg-white">
+
+      <div class="grid grid-cols-1 divide-y divide-rule md:grid-cols-12 md:divide-x md:divide-y-0">
+        <div class="md:col-span-5 p-6 md:p-7"><p class="display text-lg font-semibold text-ink">If you lie under oath in court…</p></div>
+        <div class="md:col-span-7 p-6 md:p-7 bg-paper/40">
+          <p class="text-ink/80"><strong class="text-flame">Perjury.</strong> Up to <strong>7 years' imprisonment</strong> — 14 years if it leads to wrongful conviction. <span class="text-ink/50">(Crimes Act 1961, ss 108–109)</span></p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 divide-y divide-rule md:grid-cols-12 md:divide-x md:divide-y-0 border-t border-rule">
+        <div class="md:col-span-5 p-6 md:p-7"><p class="display text-lg font-semibold text-ink">If you're a doctor and you mislead your patients…</p></div>
+        <div class="md:col-span-7 p-6 md:p-7 bg-paper/40">
+          <p class="text-ink/80"><strong class="text-flame">Suspended or struck off the medical register</strong> by the Medical Council. Career over. <span class="text-ink/50">(Health Practitioners Competence Assurance Act 2003)</span></p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 divide-y divide-rule md:grid-cols-12 md:divide-x md:divide-y-0 border-t border-rule">
+        <div class="md:col-span-5 p-6 md:p-7"><p class="display text-lg font-semibold text-ink">If you're a lawyer and you're dishonest with the court or your client…</p></div>
+        <div class="md:col-span-7 p-6 md:p-7 bg-paper/40">
+          <p class="text-ink/80"><strong class="text-flame">Struck off</strong> by the NZ Law Society. The legal profession treats dishonesty as the single most disqualifying conduct there is. <span class="text-ink/50">(Lawyers and Conveyancers Act 2006)</span></p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 divide-y divide-rule md:grid-cols-12 md:divide-x md:divide-y-0 border-t border-rule">
+        <div class="md:col-span-5 p-6 md:p-7"><p class="display text-lg font-semibold text-ink">If you're a company director and you mislead your shareholders…</p></div>
+        <div class="md:col-span-7 p-6 md:p-7 bg-paper/40">
+          <p class="text-ink/80"><strong class="text-flame">A criminal offence.</strong> Fines, imprisonment, disqualification from being a director. <span class="text-ink/50">(Companies Act 1993, s 377; Financial Markets Conduct Act 2013)</span></p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 divide-y divide-rule md:grid-cols-12 md:divide-x md:divide-y-0 border-t border-rule">
+        <div class="md:col-span-5 p-6 md:p-7"><p class="display text-lg font-semibold text-ink">If you're a public servant and you breach the honesty code…</p></div>
+        <div class="md:col-span-7 p-6 md:p-7 bg-paper/40">
+          <p class="text-ink/80"><strong class="text-flame">Dismissal</strong> under the Public Service Code of Conduct — which expressly requires honesty. <span class="text-ink/50">(Public Service Act 2020)</span></p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 divide-y divide-rule md:grid-cols-12 md:divide-x md:divide-y-0 border-t border-rule">
+        <div class="md:col-span-5 p-6 md:p-7"><p class="display text-lg font-semibold text-ink">If you lie to your boss about your work…</p></div>
+        <div class="md:col-span-7 p-6 md:p-7 bg-paper/40">
+          <p class="text-ink/80"><strong class="text-flame">Serious misconduct.</strong> Fired — often without notice. Routinely upheld by the Employment Relations Authority. <span class="text-ink/50">(Employment Relations Act 2000)</span></p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 divide-y divide-rule md:grid-cols-12 md:divide-x md:divide-y-0 border-t-2 border-flame bg-flame/5">
+        <div class="md:col-span-5 p-6 md:p-7"><p class="display text-lg font-semibold text-ink">If you're an MP and you lie to the entire country…</p></div>
+        <div class="md:col-span-7 p-6 md:p-7">
+          <p class="display text-2xl font-semibold leading-snug text-flame md:text-3xl">Nothing happens.</p>
+          <p class="mt-2 text-ink/75">Outside the 2 days before an election, there is no statutory accountability. Inside the House, parliamentary privilege is absolute. The most powerful office-holders in the country are the <em>least</em> accountable for what they say.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-10 max-w-prose-wide text-lg italic text-ink/75">
+      The public servants who work for MPs are required to be honest. The lawyers, doctors and accountants who advise them are required to be honest. The shareholders' meetings, the boardrooms, the courtrooms — all required to be honest. <strong class="not-italic text-ink">Why should the politicians at the top of all of it be the only ones who aren't?</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TL;DR — WHAT'S CHANGING                                      -->
+<!-- ============================================================ -->
+<section id="tldr" class="scroll-mt-20 border-t border-rule">
+  <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+    <div class="max-w-3xl">
+      <p class="text-xs uppercase tracking-widest text-flame">03 — What's changing</p>
+      <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
+        Four Acts. Targeted amendments. No new powers anyone doesn't already need.
+      </h2>
+      <p class="mt-5 text-lg text-ink/70">
+        The bill makes narrow, carefully-drawn changes to four existing laws. Below: what each one says today, and what it would say if this passes.
+      </p>
+    </div>
+
+    <div class="mt-14 space-y-6">
+
+      <!-- Parliament Act -->
+      <article class="rounded-2xl border border-rule bg-white overflow-hidden">
+        <header class="border-b border-rule bg-paper px-6 py-4 md:px-8">
+          <h3 class="display text-xl font-semibold md:text-2xl">Parliament Act 2025 — parliamentary privilege</h3>
+        </header>
+        <div class="grid md:grid-cols-2 divide-rule md:divide-x">
+          <div class="p-6 md:p-8">
+            <p class="text-xs uppercase tracking-widest text-ink/50">Today</p>
+            <p class="mt-3 text-base leading-relaxed text-ink/80">
+              MPs have <strong>absolute immunity</strong> for anything said "in proceedings in Parliament" — via Article 9 of the Bill of Rights 1688. No court or external body can question it. Deliberate lies in the House have no external remedy.
+            </p>
+          </div>
+          <div class="p-6 md:p-8 bg-paper/40">
+            <p class="text-xs uppercase tracking-widest text-flame">If the bill passes</p>
+            <p class="mt-3 text-base leading-relaxed text-ink/80">
+              A <strong>narrow exception</strong> — the new Political Integrity Commissioner can investigate knowingly false statements of material fact and deliberate misleading spin made in the House. Privilege otherwise stays intact. Investigation needs leave of the Speaker; a heightened evidence threshold applies inside Parliament.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Imperial Laws -->
+      <article class="rounded-2xl border border-rule bg-white overflow-hidden">
+        <header class="border-b border-rule bg-paper px-6 py-4 md:px-8">
+          <h3 class="display text-xl font-semibold md:text-2xl">Imperial Laws Application Act 1988 — Article 9</h3>
+        </header>
+        <div class="grid md:grid-cols-2 divide-rule md:divide-x">
+          <div class="p-6 md:p-8">
+            <p class="text-xs uppercase tracking-widest text-ink/50">Today</p>
+            <p class="mt-3 text-base leading-relaxed text-ink/80">
+              Article 9 of the Bill of Rights 1688 is part of NZ law: "the freedom of speech and debates or proceedings in Parliament ought not to be impeached or questioned in any court or place out of Parliament."
+            </p>
+          </div>
+          <div class="p-6 md:p-8 bg-paper/40">
+            <p class="text-xs uppercase tracking-widest text-flame">If the bill passes</p>
+            <p class="mt-3 text-base leading-relaxed text-ink/80">
+              A <strong>proviso</strong> is added: Article 9 does not prevent the Political Integrity Commissioner from investigating knowingly false statements of material fact, subject to the safeguards in this Act. The Commissioner is a parliamentary officer, not a court.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Electoral Act -->
+      <article class="rounded-2xl border border-rule bg-white overflow-hidden">
+        <header class="border-b border-rule bg-paper px-6 py-4 md:px-8">
+          <h3 class="display text-xl font-semibold md:text-2xl">Electoral Act 1993, s 199A — false statements to influence voters</h3>
+        </header>
+        <div class="grid md:grid-cols-2 divide-rule md:divide-x">
+          <div class="p-6 md:p-8">
+            <p class="text-xs uppercase tracking-widest text-ink/50">Today</p>
+            <p class="mt-3 text-base leading-relaxed text-ink/80">
+              False statements to influence voters are prohibited — but only during the <strong>2 days before election day</strong> + election day itself. Outside this window: nothing. Social media, press releases, campaign material across the 3-year term are unregulated.
+            </p>
+          </div>
+          <div class="p-6 md:p-8 bg-paper/40">
+            <p class="text-xs uppercase tracking-widest text-flame">If the bill passes</p>
+            <p class="mt-3 text-base leading-relaxed text-ink/80">
+              Extended to cover the <strong>entire parliamentary term</strong>. Expanded to explicitly include social media, press statements, and official communications. Aligned with the new "knowingly false statement" and "misleading spin" definitions. A new s 199B targets misleading spin to influence voters.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- NZBORA -->
+      <article class="rounded-2xl border border-rule bg-white overflow-hidden">
+        <header class="border-b border-rule bg-paper px-6 py-4 md:px-8">
+          <h3 class="display text-xl font-semibold md:text-2xl">NZ Bill of Rights Act 1990 — freedom of expression</h3>
+        </header>
+        <div class="grid md:grid-cols-2 divide-rule md:divide-x">
+          <div class="p-6 md:p-8">
+            <p class="text-xs uppercase tracking-widest text-ink/50">Today</p>
+            <p class="mt-3 text-base leading-relaxed text-ink/80">
+              Section 14 guarantees freedom of expression. Section 5 allows reasonable limits "demonstrably justified in a free and democratic society." Political speech is interpreted broadly.
+            </p>
+          </div>
+          <div class="p-6 md:p-8 bg-paper/40">
+            <p class="text-xs uppercase tracking-widest text-flame">If the bill passes</p>
+            <p class="mt-3 text-base leading-relaxed text-ink/80">
+              The bill is built on a robust <strong>Section 5 justification</strong> using the <em>Hansen v R</em> proportionality test. It targets only deliberate falsehoods and intentional misleading conduct. Genuine opinions, honest mistakes, and corrected statements are explicitly protected. The Attorney-General will assess it under Section 7.
+            </p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- HOW IT WORKS                                                 -->
+<!-- ============================================================ -->
+<section id="how" class="scroll-mt-20 border-y border-rule bg-deep text-paper">
+  <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+    <div class="max-w-3xl">
+      <p class="text-xs uppercase tracking-widest text-amber">03 — How it works</p>
+      <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight text-paper md:text-5xl">
+        An independent watchdog. A 48-hour out for honest mistakes. A graduated response.
+      </h2>
+    </div>
+
+    <div class="mt-14 grid gap-px overflow-hidden rounded-2xl bg-paper/15 md:grid-cols-2">
+      <!-- Commissioner -->
+      <div class="bg-deep p-7 md:p-9">
+        <p class="text-xs uppercase tracking-widest text-amber">The Commissioner</p>
+        <h3 class="display mt-2 text-2xl font-semibold">Independent. Single 7-year term.</h3>
+        <ul class="mt-5 space-y-3 text-paper/85">
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span>Appointed by the Governor-General on the recommendation of the House. <strong>Cannot</strong> be reappointed — so no incentive to please the government of the day.</span></li>
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span>Can only be removed by the Governor-General on an address from the House for proven misbehaviour or incapacity.</span></li>
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span>Cannot have been an MP or party member in the past 5 years. Must hold a legal qualification of 7+ years' standing.</span></li>
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span>Funded by Parliament directly — not by any minister or department.</span></li>
+        </ul>
+      </div>
+
+      <!-- Correction window -->
+      <div class="bg-deep p-7 md:p-9">
+        <p class="text-xs uppercase tracking-widest text-amber">The 48-hour correction window</p>
+        <h3 class="display mt-2 text-2xl font-semibold">Honest mistakes? Just fix it.</h3>
+        <p class="mt-4 text-paper/85">
+          When the Commissioner notifies an MP of a complaint, the MP has 48 hours to publicly correct the statement. If they do — and the correction meets all requirements — the matter can be closed without a finding or penalty.
+        </p>
+        <p class="mt-3 text-paper/85">
+          The correction has to appear on <strong>every platform</strong> the lie appeared on, with <strong>equal or greater prominence</strong>, and stay up for at least <strong>1 year</strong>. Deleting it before then is itself an offence.
+        </p>
+      </div>
+
+      <!-- Penalty ladder -->
+      <div class="bg-deep p-7 md:p-9">
+        <p class="text-xs uppercase tracking-widest text-amber">The penalty ladder</p>
+        <h3 class="display mt-2 text-2xl font-semibold">Graduated, proportionate, predictable.</h3>
+        <ol class="mt-5 space-y-3 text-paper/85">
+          <li class="flex gap-3"><span class="display mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber/20 text-sm font-semibold text-amber">1</span><span><strong>Warning</strong> — formal, published. First finding.</span></li>
+          <li class="flex gap-3"><span class="display mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber/20 text-sm font-semibold text-amber">2</span><span><strong>Public censure</strong> + mandatory correction. Second finding, or failure to correct after warning.</span></li>
+          <li class="flex gap-3"><span class="display mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber/20 text-sm font-semibold text-amber">3</span><span><strong>Fine up to $50,000</strong>. Third finding, or a single serious falsehood causing public harm.</span></li>
+          <li class="flex gap-3"><span class="display mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber/20 text-sm font-semibold text-amber">4</span><span><strong>Enhanced fine up to $100,000</strong>. Repeated pattern of deliberate misinformation.</span></li>
+          <li class="flex gap-3"><span class="display mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-flame/30 text-sm font-semibold text-flame">5</span><span><strong>Criminal prosecution</strong> — referred to the Solicitor-General. On conviction: fine up to $200,000, prison up to 2 years, possible disqualification from office.</span></li>
+        </ol>
+      </div>
+
+      <!-- Safeguards -->
+      <div class="bg-deep p-7 md:p-9">
+        <p class="text-xs uppercase tracking-widest text-amber">The safeguards</p>
+        <h3 class="display mt-2 text-2xl font-semibold">Built so it can't be weaponised.</h3>
+        <ul class="mt-5 space-y-3 text-paper/85">
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Genuine opinions are protected.</strong> But saying "I believe" before a lie doesn't make it an opinion — the Commissioner looks through the form to the substance.</span></li>
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Honest mistakes are protected.</strong> If the MP didn't and couldn't reasonably have known, no penalty.</span></li>
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Right of appeal to the High Court</strong> on any finding.</span></li>
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Vexatious complaints can be dismissed</strong> without investigation. High evidentiary threshold for in-House statements.</span></li>
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Mandatory review at 3 years. Sunset at 10.</strong> If it doesn't work as intended, Parliament can let it expire.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      <div class="flex flex-col gap-2 border-t border-paper/20 pt-5">
+        <p class="display text-2xl font-semibold text-paper">Actionable</p>
+        <p class="text-sm text-paper/70">Deliberate lies. Misleading spin used to create a false impression.</p>
+      </div>
+      <div class="flex flex-col gap-2 border-t border-paper/20 pt-5">
+        <p class="display text-2xl font-semibold text-paper">Not actionable</p>
+        <p class="text-sm text-paper/70">Genuine opinions. Honest mistakes. Statements corrected within 48 hours.</p>
+      </div>
+      <div class="flex flex-col gap-2 border-t border-paper/20 pt-5">
+        <p class="display text-2xl font-semibold text-paper">Look-through rule</p>
+        <p class="text-sm text-paper/70">"I believe…" before a known lie doesn't immunise it. Substance over form.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FULL BILL                                                    -->
+<!-- ============================================================ -->
+<section id="bill" class="scroll-mt-20">
+  <div class="mx-auto max-w-4xl px-5 py-20 md:py-28">
+    <p class="text-xs uppercase tracking-widest text-flame">04 — The full bill</p>
+    <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
+      Political Integrity (Misinformation Accountability) Bill
+    </h2>
+    <p class="mt-3 text-sm text-ink/60">Draft for discussion · 2026 · Government Bill format</p>
+
+    <!-- Explanatory note -->
+    <div class="mt-10 rounded-2xl border border-rule bg-white p-6 md:p-8 bill-text">
+      <p class="display text-sm uppercase tracking-widest text-flame">Explanatory note</p>
+      <h3>General policy statement</h3>
+      <p>This Bill establishes a framework to hold members of Parliament accountable for deliberately making false or misleading statements to the public. It creates the office of the Political Integrity Commissioner, an independent statutory officer with the power to investigate complaints, make findings, and impose graduated penalties. It also establishes a Political Integrity Committee to provide ongoing parliamentary oversight.</p>
+      <p>The Bill amends the Parliament Act 2025, the Imperial Laws Application Act 1988, and the Electoral Act 1993 to create narrow, carefully defined exceptions to existing protections, enabling accountability for deliberate dishonesty while preserving the essential functions of parliamentary privilege and freedom of expression.</p>
+      <p>The Bill targets only knowingly false statements of material fact and deliberate misleading spin — not genuine opinions, honest mistakes, or statements corrected within a reasonable timeframe.</p>
+      <h3>Consistency with the New Zealand Bill of Rights Act 1990</h3>
+      <p>The right to freedom of expression affirmed in section 14 of the New Zealand Bill of Rights Act 1990 is subject to the limitation in this Bill. This limitation is considered to be a reasonable limit prescribed by law that is demonstrably justified in a free and democratic society under section 5 of the New Zealand Bill of Rights Act 1990. The limitation targets only deliberate falsehoods and intentionally misleading conduct by members of Parliament in their public capacity. Genuine opinions, honest mistakes, and corrected statements are expressly excluded. The graduated penalty regime ensures proportionality.</p>
+    </div>
+
+    <!-- Preliminary clauses -->
+    <details open class="mt-6 group rounded-2xl border border-rule bg-white">
+      <summary class="flex items-center justify-between gap-4 px-6 py-5 md:px-8">
+        <span class="display text-lg font-semibold md:text-xl">Preliminary · Title, Commencement, Purpose, Interpretation</span>
+        <span class="chev text-flame" aria-hidden="true">▸</span>
+      </summary>
+      <div class="border-t border-rule bg-paper/30 px-6 py-6 md:px-8 md:py-8 bill-text">
+        <h3>1 &nbsp; Title</h3>
+        <p>This Act is the Political Integrity (Misinformation Accountability) Act 2026.</p>
+
+        <h3>2 &nbsp; Commencement</h3>
+        <p>(1) This Act comes into force 6 months after the date on which it receives the Royal assent.</p>
+        <p>(2) The Commissioner must be appointed under clause 6 within 3 months of the date on which this Act receives the Royal assent.</p>
+
+        <h3>3 &nbsp; Purpose</h3>
+        <p>The purpose of this Act is to —</p>
+        <p class="sub">(a) protect the integrity of New Zealand's democratic processes by holding members of Parliament accountable for deliberately making false or misleading statements; and</p>
+        <p class="sub">(b) establish an independent Political Integrity Commissioner to investigate complaints and enforce standards of factual honesty in political communication; and</p>
+        <p class="sub">(c) establish a Political Integrity Committee to provide ongoing parliamentary oversight of political integrity; and</p>
+        <p class="sub">(d) create a graduated penalty regime that is proportionate to the seriousness and frequency of the conduct; and</p>
+        <p class="sub">(e) ensure that corrections to false statements are publicly accessible and enduring; and</p>
+        <p class="sub">(f) balance these objectives with the protection of genuine freedom of expression, honest mistakes, and legitimate political debate.</p>
+
+        <h3>4 &nbsp; Interpretation</h3>
+        <p>In this Act, unless the context otherwise requires, —</p>
+        <p><strong>Commissioner</strong> — the Political Integrity Commissioner appointed under clause 6.</p>
+        <p><strong>Committee</strong> — the Political Integrity Committee established under clause 26.</p>
+        <p><strong>correction window</strong> — a period of 48 hours from the time the Commissioner notifies a member of a complaint or investigation, during which the member may make a correction that meets the correction requirements to avoid escalation of penalties.</p>
+        <p><strong>knowingly false statement</strong> — a statement of fact that the member knew, or ought reasonably to have known, was false at the time of making it; includes a factual claim disguised as opinion.</p>
+        <p><strong>opinion used as vehicle for falsehood</strong> — a statement framed as opinion, belief, or attribution that contains or implies a specific factual claim the member knows to be false. Includes:</p>
+        <p class="sub">(a) prefacing a false claim with "I believe", "I think", "in my view", "in my opinion";</p>
+        <p class="sub">(b) attributing a false claim to unnamed sources ("many people are saying", "some experts think");</p>
+        <p class="sub">(c) framing a false factual claim as a rhetorical question;</p>
+        <p class="sub">(d) expressing a "purported opinion" that necessarily depends on an underlying false factual claim.</p>
+        <p><strong>misleading spin</strong> — a statement that, while not entirely false on its face, deliberately frames, omits, or distorts facts with the intention of creating a false impression. Includes cherry-picking data, quoting out of context, presenting misleading statistics, and consistently using a phrase or figure that misrepresents the underlying facts.</p>
+        <p><strong>material fact</strong> — a factual claim that could reasonably influence public opinion, policy decisions, or voter behaviour.</p>
+        <p><strong>public harm</strong> — demonstrable harm to public health, safety, democratic processes, or public trust resulting from a false or misleading statement.</p>
+        <p><strong>public platform</strong> — proceedings in Parliament; select committee proceedings; personal or official social media; press conferences; media interviews; campaign material and advertising; official communications and press releases.</p>
+      </div>
+    </details>
+
+    <!-- Part 1 -->
+    <details class="mt-6 group rounded-2xl border border-rule bg-white">
+      <summary class="flex items-center justify-between gap-4 px-6 py-5 md:px-8">
+        <span class="display text-lg font-semibold md:text-xl">Part 1 · The Political Integrity Commissioner</span>
+        <span class="chev text-flame" aria-hidden="true">▸</span>
+      </summary>
+      <div class="border-t border-rule bg-paper/30 px-6 py-6 md:px-8 md:py-8 bill-text">
+        <h3>5 &nbsp; Political Integrity Commissioner established</h3>
+        <p>(1) There is established an officer called the Political Integrity Commissioner.</p>
+        <p>(2) The Commissioner is an officer of Parliament for the purposes of the Officers of Parliament Committee.</p>
+
+        <h3>6 &nbsp; Appointment of Commissioner</h3>
+        <p>(1) The Commissioner is appointed by the Governor-General on the recommendation of the House of Representatives.</p>
+        <p>(2) A person must not be appointed as Commissioner if that person —</p>
+        <p class="sub">(a) is, or has within the preceding 5 years been, a member of Parliament; or</p>
+        <p class="sub">(b) is, or has within the preceding 5 years been, a member of a political party; or</p>
+        <p class="sub">(c) holds any office that could reasonably give rise to a conflict of interest.</p>
+        <p>(3) The Commissioner must hold a legal qualification of not less than 7 years' standing.</p>
+
+        <h3>7 &nbsp; Term of office</h3>
+        <p>(1) The Commissioner holds office for a single term of 7 years.</p>
+        <p>(2) The Commissioner is not eligible for reappointment.</p>
+        <p>(3) The Commissioner may resign at any time by written notice to the Speaker.</p>
+
+        <h3>8 &nbsp; Independence of Commissioner</h3>
+        <p>(1) The Commissioner acts independently in performing the Commissioner's functions.</p>
+        <p>(2) No Minister, member of Parliament, or other person may direct the Commissioner.</p>
+        <p>(3) The Commissioner is funded by a Vote administered by the Office of the Clerk of the House.</p>
+
+        <h3>9 &nbsp; Removal from office</h3>
+        <p>The Commissioner may be removed only by the Governor-General, on an address from the House, for proven misbehaviour or incapacity.</p>
+
+        <h3>10 &nbsp; Functions of Commissioner</h3>
+        <p>The Commissioner's functions are to —</p>
+        <p class="sub">(a) receive and investigate complaints about knowingly false statements and misleading spin made by members on any public platform; and</p>
+        <p class="sub">(b) initiate own-motion investigations where there are reasonable grounds; and</p>
+        <p class="sub">(c) make findings and publish reports; and</p>
+        <p class="sub">(d) issue warnings, public censure notices, and fines under the graduated penalty regime; and</p>
+        <p class="sub">(e) refer serious or repeated cases to the Solicitor-General; and</p>
+        <p class="sub">(f) maintain a public corrections register; and</p>
+        <p class="sub">(g) provide quarterly and annual reports; and</p>
+        <p class="sub">(h) promote public awareness of the standards expected; and</p>
+        <p class="sub">(i) advise the Political Integrity Committee.</p>
+
+        <h3>11 &nbsp; Powers of Commissioner</h3>
+        <p>(1) The Commissioner may —</p>
+        <p class="sub">(a) require any person to provide documents, information, or evidence; and</p>
+        <p class="sub">(b) require any member to appear and answer questions; and</p>
+        <p class="sub">(c) enter and inspect premises occupied by a member in their capacity as an MP; and</p>
+        <p class="sub">(d) access any publicly available social media content posted by or on behalf of a member.</p>
+        <p>(2) Failure to comply without reasonable excuse is an offence under clause 37.</p>
+
+        <h3>12 &nbsp; Complaints</h3>
+        <p>(1) Any person may lodge a complaint with the Commissioner.</p>
+        <p>(2) A complaint must be in writing, identify the member and the statement, and explain why it is believed to be knowingly false or misleading spin.</p>
+        <p>(3) The Commissioner must acknowledge receipt within 5 working days and make an initial assessment within 20 working days.</p>
+
+        <h3>13 &nbsp; Own-motion investigations</h3>
+        <p>The Commissioner may commence an investigation without a complaint where there are reasonable grounds. The member must be notified within 5 working days.</p>
+
+        <h3>14 &nbsp; Investigation procedure</h3>
+        <p>The Commissioner must act in accordance with the principles of natural justice, give the member a reasonable opportunity to respond, notify them of the correction window, and complete the investigation within 90 working days unless exceptional circumstances require an extension.</p>
+
+        <h3>15 &nbsp; Evidentiary threshold for proceedings in Parliament</h3>
+        <p>Before investigating a statement made in proceedings in Parliament, the Commissioner must be satisfied on evidence available <em>without reference to proceedings in Parliament</em> that there are substantial grounds to believe the statement was knowingly false or misleading spin, and that the member had the relevant knowledge. The Commissioner must obtain the Speaker's leave before compelling any member to answer questions about statements made in proceedings.</p>
+
+        <h3>16 &nbsp; Findings</h3>
+        <p>The Commissioner makes one of: substantiated (knowingly false); substantiated (misleading spin); not substantiated; or substantiated with adequate correction within the window. All findings are published with reasoning.</p>
+
+        <h3>17–20 &nbsp; Warnings, censure, fines, referral</h3>
+        <p>See the graduated penalty regime in clause 38. Fines: up to $50,000 (third finding), up to $100,000 (fourth+ or pattern). Criminal referral to the Solicitor-General for persistent serious harm or non-compliance.</p>
+
+        <h3>21 &nbsp; Correction requirements</h3>
+        <p>(1) A correction must —</p>
+        <p class="sub">(a) be posted on every platform where the original statement appeared;</p>
+        <p class="sub">(b) be given equal or greater prominence than the original;</p>
+        <p class="sub">(c) clearly identify the original statement, explain why it was false or misleading, and state the correct facts;</p>
+        <p class="sub">(d) be kept publicly visible for at least 1 year;</p>
+        <p class="sub">(e) be notified to the Commissioner for the corrections register.</p>
+        <p>(2) Burying a correction in a reply or footnote, or posting it at a low-visibility time, does not satisfy these requirements.</p>
+        <p>(3) Removing a correction before the 1-year period is itself an offence (clause 36).</p>
+
+        <h3>22 &nbsp; Corrections register</h3>
+        <p>A public, freely accessible register on the Commissioner's website, listing the member, the original statement, the date and platform, the correction, and where it was posted. Entries kept for at least 5 years.</p>
+
+        <h3>23–25 &nbsp; Reporting, staff, resources</h3>
+        <p>Annual report to the House by 30 September. Quarterly report to the Committee within 20 working days of quarter-end. The Commissioner may employ staff as necessary.</p>
+      </div>
+    </details>
+
+    <!-- Part 2 -->
+    <details class="mt-6 group rounded-2xl border border-rule bg-white">
+      <summary class="flex items-center justify-between gap-4 px-6 py-5 md:px-8">
+        <span class="display text-lg font-semibold md:text-xl">Part 2 · The Political Integrity Committee</span>
+        <span class="chev text-flame" aria-hidden="true">▸</span>
+      </summary>
+      <div class="border-t border-rule bg-paper/30 px-6 py-6 md:px-8 md:py-8 bill-text">
+        <h3>26 &nbsp; Committee established</h3>
+        <p>A select committee of the House — the Political Integrity Committee — is established as a subject select committee for the purposes of Standing Orders.</p>
+
+        <h3>27 &nbsp; Composition</h3>
+        <p>(1) 5–8 MPs reflecting the proportional composition of the House, plus 3 independent lay members.</p>
+        <p>(2) Lay members must be persons of recognised standing in law, journalism, or public administration, and must not be current or recent party members.</p>
+        <p>(3) Lay members appointed by the Speaker for a 3-year term, renewable once. They participate and recommend but do not vote.</p>
+
+        <h3>28 &nbsp; Functions</h3>
+        <p>Review the Commissioner's reports; examine trends; call members to appear and explain; publish quarterly public report cards; recommend censure; refer matters back to the Commissioner.</p>
+
+        <h3>29 &nbsp; Quarterly review</h3>
+        <p>Meet within 20 working days of receiving each quarterly report. Additional meetings as required.</p>
+
+        <h3>30 &nbsp; Power to summon</h3>
+        <p>The Committee may require any MP to appear and answer questions, with the same effect as a select committee summons.</p>
+
+        <h3>31 &nbsp; Public report card</h3>
+        <p>Within 40 working days of each quarterly report, the Committee must publish a report card summarising findings, identifying members the subject of substantiated complaints, and noting trends. Published on the Parliament website.</p>
+
+        <h3>32 &nbsp; Recommendation of censure</h3>
+        <p>The Committee may recommend that the House censure a member, with a report setting out the grounds.</p>
+      </div>
+    </details>
+
+    <!-- Part 3 -->
+    <details class="mt-6 group rounded-2xl border border-rule bg-white">
+      <summary class="flex items-center justify-between gap-4 px-6 py-5 md:px-8">
+        <span class="display text-lg font-semibold md:text-xl">Part 3 · Offences and penalties</span>
+        <span class="chev text-flame" aria-hidden="true">▸</span>
+      </summary>
+      <div class="border-t border-rule bg-paper/30 px-6 py-6 md:px-8 md:py-8 bill-text">
+        <h3>33 &nbsp; Offence of making knowingly false statement</h3>
+        <p>(1) A member commits an offence who, on a public platform, makes a knowingly false statement of material fact.</p>
+        <p>(2) Defences: (a) did not know and could not reasonably have known; (b) made an adequate correction within the correction window.</p>
+        <p>(3) On conviction: fine up to $200,000, or imprisonment up to 2 years, or both.</p>
+
+        <h3>34 &nbsp; Offence of misleading spin</h3>
+        <p>(1) A member commits an offence who, on a public platform, engages in misleading spin with the intention of creating a false impression of material fact.</p>
+        <p>(2) Defences: no intent to mislead; statement in full context not misleading; adequate correction within the window.</p>
+        <p>(3) On conviction: fine up to $200,000, or imprisonment up to 2 years, or both.</p>
+
+        <h3>35 &nbsp; Failing to comply with correction requirement</h3>
+        <p>Offence to fail to comply with a correction order. On conviction: fine up to $50,000.</p>
+
+        <h3>36 &nbsp; Deleting a correction</h3>
+        <p>Offence to remove, hide, or reduce the accessibility of a correction before the 1-year period expires. On conviction: fine up to $50,000.</p>
+
+        <h3>37 &nbsp; Failing to comply with Commissioner's order</h3>
+        <p>Offence to fail, without reasonable excuse, to comply with a requirement under clause 11. On conviction: fine up to $25,000.</p>
+
+        <h3>38 &nbsp; Graduated penalty regime</h3>
+        <p>(1) First finding → warning. Second / failure-to-correct → public censure. Third / demonstrable public harm → fine to $50,000. Fourth+ / repeated pattern → fine to $100,000. Persistent serious harm or refusal to comply → referral for prosecution.</p>
+        <p>(2) The Commissioner may depart from the schedule where seriousness warrants, but must record reasons.</p>
+
+        <h3>39 &nbsp; Disqualification from holding office</h3>
+        <p>On conviction under clause 33 or 34, the court may disqualify the person from candidacy and from holding office for up to 5 years.</p>
+
+        <h3>40 &nbsp; Correction window</h3>
+        <p>48 hours from notification. If a compliant correction is made, the Commissioner may close the investigation without a finding, or record a finding without penalty. The window does not apply where the original statement was made with deliberate intention of causing serious public harm.</p>
+      </div>
+    </details>
+
+    <!-- Part 4 -->
+    <details class="mt-6 group rounded-2xl border border-rule bg-white">
+      <summary class="flex items-center justify-between gap-4 px-6 py-5 md:px-8">
+        <span class="display text-lg font-semibold md:text-xl">Part 4 · Amendments to other enactments</span>
+        <span class="chev text-flame" aria-hidden="true">▸</span>
+      </summary>
+      <div class="border-t border-rule bg-paper/30 px-6 py-6 md:px-8 md:py-8 bill-text">
+        <h3>41 &nbsp; Amendment to Parliament Act 2025</h3>
+        <p>After the provision providing for the effect of Article 9 of the Bill of Rights 1688, insert:</p>
+        <blockquote>"Nothing in this section prevents the Political Integrity Commissioner, established under the Political Integrity (Misinformation Accountability) Act 2026, from receiving complaints about statements made in proceedings in Parliament, investigating such statements in accordance with clause 15 of that Act, and making findings and imposing penalties — provided that the Commissioner has obtained the Speaker's leave before compelling any member to answer questions about statements made in proceedings in Parliament."</blockquote>
+
+        <h3>42 &nbsp; Amendment to Imperial Laws Application Act 1988</h3>
+        <p>In Schedule 1, after the entry relating to Article 9 of the Bill of Rights 1688, insert:</p>
+        <blockquote>"Article 9 of the Bill of Rights 1688 does not prevent the investigation of knowingly false statements of material fact or misleading spin by the Political Integrity Commissioner under the Political Integrity (Misinformation Accountability) Act 2026, subject to the procedural safeguards in that Act."</blockquote>
+
+        <h3>43 &nbsp; Amendment to Electoral Act 1993</h3>
+        <p>(2) In section 199A, replace "during the specified period" with <em>"at any time during the parliamentary term."</em></p>
+        <p>(3) In section 199A, after "publishes or republishes a statement" insert <em>"on any public platform (as defined in the Political Integrity (Misinformation Accountability) Act 2026)."</em></p>
+        <p>(4) After section 199A, insert:</p>
+        <blockquote><strong>"199B — Misleading spin to influence voters.</strong> A person is guilty of a corrupt practice who, with the intention of influencing the vote of an elector, engages in misleading spin (as defined in the Political Integrity (Misinformation Accountability) Act 2026) on any public platform at any time during the parliamentary term."</blockquote>
+      </div>
+    </details>
+
+    <!-- Part 5 -->
+    <details class="mt-6 group rounded-2xl border border-rule bg-white">
+      <summary class="flex items-center justify-between gap-4 px-6 py-5 md:px-8">
+        <span class="display text-lg font-semibold md:text-xl">Part 5 · Safeguards, appeals, review, sunset</span>
+        <span class="chev text-flame" aria-hidden="true">▸</span>
+      </summary>
+      <div class="border-t border-rule bg-paper/30 px-6 py-6 md:px-8 md:py-8 bill-text">
+        <h3>44 &nbsp; Protected speech</h3>
+        <p>(1) Nothing in this Act applies to —</p>
+        <p class="sub">(a) a genuine statement of opinion, belief, or political judgement clearly presented as such, that does not contain or imply a specific factual claim the member knows to be false;</p>
+        <p class="sub">(b) a statement honestly believed to be true, where the member did not know and could not reasonably have known it was false;</p>
+        <p class="sub">(c) a statement of fact made in good faith reliance on an identified official source or expert advice;</p>
+        <p class="sub">(d) satire, humour, or rhetorical exaggeration no reasonable person would interpret as a statement of fact.</p>
+        <p>(2) For the avoidance of doubt, a statement is not protected merely because it is prefaced with "I believe", "I think", "in my view", or similar phrases, if it contains or implies a specific factual claim the member knows to be false. <strong>The Commissioner must look through the form of the statement to its substance.</strong></p>
+        <p>(3) Context, audience, platform, and manner of delivery must all be considered.</p>
+
+        <h3>45 &nbsp; Right of appeal</h3>
+        <p>A member subject to a finding may appeal to the High Court on a question of law or fact, within 20 working days of publication. The High Court may confirm, set aside, refer back, or vary the penalty.</p>
+
+        <h3>46 &nbsp; Vexatious complaints</h3>
+        <p>The Commissioner may dismiss a complaint without investigation if it is frivolous, vexatious, made for a predominantly political purpose unrelated to genuine concern about misinformation, or outside the scope of the Act. Written reasons must be provided.</p>
+
+        <h3>47 &nbsp; Review of Act</h3>
+        <p>The Minister must commence a review within 3 years of commencement, covering complaints received, effectiveness of the penalty regime, any unintended consequences, the independence and resourcing of the Commissioner, and the operation of correction requirements. A report is presented to the House within 12 months of commencing the review.</p>
+
+        <h3>48 &nbsp; Sunset clause</h3>
+        <p>This Act is repealed 10 years after commencement unless the House resolves before that date to continue it. A continuation resolution may extend it for a further period not exceeding 10 years.</p>
+
+        <hr>
+
+        <p class="text-sm italic text-ink/60">This draft is prepared for discussion purposes and does not constitute formal legal advice. Formal drafting of New Zealand legislation is undertaken by the Parliamentary Counsel Office (PCO).</p>
+      </div>
+    </details>
+
+    <div class="mt-8 flex flex-wrap items-center gap-3 text-sm">
+      <button id="expand-all"  type="button" class="rounded-full border border-ink/20 px-4 py-1.5 hover:bg-white">Expand all parts</button>
+      <button id="collapse-all" type="button" class="rounded-full border border-ink/20 px-4 py-1.5 hover:bg-white">Collapse all</button>
+      <span class="text-ink/50">Working draft for public discussion.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- OVERSEAS                                                     -->
+<!-- ============================================================ -->
+<section id="overseas" class="scroll-mt-20 border-y border-rule bg-white/60">
+  <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+    <div class="max-w-3xl">
+      <p class="text-xs uppercase tracking-widest text-flame">05 — What's happening overseas</p>
+      <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
+        New Zealand wouldn't be doing this alone.
+      </h2>
+      <p class="mt-5 text-lg text-ink/70">
+        Several democracies have tried, are trying, or have already enacted laws holding politicians accountable for misinformation. Some are good models. Some are cautionary tales. Honest assessment of each:
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 lg:grid-cols-2">
+
+      <!-- Wales -->
+      <article class="rounded-2xl border border-rule bg-paper p-7 md:p-9">
+        <div class="flex items-center justify-between gap-4">
+          <p class="display text-sm uppercase tracking-widest text-ink/55">🏴󠁧󠁢󠁷󠁬󠁳󠁿 &nbsp; Wales — Senedd Cymru</p>
+          <span class="pill rounded-full px-2.5 py-0.5 text-xs font-medium text-amber">Stage 1 passed · stalled</span>
+        </div>
+        <h3 class="display mt-3 text-2xl font-semibold leading-tight">Member Accountability and Elections Bill</h3>
+        <p class="mt-3 text-ink/75">
+          Proposed by the Welsh Government in 2025, building on earlier work by Adam Price MS (Plaid Cymru). Would create a duty on Members to prohibit false statements of fact during election campaigns, plus a recall system and an independent judicial disqualification process for deliberate deception. <strong>Doesn't</strong> create a year-round ban.
+        </p>
+        <p class="mt-3 text-ink/75">
+          Stage 1 (general principles) passed 13 Jan 2026. Stage 2 stalled — the financial resolution wasn't moved before the May 2026 Senedd election. Welsh Labour lost government for the first time since devolution. The bill's fate under the new government is unresolved.
+        </p>
+        <p class="mt-3 text-sm text-ink/55">
+          The Senedd's own Standards Committee said it was "not convinced" a criminal-offence approach would restore trust, and there are open questions about whether the Senedd can legislate criminal offences at all.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+          <a class="text-flame underline-offset-4 hover:underline" href="https://research.senedd.wales/research-articles/new-bill-seeks-to-strengthen-accountability-of-members-and-tackle-election-misinformation/" target="_blank" rel="noopener">Senedd Research — overview</a>
+          <a class="text-flame underline-offset-4 hover:underline" href="https://www.bangor.ac.uk/news/2024-06-20-wales-could-become-worlds-first-country-to-criminalise-politicians-who-lie" target="_blank" rel="noopener">Bangor University analysis</a>
+        </div>
+      </article>
+
+      <!-- UK -->
+      <article class="rounded-2xl border border-rule bg-paper p-7 md:p-9">
+        <div class="flex items-center justify-between gap-4">
+          <p class="display text-sm uppercase tracking-widest text-ink/55">🇬🇧 &nbsp; United Kingdom — Westminster</p>
+          <span class="pill rounded-full px-2.5 py-0.5 text-xs font-medium text-ink/60">Petition / amendment stage</span>
+        </div>
+        <h3 class="display mt-3 text-2xl font-semibold leading-tight">"Compassion in Politics" amendment</h3>
+        <p class="mt-3 text-ink/75">
+          A cross-party amendment, championed by the Compassion in Politics campaign and explicitly framed as "the law that could stop a British Trump," would create a standalone criminal offence for MPs who intentionally or recklessly mislead the public.
+        </p>
+        <p class="mt-3 text-ink/75">
+          A linked UK Parliament petition crossed the threshold for parliamentary consideration. No bill has been formally introduced; the existing convention is that ministers who mislead Parliament resign — there is no legal sanction.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+          <a class="text-flame underline-offset-4 hover:underline" href="https://www.compassioninpolitics.com/the_law_that_could_stop_a_british_trump" target="_blank" rel="noopener">Compassion in Politics</a>
+          <a class="text-flame underline-offset-4 hover:underline" href="https://petition.parliament.uk/petitions/561730" target="_blank" rel="noopener">UK Parliament petition</a>
+        </div>
+      </article>
+
+      <!-- France -->
+      <article class="rounded-2xl border border-rule bg-paper p-7 md:p-9">
+        <div class="flex items-center justify-between gap-4">
+          <p class="display text-sm uppercase tracking-widest text-ink/55">🇫🇷 &nbsp; France</p>
+          <span class="pill rounded-full px-2.5 py-0.5 text-xs font-medium text-deep">Enacted · narrow scope</span>
+        </div>
+        <h3 class="display mt-3 text-2xl font-semibold leading-tight">Loi contre la manipulation de l'information (2018)</h3>
+        <p class="mt-3 text-ink/75">
+          Allows a judge to issue an emergency order against false information in the <strong>3 months before</strong> an election. Imposes transparency duties on online platforms. Judicially supervised — not a ministerial power.
+        </p>
+        <p class="mt-3 text-ink/75">
+          Often cited as a more measured model than executive-led approaches, but limited to election windows. NZ's bill goes further: full parliamentary term, statements outside election campaigns, year-round.
+        </p>
+      </article>
+
+      <!-- Singapore -->
+      <article class="rounded-2xl border border-rule bg-paper p-7 md:p-9">
+        <div class="flex items-center justify-between gap-4">
+          <p class="display text-sm uppercase tracking-widest text-ink/55">🇸🇬 &nbsp; Singapore — cautionary example</p>
+          <span class="pill rounded-full px-2.5 py-0.5 text-xs font-medium text-flame">Enacted · widely criticised</span>
+        </div>
+        <h3 class="display mt-3 text-2xl font-semibold leading-tight">Protection from Online Falsehoods and Manipulation Act (POFMA, 2019)</h3>
+        <p class="mt-3 text-ink/75">
+          Gives <strong>ministers</strong> the power to issue correction or takedown orders for online statements they consider false. Penalties: up to S$50,000 and 5 years' prison for individuals.
+        </p>
+        <p class="mt-3 text-ink/75">
+          Frequently criticised internationally as a tool used disproportionately against political opposition and dissenters. <strong>This is a model NZ's bill explicitly does <em>not</em> follow:</strong> our Commissioner is independent, judicially-supervised, and targets politicians — not citizens.
+        </p>
+      </article>
+
+    </div>
+
+    <p class="mt-12 max-w-prose-wide text-sm text-ink/60">
+      No federal bill in Australia, Canada, or the United States addresses this directly. In Australia, misleading a parliamentary committee is treated as contempt; there is no statutory offence for political misinformation more broadly. US First Amendment protections make any analogous federal law constitutionally implausible.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- COMMENTS                                                     -->
+<!-- ============================================================ -->
+<section id="comments" class="scroll-mt-20">
+  <div class="mx-auto max-w-4xl px-5 py-20 md:py-28">
+    <p class="text-xs uppercase tracking-widest text-flame">06 — Public comments</p>
+    <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
+      What do you think?
+    </h2>
+    <p class="mt-5 max-w-prose-wide text-lg text-ink/75">
+      All comments are <strong>public</strong>, visible to every visitor. No sign-in needed. Be civil — anything abusive, defamatory, or off-topic will be removed.
+    </p>
+    <p class="mt-3 max-w-prose-wide text-ink/60">
+      If you'd like to comment on a <em>specific</em> part of the bill, scroll back to that section — there's a comment block under each one.
+    </p>
+
+    <div class="mt-10 rounded-2xl border border-rule bg-white p-6 md:p-8">
+      <div id="cusdis_thread"
+           data-host="https://cusdis.com"
+           data-app-id="REPLACE_WITH_CUSDIS_APP_ID"
+           data-page-id="home"
+           data-page-url=""
+           data-page-title="Political Integrity Bill — general comments">
+      </div>
+      <p id="cusdis-placeholder" class="text-center text-ink/50 italic">
+        Comments will appear here once Cusdis is configured. See <code class="rounded bg-paper px-1.5 py-0.5 text-xs">README.md</code> for setup.
+      </p>
+    </div>
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SUPPORT                                                      -->
+<!-- ============================================================ -->
+<section id="support" class="border-t border-rule bg-ink text-paper">
+  <div class="mx-auto max-w-6xl px-5 py-20 md:py-24">
+    <p class="text-xs uppercase tracking-widest text-amber">07 — How to support</p>
+    <h2 class="display-tight mt-3 max-w-3xl text-4xl font-semibold leading-tight md:text-5xl">
+      The bill only moves forward if the public pushes for it.
+    </h2>
+
+    <div class="mt-12 grid gap-8 md:grid-cols-3">
+      <div>
+        <p class="display text-xl font-semibold text-amber">1 — Share it</p>
+        <p class="mt-2 text-paper/75">Send this page to people who'd want to read it. The more eyes on the bill, the more political weight it carries.</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a class="rounded-full border border-paper/30 px-3 py-1.5 text-sm hover:bg-paper/10" target="_blank" rel="noopener"
+             href="https://twitter.com/intent/tweet?text=NZ%20draft%20bill%20to%20hold%20MPs%20accountable%20for%20deliberate%20misinformation%20%E2%80%94%20read%20%26%20comment%3A&url=">Share on X</a>
+          <a class="rounded-full border border-paper/30 px-3 py-1.5 text-sm hover:bg-paper/10" target="_blank" rel="noopener"
+             href="https://www.facebook.com/sharer/sharer.php?u=">Share on Facebook</a>
+          <a class="rounded-full border border-paper/30 px-3 py-1.5 text-sm hover:bg-paper/10" target="_blank" rel="noopener"
+             href="https://www.linkedin.com/sharing/share-offsite/?url=">Share on LinkedIn</a>
+          <button id="share-instagram" type="button"
+             class="rounded-full border border-paper/30 px-3 py-1.5 text-sm hover:bg-paper/10">Share on Instagram</button>
+          <span id="share-instagram-toast" class="hidden self-center text-xs text-amber">Link copied — paste into your story, bio or a DM.</span>
+        </div>
+      </div>
+      <div>
+        <p class="display text-xl font-semibold text-amber">2 — Petition Parliament</p>
+        <p class="mt-2 text-paper/75">Anyone can lodge a petition to Parliament. It's the first formal step to get the issue on the parliamentary record. You'll need an MP to present it.</p>
+        <a class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-amber px-4 py-1.5 text-sm font-medium text-ink hover:bg-amber/90"
+           target="_blank" rel="noopener"
+           href="https://www.parliament.nz/en/pb/petitions/">Start a petition →</a>
+      </div>
+      <div>
+        <p class="display text-xl font-semibold text-amber">3 — Write to MPs</p>
+        <p class="mt-2 text-paper/75">A Member's Bill needs a sympathetic MP to sponsor it. Opposition and crossbench MPs with a track record on transparency are the most likely supporters.</p>
+        <a class="mt-4 inline-flex items-center gap-1.5 rounded-full border border-paper/30 px-4 py-1.5 text-sm font-medium hover:bg-paper/10"
+           target="_blank" rel="noopener"
+           href="https://www.parliament.nz/en/mps-and-electorates/members-of-parliament/">Find your MP →</a>
+      </div>
+    </div>
+
+    <hr class="mt-16 border-paper/15">
+
+    <div class="mt-8 grid gap-6 text-sm text-paper/60 md:grid-cols-2">
+      <div>
+        <p class="text-paper">Sources &amp; references</p>
+        <ul class="mt-3 space-y-1">
+          <li><a class="hover:text-paper" target="_blank" rel="noopener" href="https://www.legislation.govt.nz/act/public/2025/0062/63.0/LMS803780.html">Parliament Act 2025</a></li>
+          <li><a class="hover:text-paper" target="_blank" rel="noopener" href="https://www.legislation.govt.nz/act/public/1993/0087/latest/DLM310074.html">Electoral Act 1993, s 199A</a></li>
+          <li><a class="hover:text-paper" target="_blank" rel="noopener" href="https://www.legislation.govt.nz/act/public/1990/0109/latest/DLM225513.html">NZ Bill of Rights Act 1990</a></li>
+          <li><a class="hover:text-paper" target="_blank" rel="noopener" href="https://www.dpmc.govt.nz/our-programmes/national-security/strengthening-resilience-disinformation">DPMC — Resilience to Disinformation</a></li>
+          <li><a class="hover:text-paper" target="_blank" rel="noopener" href="https://www.borrinfoundation.nz/content-regulation-and-disinformation-in-new-zealand/">Borrin Foundation report</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-paper">About this page</p>
+        <p class="mt-3">This is a draft Member's Bill prepared for public discussion. Not formal legislation; not legal advice. New Zealand legislation is formally drafted by the Parliamentary Counsel Office.</p>
+      </div>
+    </div>
+
+    <p class="mt-12 text-xs text-paper/40">© 2026. Public discussion document.</p>
+  </div>
+</section>
+
+<script>
+  // Expand / collapse all bill <details>
+  const bill = document.getElementById('bill');
+  document.getElementById('expand-all').addEventListener('click', () => {
+    bill.querySelectorAll('details').forEach(d => d.open = true);
+  });
+  document.getElementById('collapse-all').addEventListener('click', () => {
+    bill.querySelectorAll('details').forEach(d => d.open = false);
+  });
+
+  // Hide the Cusdis placeholder once the embed actually mounts (the script renders an iframe inside #cusdis_thread)
+  const cusdisRoot = document.getElementById('cusdis_thread');
+  const placeholder = document.getElementById('cusdis-placeholder');
+  if (cusdisRoot && placeholder) {
+    const obs = new MutationObserver(() => {
+      if (cusdisRoot.children.length > 0) {
+        placeholder.style.display = 'none';
+        obs.disconnect();
+      }
+    });
+    obs.observe(cusdisRoot, { childList: true });
+  }
+
+  // Instagram has no web share URL — best UX is copy-to-clipboard so the user can paste anywhere on IG
+  const igBtn = document.getElementById('share-instagram');
+  const igToast = document.getElementById('share-instagram-toast');
+  if (igBtn && igToast) {
+    igBtn.addEventListener('click', async () => {
+      const url = window.location.href;
+      try {
+        if (navigator.share) {
+          // On mobile, the native share sheet includes Instagram directly
+          await navigator.share({ title: document.title, url });
+          return;
+        }
+        await navigator.clipboard.writeText(url);
+        igToast.classList.remove('hidden');
+        setTimeout(() => igToast.classList.add('hidden'), 4000);
+      } catch (err) {
+        // user dismissed share sheet or clipboard denied — fail quietly
+      }
+    });
+  }
+
+  // Pre-fill the share URLs on X / Facebook / LinkedIn with the current page URL
+  document.querySelectorAll('a[href^="https://twitter.com/intent/tweet"], a[href^="https://www.facebook.com/sharer"], a[href^="https://www.linkedin.com/sharing"]').forEach(a => {
+    const href = a.getAttribute('href');
+    const encoded = encodeURIComponent(window.location.href);
+    a.setAttribute('href', href.endsWith('=') ? href + encoded : href + (href.includes('?') ? '&' : '?') + 'url=' + encoded);
+  });
+</script>
+
+</body>
+</html>
