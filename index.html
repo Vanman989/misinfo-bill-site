@@ -412,13 +412,25 @@ tailwind.config = {
         </ol>
       </div>
 
+      <!-- Show your source (full-width pillar) -->
+      <div class="bg-flame p-7 md:p-9 md:col-span-2">
+        <p class="text-xs uppercase tracking-widest text-paper/80">Show your source</p>
+        <h3 class="display mt-2 text-2xl font-semibold text-paper md:text-3xl">A new duty to cite — for health, science, stats, and government claims.</h3>
+        <p class="mt-4 text-paper/90 md:text-lg">
+          If you're making a factual claim that rests on research, statistics, government data, or expert advice — and especially if it's about <strong>public health, science, statistics, government performance, or historical events</strong> — you must include a <strong>link to the source</strong>, or cite it clearly when a link isn't possible (a speech, a broadcast, a printed ad).
+        </p>
+        <p class="mt-3 text-paper/85">
+          Genuine opinions are exempt. Common knowledge is exempt. Informal personal speech is exempt. But unsourced confident claims on the topics above start the warning ladder.
+        </p>
+      </div>
+
       <!-- Safeguards -->
       <div class="bg-deep p-7 md:p-9">
         <p class="text-xs uppercase tracking-widest text-amber">The safeguards</p>
         <h3 class="display mt-2 text-2xl font-semibold">Built so it can't be weaponised.</h3>
         <ul class="mt-5 space-y-3 text-paper/85">
           <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Genuine opinions are protected.</strong> But saying "I believe" before a lie doesn't make it an opinion — the Commissioner looks through the form to the substance.</span></li>
-          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Honest mistakes are protected — but you have to <em>actually check</em>.</strong> The defence isn't "I didn't know"; it's "I took reasonable steps to verify and the falsity wasn't discoverable". Politicians have staff, briefings, and the parliamentary library — they're held to the same duty of care as doctors, lawyers, and company directors.</span></li>
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Show your source — or bear the risk.</strong> The "I didn't know" defence is gone. If you make a confident factual claim that rests on a source, you must link or cite it. The remaining defences are genuine opinion, good-faith reliance on a <em>named</em> source, and satire. Politicians chose this job — they have staff, briefings, and the parliamentary library to draw on.</span></li>
           <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>You only go to prison for actual lies.</strong> Criminal charges (the top two rungs of the ladder) require the prosecution to prove the MP <em>actually knew</em> they were lying — beyond reasonable doubt. The lower hybrid standard only applies to administrative warnings, censure, and fines.</span></li>
           <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Right of appeal to the High Court</strong> on any finding.</span></li>
           <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Vexatious complaints can be dismissed</strong> without investigation. Investigations into statements made <em>inside Parliament</em> require a vote of the House to authorise them.</span></li>
@@ -430,11 +442,11 @@ tailwind.config = {
     <div class="mt-12 grid gap-6 md:grid-cols-3">
       <div class="flex flex-col gap-2 border-t border-paper/20 pt-5">
         <p class="display text-2xl font-semibold text-paper">Actionable</p>
-        <p class="text-sm text-paper/70">Deliberate lies. Misleading spin used to create a false impression.</p>
+        <p class="text-sm text-paper/70">Deliberate lies. Misleading spin used to create a false impression. Unsourced confident claims about health, science, stats, or government performance.</p>
       </div>
       <div class="flex flex-col gap-2 border-t border-paper/20 pt-5">
         <p class="display text-2xl font-semibold text-paper">Not actionable</p>
-        <p class="text-sm text-paper/70">Genuine opinions. Honest mistakes. Statements corrected within 48 hours.</p>
+        <p class="text-sm text-paper/70">Genuine opinions. Claims with a clearly identified source. Statements corrected within 48 hours.</p>
       </div>
       <div class="flex flex-col gap-2 border-t border-paper/20 pt-5">
         <p class="display text-2xl font-semibold text-paper">Look-through rule</p>
@@ -603,6 +615,15 @@ tailwind.config = {
 
         <h3>23–25 &nbsp; Reporting, staff, resources</h3>
         <p>Annual report to the House by 30 September. Quarterly report to the Committee within 20 working days of quarter-end. The Commissioner may employ staff as necessary.</p>
+
+        <h3>25A &nbsp; Duty to cite sources for factual claims</h3>
+        <p>(1) When a member makes a factual claim of material fact on a public platform that relies on or purports to be supported by an identifiable source, the member must accompany the statement with —</p>
+        <p class="sub">(a) a hyperlink to the primary source where the platform permits hyperlinks; or</p>
+        <p class="sub">(b) a clear citation of the source where hyperlinks aren't possible (spoken statements in Parliament, broadcast interviews, print advertising).</p>
+        <p>(2) The duty applies in particular to claims about public health and vaccines; scientific or environmental research; statistical claims (crime, unemployment, immigration, demographic, economic); government expenditure and policy outcomes; and historical events or actions by identifiable persons or organisations.</p>
+        <p>(3) Exempt: opinions and predictions; common knowledge; informal personal speech.</p>
+        <p>(4) Failure to comply is investigable by the Commissioner. Repeated non-compliance attracts graduated penalties beginning at the warning level. Not a criminal offence on its own.</p>
+        <p class="text-sm italic text-ink/60">Drafting note — May 2026 (second pass): added to complement the deletion of the "honest mistake" defence in clause 44. The principle: politicians who make factual claims must show their work. Targets categories where misinformation has high public-harm potential, while protecting ordinary political debate via the exemptions.</p>
       </div>
     </details>
 
@@ -713,12 +734,11 @@ tailwind.config = {
         <h3>44 &nbsp; Protected speech</h3>
         <p>(1) Nothing in this Act applies to —</p>
         <p class="sub">(a) a genuine statement of opinion, belief, or political judgement clearly presented as such, that does not contain or imply a specific factual claim the member knows to be false;</p>
-        <p class="sub">(b) a statement honestly believed to be true at the time of making it, where the member <strong>took reasonable steps to verify</strong> the accuracy of the statement before making it (having regard to the seriousness of the claim, the public platform, the resources available, and the time available) <strong>and</strong> the falsity was not reasonably discoverable through those steps;</p>
-        <p class="sub">(c) a statement of fact made in good faith reliance on an identified official source or expert advice;</p>
-        <p class="sub">(d) satire, humour, or rhetorical exaggeration no reasonable person would interpret as a statement of fact.</p>
+        <p class="sub">(b) a statement of fact made in good faith reliance on an identified official source, published research, or expert advice — the member must name the source;</p>
+        <p class="sub">(c) satire, humour, or rhetorical exaggeration no reasonable person would interpret as a statement of fact.</p>
         <p>(2) For the avoidance of doubt, a statement is not protected merely because it is prefaced with "I believe", "I think", "in my view", or similar phrases, if it contains or implies a specific factual claim the member knows to be false. <strong>The Commissioner must look through the form of the statement to its substance.</strong></p>
         <p>(3) Context, audience, platform, and manner of delivery must all be considered.</p>
-        <p class="text-sm italic text-ink/60">Drafting note — May 2026 (second pass): the "honest mistake" defence was tightened from a passive "could not reasonably have known" standard to an active duty to verify. Mirrors the duty of care imposed on doctors, lawyers, accountants, and company directors. The "having regard to" wording scales the standard with the seriousness of the claim — a casual social-media reply is not held to the same standard as a Budget speech.</p>
+        <p class="text-sm italic text-ink/60">Drafting note — May 2026 (second pass): the "honest mistake" defence was deleted entirely. It was substantially redundant with (b) (good-faith reliance on an identified source) and let MPs escape via unsourced confident claims. The remaining defences are genuine opinion, identified-source reliance, and satire. This change is paired with the new duty to cite sources in clause 25A.</p>
 
         <h3>45 &nbsp; Right of appeal</h3>
         <p>A member subject to a finding may appeal to the High Court on a question of law or fact, within 20 working days of publication. The High Court may confirm, set aside, refer back, or vary the penalty.</p>
