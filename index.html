@@ -66,6 +66,8 @@ tailwind.config = {
   .bill-text .clause { display:block; font-family:'Fraunces',serif; font-weight:600; color:#13161B; }
   .bill-text .sub { padding-left:1rem; }
   .bill-text .sub2 { padding-left:2rem; }
+  /* Cusdis embed — force a comfortable min-height so the form isn't cropped before auto-resize kicks in */
+  #cusdis_thread iframe { min-height: 560px !important; width: 100% !important; border: 0; }
 </style>
 </head>
 
