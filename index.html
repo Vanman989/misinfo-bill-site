@@ -66,8 +66,8 @@ tailwind.config = {
   .bill-text .clause { display:block; font-family:'Fraunces',serif; font-weight:600; color:#13161B; }
   .bill-text .sub { padding-left:1rem; }
   .bill-text .sub2 { padding-left:2rem; }
-  /* Cusdis embed — force a comfortable min-height so the form isn't cropped before auto-resize kicks in */
-  #cusdis_thread iframe { min-height: 560px !important; width: 100% !important; border: 0; }
+  /* Cusdis embed — let the iframe auto-size to its content (handled by the postMessage listener below); 360px floor so the empty form isn't cropped */
+  #cusdis_thread iframe { min-height: 360px; width: 100% !important; border: 0; transition: height .2s ease; }
 </style>
 </head>
 
@@ -466,7 +466,7 @@ tailwind.config = {
     </div>
 
     <!-- Preliminary clauses -->
-    <details open class="mt-6 group rounded-2xl border border-rule bg-white">
+    <details class="mt-6 group rounded-2xl border border-rule bg-white">
       <summary class="flex items-center justify-between gap-4 px-6 py-5 md:px-8">
         <span class="display text-lg font-semibold md:text-xl">Preliminary · Title, Commencement, Purpose, Interpretation</span>
         <span class="chev text-flame" aria-hidden="true">▸</span>
@@ -973,6 +973,19 @@ tailwind.config = {
     const href = a.getAttribute('href');
     const encoded = encodeURIComponent(window.location.href);
     a.setAttribute('href', href.endsWith('=') ? href + encoded : href + (href.includes('?') ? '&' : '?') + 'url=' + encoded);
+  });
+
+  // Cusdis iframe auto-resize fallback. Cusdis posts {from:'cusdis', event:'resize', height:N}
+  // when its inner content changes height. Listen for those and resize the iframe so the form
+  // sits snugly when empty and grows when comments arrive — no internal scrollbar.
+  window.addEventListener('message', (e) => {
+    if (e.origin !== 'https://cusdis.com') return;
+    const d = e.data;
+    if (!d || d.from !== 'cusdis' || d.event !== 'resize') return;
+    const iframe = document.querySelector('#cusdis_thread iframe');
+    if (iframe && typeof d.height === 'number') {
+      iframe.style.height = Math.max(d.height, 360) + 'px';
+    }
   });
 </script>
 
