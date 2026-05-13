@@ -67,12 +67,15 @@ tailwind.config = {
       <span class="ribbon block h-5 w-5 rounded-sm" aria-hidden="true"></span>
       <span class="display-tight text-lg font-semibold leading-none">Honest Politics&nbsp;NZ</span>
     </a>
-    <nav class="hidden gap-6 text-sm md:flex">
+    <nav class="hidden gap-x-5 gap-y-1 text-sm lg:flex lg:flex-wrap">
+      <a href="#problem"   class="text-ink/70 hover:text-ink">Problem</a>
+      <a href="#integrity" class="text-ink/70 hover:text-ink">Integrity</a>
       <a href="#tldr"      class="text-ink/70 hover:text-ink">What's changing</a>
       <a href="#how"       class="text-ink/70 hover:text-ink">How it works</a>
       <a href="#bill"      class="text-ink/70 hover:text-ink">The bill</a>
       <a href="#overseas"  class="text-ink/70 hover:text-ink">Overseas</a>
       <a href="#comments"  class="text-ink/70 hover:text-ink">Comments</a>
+      <a href="#support"   class="text-ink/70 hover:text-ink">Support</a>
     </nav>
     <a href="#comments" class="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-paper hover:bg-deep">
       Have your say <span aria-hidden="true">→</span>
@@ -90,9 +93,10 @@ tailwind.config = {
       Draft Member's Bill · New Zealand · 2026
     </div>
 
-    <h1 class="display-tight text-3xl font-semibold leading-[1.08] text-ink sm:text-4xl md:text-5xl lg:text-6xl">
-      It's illegal to lie to your employer, bank, IRD, or&nbsp;court.
-      <span class="mt-4 block text-flame">Why can politicians lie to&nbsp;you?</span>
+    <h1 class="display-tight text-3xl font-semibold leading-[1.1] text-ink sm:text-4xl md:text-5xl lg:text-6xl">
+      <span class="block">It's illegal to lie to your employer,</span>
+      <span class="block">bank, IRD, or court.</span>
+      <span class="mt-5 block text-flame">Why can politicians lie to you?</span>
     </h1>
 
     <p class="mt-8 max-w-prose-wide text-lg leading-relaxed text-ink/75 md:text-xl">
@@ -101,16 +105,16 @@ tailwind.config = {
       Not for honest mistakes. Not for opinions. For deliberate, knowing lies and misleading spin.
     </p>
 
-    <div class="mt-10 flex flex-wrap items-center gap-3">
-      <a href="#tldr" class="inline-flex items-center gap-1.5 rounded-full bg-ink px-5 py-3 text-sm font-medium text-paper hover:bg-deep">
-        See what's changing <span aria-hidden="true">→</span>
-      </a>
-      <a href="#bill" class="inline-flex items-center gap-1.5 rounded-full border border-ink/20 px-5 py-3 text-sm font-medium text-ink hover:bg-white">
-        Read the full bill
-      </a>
-      <a href="#comments" class="inline-flex items-center gap-1.5 px-3 py-3 text-sm font-medium text-ink/70 underline-offset-4 hover:underline">
-        Leave a public comment
-      </a>
+    <p class="mt-10 text-xs uppercase tracking-widest text-ink/55">Jump to a section — or scroll to read the whole thing</p>
+    <div class="mt-3 flex flex-wrap items-center gap-2">
+      <a href="#problem"   class="inline-flex items-center rounded-full border border-ink/15 bg-white/60 px-4 py-2 text-sm font-medium text-ink/80 hover:bg-ink hover:text-paper hover:border-ink">The problem</a>
+      <a href="#integrity" class="inline-flex items-center rounded-full border border-ink/15 bg-white/60 px-4 py-2 text-sm font-medium text-ink/80 hover:bg-ink hover:text-paper hover:border-ink">Integrity</a>
+      <a href="#tldr"      class="inline-flex items-center rounded-full border border-ink/15 bg-white/60 px-4 py-2 text-sm font-medium text-ink/80 hover:bg-ink hover:text-paper hover:border-ink">What's changing</a>
+      <a href="#how"       class="inline-flex items-center rounded-full border border-ink/15 bg-white/60 px-4 py-2 text-sm font-medium text-ink/80 hover:bg-ink hover:text-paper hover:border-ink">How it works</a>
+      <a href="#bill"      class="inline-flex items-center rounded-full border border-ink/15 bg-white/60 px-4 py-2 text-sm font-medium text-ink/80 hover:bg-ink hover:text-paper hover:border-ink">The full bill</a>
+      <a href="#overseas"  class="inline-flex items-center rounded-full border border-ink/15 bg-white/60 px-4 py-2 text-sm font-medium text-ink/80 hover:bg-ink hover:text-paper hover:border-ink">Overseas</a>
+      <a href="#comments"  class="inline-flex items-center rounded-full border border-ink/15 bg-white/60 px-4 py-2 text-sm font-medium text-ink/80 hover:bg-ink hover:text-paper hover:border-ink">Comments</a>
+      <a href="#support"   class="inline-flex items-center rounded-full border border-ink/15 bg-white/60 px-4 py-2 text-sm font-medium text-ink/80 hover:bg-ink hover:text-paper hover:border-ink">Support</a>
     </div>
 
     <!-- key facts strip -->
@@ -142,7 +146,7 @@ tailwind.config = {
 <!-- ============================================================ -->
 <!-- THE PROBLEM                                                  -->
 <!-- ============================================================ -->
-<section class="border-y border-rule bg-white/60">
+<section id="problem" class="scroll-mt-20 border-y border-rule bg-white/60">
   <div class="mx-auto max-w-6xl px-5 py-20 md:py-24">
     <div class="grid gap-12 md:grid-cols-12">
       <div class="md:col-span-4">
@@ -821,7 +825,7 @@ tailwind.config = {
       All comments are <strong>public</strong>, visible to every visitor. No sign-in needed. Be civil — anything abusive, defamatory, or off-topic will be removed.
     </p>
     <p class="mt-3 max-w-prose-wide text-ink/60">
-      If you'd like to comment on a <em>specific</em> part of the bill, scroll back to that section — there's a comment block under each one.
+      If you want to flag a specific part of the bill, mention the section by name in your comment (e.g. <em>"On Part 3 — Penalties…"</em>).
     </p>
 
     <div class="mt-10 rounded-2xl border border-rule bg-white p-6 md:p-8">
