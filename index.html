@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Political Integrity (Misinformation Accountability) Bill — New Zealand</title>
+<title>Political Integrity (Misinformation Accountability) Bill: New Zealand</title>
 <meta name="description" content="A draft New Zealand Member's Bill to hold MPs accountable for deliberately lying to the public. Read the bill, see what's changing, and leave a public comment." />
 
 <!-- Open Graph (Facebook, LinkedIn, etc.) -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Honest Politics NZ" />
 <meta property="og:title" content="It's illegal to lie to your employer, bank, IRD, or court. Why can politicians lie to you?" />
-<meta property="og:description" content="A draft NZ Member's Bill to hold MPs accountable for deliberate lies and misleading spin — without affecting honest mistakes or genuine opinions. Read it. Comment on it. Share it." />
+<meta property="og:description" content="A draft NZ Member's Bill to hold MPs accountable for deliberate lies and misleading spin, without affecting honest mistakes or genuine opinions. Read it. Comment on it. Share it." />
 <meta property="og:url" content="https://honestpoliticsnz.pages.dev/" />
 <meta property="og:locale" content="en_NZ" />
 
@@ -21,7 +21,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -29,8 +29,8 @@ tailwind.config = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Fraunces', 'Georgia', 'serif'],
-        sans:  ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Newsreader', 'Georgia', 'serif'],
+        sans:  ['"Public Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       colors: {
         ink:    '#13161B',
@@ -48,9 +48,13 @@ tailwind.config = {
 
 <style>
   html { scroll-behavior: smooth; }
-  body { font-feature-settings: "ss01","ss02","cv11"; }
-  .display { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; letter-spacing: -0.02em; }
-  .display-tight { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; letter-spacing: -0.035em; }
+  /* No stylistic-set overrides: the old "ss01/ss02/cv11" set gave Inter its
+     single-storey 'a' and other alternate glyphs, which read as odd. */
+  body { font-synthesis: none; }
+  .display { font-family: 'Newsreader', Georgia, serif; font-optical-sizing: auto; letter-spacing: -0.015em; }
+  .display-tight { font-family: 'Newsreader', Georgia, serif; font-optical-sizing: auto; letter-spacing: -0.025em; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
   .pad-rule { background-image: linear-gradient(to right, #E7E2D6 50%, transparent 50%); background-size: 14px 1px; background-repeat: repeat-x; background-position: bottom; }
   details > summary { list-style: none; cursor: pointer; }
   details > summary::-webkit-details-marker { display: none; }
@@ -59,14 +63,14 @@ tailwind.config = {
   .ribbon { background: repeating-linear-gradient(135deg, #D2541F 0 14px, #E5A024 14px 28px); }
   .pill { border: 1px solid currentColor; }
   /* Bill text styling */
-  .bill-text h3 { font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; margin-top:1.75rem; margin-bottom:0.5rem; color:#1F2A33; letter-spacing:-0.01em; }
+  .bill-text h3 { font-family:'Newsreader',Georgia,serif; font-weight:600; font-size:1.15rem; margin-top:1.75rem; margin-bottom:0.5rem; color:#1F2A33; letter-spacing:-0.01em; }
   .bill-text p { margin-top:0.55rem; line-height:1.7; color:#2A3038; }
   .bill-text blockquote { border-left:3px solid #E5A024; margin:0.75rem 0 0.75rem 0.25rem; padding:0.25rem 0 0.25rem 0.9rem; color:#3A4049; font-style:italic; }
   .bill-text hr { margin: 2rem 0; border:0; border-top:1px dashed #E7E2D6; }
-  .bill-text .clause { display:block; font-family:'Fraunces',serif; font-weight:600; color:#13161B; }
+  .bill-text .clause { display:block; font-family:'Newsreader',Georgia,serif; font-weight:600; color:#13161B; }
   .bill-text .sub { padding-left:1rem; }
   .bill-text .sub2 { padding-left:2rem; }
-  /* Cusdis embed — let the iframe auto-size to its content (handled by the postMessage listener below); 360px floor so the empty form isn't cropped */
+  /* Cusdis embed: let the iframe auto-size to its content (handled by the postMessage listener below); 360px floor so the empty form isn't cropped */
   #cusdis_thread iframe { min-height: 360px; width: 100% !important; border: 0; transition: height .2s ease; }
 </style>
 </head>
@@ -117,11 +121,11 @@ tailwind.config = {
 
     <p class="mt-8 max-w-prose-wide text-lg leading-relaxed text-ink/75 md:text-xl">
       The <strong class="font-semibold text-ink">Political Integrity (Misinformation Accountability) Bill</strong>
-      would change that — by holding New Zealand MPs accountable when they deliberately deceive the public.
+      would change that, by holding New Zealand MPs accountable when they deliberately deceive the public.
       Not for honest mistakes. Not for opinions. For deliberate, knowing lies and misleading spin.
     </p>
 
-    <p class="mt-10 text-xs uppercase tracking-widest text-ink/55">Jump to a section — or scroll to read the whole thing</p>
+    <p class="mt-10 text-xs uppercase tracking-widest text-ink/55">Jump to a section, or scroll to read the whole thing</p>
     <div class="mt-3 flex flex-wrap items-center gap-2">
       <a href="#problem"   class="inline-flex items-center rounded-full border border-ink/15 bg-white/60 px-4 py-2 text-sm font-medium text-ink/80 hover:bg-ink hover:text-paper hover:border-ink">The problem</a>
       <a href="#integrity" class="inline-flex items-center rounded-full border border-ink/15 bg-white/60 px-4 py-2 text-sm font-medium text-ink/80 hover:bg-ink hover:text-paper hover:border-ink">Integrity</a>
@@ -139,7 +143,7 @@ tailwind.config = {
       <div>
         <dt class="text-xs uppercase tracking-wider text-ink/60">Correction window</dt>
         <dd class="display mt-1 text-3xl font-semibold">48&nbsp;hours</dd>
-        <p class="mt-1 text-sm leading-relaxed text-ink/65">to fix an honest mistake — no penalty applies.</p>
+        <p class="mt-1 text-sm leading-relaxed text-ink/65">to fix an honest mistake, no penalty applies.</p>
       </div>
       <div>
         <dt class="text-xs uppercase tracking-wider text-ink/60">Penalty ladder</dt>
@@ -167,14 +171,14 @@ tailwind.config = {
   <div class="mx-auto max-w-6xl px-5 py-20 md:py-24">
     <div class="grid gap-12 md:grid-cols-12">
       <div class="md:col-span-4">
-        <p class="text-xs uppercase tracking-widest text-flame">01 — The problem</p>
+        <p class="text-xs uppercase tracking-widest text-flame">01 / The problem</p>
         <h2 class="display-tight mt-3 text-3xl font-semibold leading-tight md:text-4xl">
           Right now, MPs can lie to you almost without consequence.
         </h2>
       </div>
       <div class="md:col-span-8 space-y-5 text-lg leading-relaxed text-ink/80">
-        <p><strong>Inside Parliament</strong> — parliamentary privilege gives MPs absolute immunity for anything they say in the House. The existing rule against "deliberately misleading Parliament" has such a high bar it's almost never enforced. MPs can simply "correct" the record afterwards.</p>
-        <p><strong>Outside Parliament</strong> — Section 199A of the Electoral Act 1993 prohibits false statements to influence voters, but <em>only on the 2 days before election day</em>. For the rest of the 3-year term, MPs can say whatever they want on social media, in press conferences, in campaign material. No legal consequence.</p>
+        <p><strong>Inside Parliament</strong>: parliamentary privilege gives MPs absolute immunity for anything they say in the House. The existing rule against "deliberately misleading Parliament" has such a high bar it's almost never enforced. MPs can simply "correct" the record afterwards.</p>
+        <p><strong>Outside Parliament</strong>: Section 199A of the Electoral Act 1993 prohibits false statements to influence voters, but <em>only on the 2 days before election day</em>. For the rest of the 3-year term, MPs can say whatever they want on social media, in press conferences, in campaign material. No legal consequence.</p>
         <p>Meanwhile, national security surveys in 2022 and 2023 found misinformation and disinformation rank among the <strong>top national security threats</strong> New Zealanders are concerned about.</p>
       </div>
     </div>
@@ -182,20 +186,20 @@ tailwind.config = {
 </section>
 
 <!-- ============================================================ -->
-<!-- INTEGRITY — every other job has consequences for lying       -->
+<!-- INTEGRITY / every other job has consequences for lying       -->
 <!-- ============================================================ -->
 <section id="integrity" class="scroll-mt-20">
   <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
     <div class="max-w-3xl">
-      <p class="text-xs uppercase tracking-widest text-flame">02 — Integrity is the standard</p>
+      <p class="text-xs uppercase tracking-widest text-flame">02 / Integrity is the standard</p>
       <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
         In every other job, lying has consequences. Politicians are the one exception.
       </h2>
       <p class="mt-5 text-lg text-ink/75">
-        New Zealand law is built on the idea that when other people rely on your word — your patients, your clients, your employer, the court, the shareholders — dishonesty carries real consequences. Right across the workforce, integrity isn't optional. It's the baseline.
+        New Zealand law is built on the idea that when other people rely on your word: your patients, your clients, your employer, the court, the shareholders, dishonesty carries real consequences. Right across the workforce, integrity isn't optional. It's the baseline.
       </p>
       <p class="mt-3 text-lg text-ink/75">
-        Politicians, of all people, should be held to the <em>highest</em> standard of honesty — not the lowest. They hold more power than anyone else in the country, and their words shape policy that affects every New Zealander. Yet today they answer to less accountability than any other profession. <strong class="text-ink">The current system makes a mockery of the integrity we demand from everyone else.</strong>
+        Politicians, of all people, should be held to the <em>highest</em> standard of honesty, not the lowest. They hold more power than anyone else in the country, and their words shape policy that affects every New Zealander. Yet today they answer to less accountability than any other profession. <strong class="text-ink">The current system makes a mockery of the integrity we demand from everyone else.</strong>
       </p>
     </div>
 
@@ -205,7 +209,7 @@ tailwind.config = {
       <div class="grid grid-cols-1 divide-y divide-rule md:grid-cols-12 md:divide-x md:divide-y-0">
         <div class="md:col-span-5 p-6 md:p-7"><p class="display text-lg font-semibold text-ink">If you lie under oath in court…</p></div>
         <div class="md:col-span-7 p-6 md:p-7 bg-paper/40">
-          <p class="text-ink/80"><strong class="text-flame">Perjury.</strong> Up to <strong>7 years' imprisonment</strong> — 14 years if it leads to wrongful conviction. <span class="text-ink/50">(Crimes Act 1961, ss 108–109)</span></p>
+          <p class="text-ink/80"><strong class="text-flame">Perjury.</strong> Up to <strong>7 years' imprisonment</strong>, or 14 years if it leads to wrongful conviction. <span class="text-ink/50">(Crimes Act 1961, ss 108 to 109)</span></p>
         </div>
       </div>
 
@@ -233,14 +237,14 @@ tailwind.config = {
       <div class="grid grid-cols-1 divide-y divide-rule md:grid-cols-12 md:divide-x md:divide-y-0 border-t border-rule">
         <div class="md:col-span-5 p-6 md:p-7"><p class="display text-lg font-semibold text-ink">If you're a public servant and you breach the honesty code…</p></div>
         <div class="md:col-span-7 p-6 md:p-7 bg-paper/40">
-          <p class="text-ink/80"><strong class="text-flame">Dismissal</strong> under the Public Service Code of Conduct — which expressly requires honesty. <span class="text-ink/50">(Public Service Act 2020)</span></p>
+          <p class="text-ink/80"><strong class="text-flame">Dismissal</strong> under the Public Service Code of Conduct, which expressly requires honesty. <span class="text-ink/50">(Public Service Act 2020)</span></p>
         </div>
       </div>
 
       <div class="grid grid-cols-1 divide-y divide-rule md:grid-cols-12 md:divide-x md:divide-y-0 border-t border-rule">
         <div class="md:col-span-5 p-6 md:p-7"><p class="display text-lg font-semibold text-ink">If you lie to your boss about your work…</p></div>
         <div class="md:col-span-7 p-6 md:p-7 bg-paper/40">
-          <p class="text-ink/80"><strong class="text-flame">Serious misconduct.</strong> Fired — often without notice. Routinely upheld by the Employment Relations Authority. <span class="text-ink/50">(Employment Relations Act 2000)</span></p>
+          <p class="text-ink/80"><strong class="text-flame">Serious misconduct.</strong> Fired, often without notice. Routinely upheld by the Employment Relations Authority. <span class="text-ink/50">(Employment Relations Act 2000)</span></p>
         </div>
       </div>
 
@@ -254,18 +258,18 @@ tailwind.config = {
     </div>
 
     <p class="mt-10 max-w-prose-wide text-lg italic text-ink/75">
-      The public servants who work for MPs are required to be honest. The lawyers, doctors and accountants who advise them are required to be honest. The shareholders' meetings, the boardrooms, the courtrooms — all required to be honest. <strong class="not-italic text-ink">Why should the politicians at the top of all of it be the only ones who aren't?</strong>
+      The public servants who work for MPs are required to be honest. The lawyers, doctors and accountants who advise them are required to be honest. The shareholders' meetings, the boardrooms, the courtrooms, all required to be honest. <strong class="not-italic text-ink">Why should the politicians at the top of all of it be the only ones who aren't?</strong>
     </p>
   </div>
 </section>
 
 <!-- ============================================================ -->
-<!-- TL;DR — WHAT'S CHANGING                                      -->
+<!-- TL;DR / WHAT'S CHANGING                                      -->
 <!-- ============================================================ -->
 <section id="tldr" class="scroll-mt-20 border-t border-rule">
   <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
     <div class="max-w-3xl">
-      <p class="text-xs uppercase tracking-widest text-flame">03 — What's changing</p>
+      <p class="text-xs uppercase tracking-widest text-flame">03 / What's changing</p>
       <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
         Four Acts. Targeted amendments. No new powers anyone doesn't already need.
       </h2>
@@ -279,19 +283,19 @@ tailwind.config = {
       <!-- Parliament Act -->
       <article class="rounded-2xl border border-rule bg-white overflow-hidden">
         <header class="border-b border-rule bg-paper px-6 py-4 md:px-8">
-          <h3 class="display text-xl font-semibold md:text-2xl">Parliament Act 2025 — parliamentary privilege</h3>
+          <h3 class="display text-xl font-semibold md:text-2xl">Parliament Act 2025: parliamentary privilege</h3>
         </header>
         <div class="grid md:grid-cols-2 divide-rule md:divide-x">
           <div class="p-6 md:p-8">
             <p class="text-xs uppercase tracking-widest text-ink/50">Today</p>
             <p class="mt-3 text-base leading-relaxed text-ink/80">
-              MPs have <strong>absolute immunity</strong> for anything said "in proceedings in Parliament" — via Article 9 of the Bill of Rights 1688. No court or external body can question it. Deliberate lies in the House have no external remedy.
+              MPs have <strong>absolute immunity</strong> for anything said "in proceedings in Parliament", via Article 9 of the Bill of Rights 1688. No court or external body can question it. Deliberate lies in the House have no external remedy.
             </p>
           </div>
           <div class="p-6 md:p-8 bg-paper/40">
             <p class="text-xs uppercase tracking-widest text-flame">If the bill passes</p>
             <p class="mt-3 text-base leading-relaxed text-ink/80">
-              A <strong>narrow exception</strong> — but only the House itself can switch it on. Before any investigation of in-House speech, <strong>Parliament must pass a resolution</strong> authorising that specific case. Privilege otherwise stays absolute. This keeps the limitation on Article 9 inside Parliament's own constitutional authority, where it belongs.
+              A <strong>narrow exception</strong>, but only the House itself can switch it on. Before any investigation of in-House speech, <strong>Parliament must pass a resolution</strong> authorising that specific case. Privilege otherwise stays absolute. This keeps the limitation on Article 9 inside Parliament's own constitutional authority, where it belongs.
             </p>
           </div>
         </div>
@@ -300,7 +304,7 @@ tailwind.config = {
       <!-- Imperial Laws -->
       <article class="rounded-2xl border border-rule bg-white overflow-hidden">
         <header class="border-b border-rule bg-paper px-6 py-4 md:px-8">
-          <h3 class="display text-xl font-semibold md:text-2xl">Imperial Laws Application Act 1988 — Article 9</h3>
+          <h3 class="display text-xl font-semibold md:text-2xl">Imperial Laws Application Act 1988: Article 9</h3>
         </header>
         <div class="grid md:grid-cols-2 divide-rule md:divide-x">
           <div class="p-6 md:p-8">
@@ -321,13 +325,13 @@ tailwind.config = {
       <!-- Electoral Act -->
       <article class="rounded-2xl border border-rule bg-white overflow-hidden">
         <header class="border-b border-rule bg-paper px-6 py-4 md:px-8">
-          <h3 class="display text-xl font-semibold md:text-2xl">Electoral Act 1993, s 199A — false statements to influence voters</h3>
+          <h3 class="display text-xl font-semibold md:text-2xl">Electoral Act 1993, s 199A: false statements to influence voters</h3>
         </header>
         <div class="grid md:grid-cols-2 divide-rule md:divide-x">
           <div class="p-6 md:p-8">
             <p class="text-xs uppercase tracking-widest text-ink/50">Today</p>
             <p class="mt-3 text-base leading-relaxed text-ink/80">
-              False statements to influence voters are prohibited — but only during the <strong>2 days before election day</strong> + election day itself. Outside this window: nothing. Social media, press releases, campaign material across the 3-year term are unregulated.
+              False statements to influence voters are prohibited, but only during the <strong>2 days before election day</strong> + election day itself. Outside this window: nothing. Social media, press releases, campaign material across the 3-year term are unregulated.
             </p>
           </div>
           <div class="p-6 md:p-8 bg-paper/40">
@@ -342,7 +346,7 @@ tailwind.config = {
       <!-- NZBORA -->
       <article class="rounded-2xl border border-rule bg-white overflow-hidden">
         <header class="border-b border-rule bg-paper px-6 py-4 md:px-8">
-          <h3 class="display text-xl font-semibold md:text-2xl">NZ Bill of Rights Act 1990 — freedom of expression</h3>
+          <h3 class="display text-xl font-semibold md:text-2xl">NZ Bill of Rights Act 1990: freedom of expression</h3>
         </header>
         <div class="grid md:grid-cols-2 divide-rule md:divide-x">
           <div class="p-6 md:p-8">
@@ -370,7 +374,7 @@ tailwind.config = {
 <section id="how" class="scroll-mt-20 border-y border-rule bg-deep text-paper">
   <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
     <div class="max-w-3xl">
-      <p class="text-xs uppercase tracking-widest text-amber">03 — How it works</p>
+      <p class="text-xs uppercase tracking-widest text-amber">03 / How it works</p>
       <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight text-paper md:text-5xl">
         An independent watchdog. A 48-hour out for honest mistakes. A graduated response.
       </h2>
@@ -382,10 +386,10 @@ tailwind.config = {
         <p class="text-xs uppercase tracking-widest text-amber">The Commissioner</p>
         <h3 class="display mt-2 text-2xl font-semibold">Independent. Single 7-year term.</h3>
         <ul class="mt-5 space-y-3 text-paper/85">
-          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span>Appointed by the Governor-General on the recommendation of the House. <strong>Cannot</strong> be reappointed — so no incentive to please the government of the day.</span></li>
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span>Appointed by the Governor-General on the recommendation of the House. <strong>Cannot</strong> be reappointed, so no incentive to please the government of the day.</span></li>
           <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span>Can only be removed by the Governor-General on an address from the House for proven misbehaviour or incapacity.</span></li>
           <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span>Cannot have been an MP or party member in the past 5 years. Must hold a legal qualification of 7+ years' standing.</span></li>
-          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Budget set by the cross-party Officers of Parliament Committee</strong>, not by Cabinet. Salary set by the Remuneration Authority and can't be cut during their term — so an aggrieved government can't defund them in retaliation.</span></li>
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Budget set by the cross-party Officers of Parliament Committee</strong>, not by Cabinet. Salary set by the Remuneration Authority and can't be cut during their term, so an aggrieved government can't defund them in retaliation.</span></li>
         </ul>
       </div>
 
@@ -394,7 +398,7 @@ tailwind.config = {
         <p class="text-xs uppercase tracking-widest text-amber">The 48-hour correction window</p>
         <h3 class="display mt-2 text-2xl font-semibold">Honest mistakes? Just fix it.</h3>
         <p class="mt-4 text-paper/85">
-          When the Commissioner notifies an MP of a complaint, the MP has 48 hours to publicly correct the statement. If they do — and the correction meets all requirements — the matter can be closed without a finding or penalty.
+          When the Commissioner notifies an MP of a complaint, the MP has 48 hours to publicly correct the statement. If they do, and the correction meets all requirements, the matter can be closed without a finding or penalty.
         </p>
         <p class="mt-3 text-paper/85">
           The correction has to appear on <strong>every platform</strong> the lie appeared on, with <strong>equal or greater prominence</strong>, and stay up for at least <strong>1 year</strong>. Deleting it before then is itself an offence.
@@ -406,11 +410,11 @@ tailwind.config = {
         <p class="text-xs uppercase tracking-widest text-amber">The penalty ladder</p>
         <h3 class="display mt-2 text-2xl font-semibold">Graduated, proportionate, predictable.</h3>
         <ol class="mt-5 space-y-3 text-paper/85">
-          <li class="flex gap-3"><span class="display mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber/20 text-sm font-semibold text-amber">1</span><span><strong>Warning</strong> — formal, published. First finding.</span></li>
+          <li class="flex gap-3"><span class="display mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber/20 text-sm font-semibold text-amber">1</span><span><strong>Warning</strong>: formal, published. First finding.</span></li>
           <li class="flex gap-3"><span class="display mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber/20 text-sm font-semibold text-amber">2</span><span><strong>Public censure</strong> + mandatory correction. Second finding, or failure to correct after warning.</span></li>
           <li class="flex gap-3"><span class="display mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber/20 text-sm font-semibold text-amber">3</span><span><strong>Fine up to $50,000</strong>. Third finding, or a single serious falsehood causing public harm.</span></li>
           <li class="flex gap-3"><span class="display mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber/20 text-sm font-semibold text-amber">4</span><span><strong>Enhanced fine up to $100,000</strong>. Repeated pattern of deliberate misinformation.</span></li>
-          <li class="flex gap-3"><span class="display mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-flame/30 text-sm font-semibold text-flame">5</span><span><strong>Criminal prosecution</strong> — referred to the Solicitor-General. On conviction: fine up to $200,000, prison up to 2 years, possible disqualification from office.</span></li>
+          <li class="flex gap-3"><span class="display mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-flame/30 text-sm font-semibold text-flame">5</span><span><strong>Criminal prosecution</strong>: referred to the Solicitor-General. On conviction: fine up to $200,000, prison up to 2 years, possible disqualification from office.</span></li>
         </ol>
       </div>
 
@@ -419,9 +423,9 @@ tailwind.config = {
         <p class="text-xs uppercase tracking-widest text-amber">The safeguards</p>
         <h3 class="display mt-2 text-2xl font-semibold">Built so it can't be weaponised.</h3>
         <ul class="mt-5 space-y-3 text-paper/85">
-          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Genuine opinions are protected.</strong> But saying "I believe" before a lie doesn't make it an opinion — the Commissioner looks through the form to the substance.</span></li>
-          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Show your source — or bear the risk.</strong> The "I didn't know" defence is gone. If you make a confident factual claim that rests on a source, you must link or cite it. The remaining defences are genuine opinion, good-faith reliance on a <em>named</em> source, and satire. Politicians chose this job — they have staff, briefings, and the parliamentary library to draw on.</span></li>
-          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>You only go to prison for actual lies.</strong> Criminal charges (the top two rungs of the ladder) require the prosecution to prove the MP <em>actually knew</em> they were lying — beyond reasonable doubt. The lower hybrid standard only applies to administrative warnings, censure, and fines.</span></li>
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Genuine opinions are protected.</strong> But saying "I believe" before a lie doesn't make it an opinion. The Commissioner looks through the form to the substance.</span></li>
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Show your source, or bear the risk.</strong> The "I didn't know" defence is gone. If you make a confident factual claim that rests on a source, you must link or cite it. The remaining defences are genuine opinion, good-faith reliance on a <em>named</em> source, and satire. Politicians chose this job, they have staff, briefings, and the parliamentary library to draw on.</span></li>
+          <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>You only go to prison for actual lies.</strong> Criminal charges (the top two rungs of the ladder) require the prosecution to prove the MP <em>actually knew</em> they were lying, beyond reasonable doubt. The lower hybrid standard only applies to administrative warnings, censure, and fines.</span></li>
           <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Right of appeal to the High Court</strong> on any finding.</span></li>
           <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Vexatious complaints can be dismissed</strong> without investigation. Investigations into statements made <em>inside Parliament</em> require a vote of the House to authorise them.</span></li>
           <li class="flex gap-3"><span class="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber"></span><span><strong>Mandatory review at 3 years. Sunset at 10.</strong> If it doesn't work as intended, Parliament can let it expire.</span></li>
@@ -431,9 +435,9 @@ tailwind.config = {
       <!-- Show your source (full-width pillar) -->
       <div class="bg-flame p-7 md:p-9 md:col-span-2">
         <p class="text-xs uppercase tracking-widest text-paper/80">Show your source</p>
-        <h3 class="display mt-2 text-2xl font-semibold text-paper md:text-3xl">A new duty to cite — for health, science, stats, and government claims.</h3>
+        <h3 class="display mt-2 text-2xl font-semibold text-paper md:text-3xl">A new duty to cite: for health, science, stats, and government claims.</h3>
         <p class="mt-4 text-paper/90 md:text-lg">
-          If you're making a factual claim that rests on research, statistics, government data, or expert advice — and especially if it's about <strong>public health, science, statistics, government performance, or historical events</strong> — you must include a <strong>link to the source</strong>, or cite it clearly when a link isn't possible (a speech, a broadcast, a printed ad).
+          If you're making a factual claim that rests on research, statistics, government data, or expert advice, and especially if it's about <strong>public health, science, statistics, government performance, or historical events</strong>, you must include a <strong>link to the source</strong>, or cite it clearly when a link isn't possible (a speech, a broadcast, a printed ad).
         </p>
         <p class="mt-3 text-paper/85">
           Genuine opinions are exempt. Common knowledge is exempt. Informal personal speech is exempt. But unsourced confident claims on the topics above start the warning ladder.
@@ -774,7 +778,7 @@ tailwind.config = {
 <section id="overseas" class="scroll-mt-20 border-y border-rule bg-white/60">
   <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
     <div class="max-w-3xl">
-      <p class="text-xs uppercase tracking-widest text-flame">05 — What's happening overseas</p>
+      <p class="text-xs uppercase tracking-widest text-flame">05 / What's happening overseas</p>
       <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
         New Zealand wouldn't be doing this alone.
       </h2>
@@ -785,25 +789,25 @@ tailwind.config = {
 
     <div class="mt-14 grid gap-6 lg:grid-cols-2">
 
-      <!-- Wales — passed, now law -->
+      <!-- Wales: passed, now law -->
       <article class="rounded-2xl border-2 border-flame/40 bg-paper p-7 md:p-9 lg:col-span-2">
         <div class="flex items-center justify-between gap-4">
-          <p class="display text-sm uppercase tracking-widest text-flame">🏴󠁧󠁢󠁷󠁬󠁳󠁿 &nbsp; Wales — first in the Westminster world</p>
+          <p class="display text-sm uppercase tracking-widest text-flame">🏴󠁧󠁢󠁷󠁬󠁳󠁿 &nbsp; Wales: first in the Westminster world</p>
           <span class="pill rounded-full bg-flame px-2.5 py-0.5 text-xs font-medium text-paper">Enacted · April 2026</span>
         </div>
         <h3 class="display mt-3 text-2xl font-semibold leading-tight">Member Accountability and Elections Act 2026</h3>
         <p class="mt-3 text-ink/80">
-          Building on earlier work by Adam Price MS (Plaid Cymru), the Welsh Government's Member Accountability and Elections Bill <strong>passed the Senedd 50–1 on 17 March 2026</strong> and received <strong>Royal Assent on 27 April 2026</strong>. Wales is now the first Westminster jurisdiction to have a law that holds elected representatives directly accountable for deliberate deception.
+          Building on earlier work by Adam Price MS (Plaid Cymru), the Welsh Government's Member Accountability and Elections Bill <strong>passed the Senedd 50 votes to 1 on 17 March 2026</strong> and received <strong>Royal Assent on 27 April 2026</strong>. Wales is now the first Westminster jurisdiction to have a law that holds elected representatives directly accountable for deliberate deception.
         </p>
         <p class="mt-3 text-ink/80">
-          The Welsh Act creates a duty on Senedd Members to prohibit false statements of fact during election campaigns, a recall mechanism, and an independent judicial disqualification process for deliberate deception. It is narrower than the NZ bill — scoped to election periods rather than the full parliamentary term — but it proves the constitutional and political path exists.
+          The Welsh Act creates a duty on Senedd Members to prohibit false statements of fact during election campaigns, a recall mechanism, and an independent judicial disqualification process for deliberate deception. It is narrower than the NZ bill, scoped to election periods rather than the full parliamentary term, but it proves the constitutional and political path exists.
         </p>
         <p class="mt-3 text-sm text-ink/60">
           The "no Western democracy has done this" objection no longer holds. New Zealand would be following an established precedent, not breaking new ground.
         </p>
         <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm">
           <a class="text-flame underline-offset-4 hover:underline" href="https://business.senedd.wales/mgIssueHistoryHome.aspx?IId=46598" target="_blank" rel="noopener">Senedd legislative record</a>
-          <a class="text-flame underline-offset-4 hover:underline" href="https://research.senedd.wales/research-articles/new-bill-seeks-to-strengthen-accountability-of-members-and-tackle-election-misinformation/" target="_blank" rel="noopener">Senedd Research — overview</a>
+          <a class="text-flame underline-offset-4 hover:underline" href="https://research.senedd.wales/research-articles/new-bill-seeks-to-strengthen-accountability-of-members-and-tackle-election-misinformation/" target="_blank" rel="noopener">Senedd Research overview</a>
           <a class="text-flame underline-offset-4 hover:underline" href="https://www.bangor.ac.uk/news/2024-06-20-wales-could-become-worlds-first-country-to-criminalise-politicians-who-lie" target="_blank" rel="noopener">Bangor University analysis</a>
         </div>
       </article>
@@ -811,7 +815,7 @@ tailwind.config = {
       <!-- UK -->
       <article class="rounded-2xl border border-rule bg-paper p-7 md:p-9">
         <div class="flex items-center justify-between gap-4">
-          <p class="display text-sm uppercase tracking-widest text-ink/55">🇬🇧 &nbsp; United Kingdom — Westminster</p>
+          <p class="display text-sm uppercase tracking-widest text-ink/55">🇬🇧 &nbsp; United Kingdom: Westminster</p>
           <span class="pill rounded-full px-2.5 py-0.5 text-xs font-medium text-ink/60">Petition / amendment stage</span>
         </div>
         <h3 class="display mt-3 text-2xl font-semibold leading-tight">"Compassion in Politics" amendment</h3>
@@ -819,7 +823,7 @@ tailwind.config = {
           A cross-party amendment, championed by the Compassion in Politics campaign and explicitly framed as "the law that could stop a British Trump," would create a standalone criminal offence for MPs who intentionally or recklessly mislead the public.
         </p>
         <p class="mt-3 text-ink/75">
-          A linked UK Parliament petition crossed the threshold for parliamentary consideration. No bill has been formally introduced; the existing convention is that ministers who mislead Parliament resign — there is no legal sanction.
+          A linked UK Parliament petition crossed the threshold for parliamentary consideration. No bill has been formally introduced; the existing convention is that ministers who mislead Parliament resign, there is no legal sanction.
         </p>
         <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm">
           <a class="text-flame underline-offset-4 hover:underline" href="https://www.compassioninpolitics.com/the_law_that_could_stop_a_british_trump" target="_blank" rel="noopener">Compassion in Politics</a>
@@ -835,7 +839,7 @@ tailwind.config = {
         </div>
         <h3 class="display mt-3 text-2xl font-semibold leading-tight">Loi contre la manipulation de l'information (2018)</h3>
         <p class="mt-3 text-ink/75">
-          Allows a judge to issue an emergency order against false information in the <strong>3 months before</strong> an election. Imposes transparency duties on online platforms. Judicially supervised — not a ministerial power.
+          Allows a judge to issue an emergency order against false information in the <strong>3 months before</strong> an election. Imposes transparency duties on online platforms. Judicially supervised, not a ministerial power.
         </p>
         <p class="mt-3 text-ink/75">
           Often cited as a more measured model than executive-led approaches, but limited to election windows. NZ's bill goes further: full parliamentary term, statements outside election campaigns, year-round.
@@ -845,7 +849,7 @@ tailwind.config = {
       <!-- Singapore -->
       <article class="rounded-2xl border border-rule bg-paper p-7 md:p-9">
         <div class="flex items-center justify-between gap-4">
-          <p class="display text-sm uppercase tracking-widest text-ink/55">🇸🇬 &nbsp; Singapore — cautionary example</p>
+          <p class="display text-sm uppercase tracking-widest text-ink/55">🇸🇬 &nbsp; Singapore: a cautionary example</p>
           <span class="pill rounded-full px-2.5 py-0.5 text-xs font-medium text-flame">Enacted · widely criticised</span>
         </div>
         <h3 class="display mt-3 text-2xl font-semibold leading-tight">Protection from Online Falsehoods and Manipulation Act (POFMA, 2019)</h3>
@@ -853,7 +857,7 @@ tailwind.config = {
           Gives <strong>ministers</strong> the power to issue correction or takedown orders for online statements they consider false. Penalties: up to S$50,000 and 5 years' prison for individuals.
         </p>
         <p class="mt-3 text-ink/75">
-          Frequently criticised internationally as a tool used disproportionately against political opposition and dissenters. <strong>This is a model NZ's bill explicitly does <em>not</em> follow:</strong> our Commissioner is independent, judicially-supervised, and targets politicians — not citizens.
+          Frequently criticised internationally as a tool used disproportionately against political opposition and dissenters. <strong>This is a model NZ's bill explicitly does <em>not</em> follow:</strong> our Commissioner is independent, judicially-supervised, and targets politicians, not citizens.
         </p>
       </article>
 
@@ -870,15 +874,15 @@ tailwind.config = {
 <!-- ============================================================ -->
 <section id="comments" class="scroll-mt-20">
   <div class="mx-auto max-w-4xl px-5 py-20 md:py-28">
-    <p class="text-xs uppercase tracking-widest text-flame">06 — Public comments</p>
+    <p class="text-xs uppercase tracking-widest text-flame">06 / Public comments</p>
     <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
       What do you think?
     </h2>
     <p class="mt-5 max-w-prose-wide text-lg text-ink/75">
-      All comments are <strong>public</strong>, visible to every visitor. No sign-in needed. Be civil — anything abusive, defamatory, or off-topic will be removed.
+      All comments are <strong>public</strong>, visible to every visitor. No sign-in needed. Be civil, anything abusive, defamatory, or off-topic will be removed.
     </p>
     <p class="mt-3 max-w-prose-wide text-ink/60">
-      If you want to flag a specific part of the bill, mention the section by name in your comment (e.g. <em>"On Part 3 — Penalties…"</em>).
+      If you want to flag a specific part of the bill, mention the section by name in your comment (e.g. <em>"On Part 3, Penalties…"</em>).
     </p>
 
     <div class="mt-10 rounded-2xl border border-rule bg-white p-6 md:p-8">
@@ -887,7 +891,7 @@ tailwind.config = {
            data-app-id="2ae9fda7-819c-4233-937c-928d0d7e2542"
            data-page-id="home"
            data-page-url=""
-           data-page-title="Political Integrity Bill — general comments">
+           data-page-title="Political Integrity Bill, general comments">
       </div>
       <p id="cusdis-placeholder" class="text-center text-ink/50 italic">
         Comments will appear here once Cusdis is configured. See <code class="rounded bg-paper px-1.5 py-0.5 text-xs">README.md</code> for setup.
@@ -902,7 +906,7 @@ tailwind.config = {
 <!-- ============================================================ -->
 <section id="email" class="scroll-mt-20 border-t border-rule bg-white">
   <div class="mx-auto max-w-5xl px-5 py-20 md:py-28">
-    <p class="text-xs uppercase tracking-widest text-flame">07 — Write to your MP</p>
+    <p class="text-xs uppercase tracking-widest text-flame">07 / Write to your MP</p>
     <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
       One email is worth more than a thousand shares.
     </h2>
@@ -912,12 +916,12 @@ tailwind.config = {
       same direct question is genuinely enough to make an office take notice.
     </p>
 
-    <!-- Step 1 — your details -->
+    <!-- Step 1, your details -->
     <div class="mt-10 rounded-2xl border-2 border-flame/40 bg-flame/[0.04] p-6 md:p-7">
       <p class="display text-xl font-semibold">Put your name and address in once</p>
       <p class="mt-2 text-ink/75">
         It fills them into the letter below automatically. Your address is what tells the office
-        you're one of their voters — that's the bit that makes them read it. Nothing is sent or
+        you're one of their voters. That's the bit that makes them read it. Nothing is sent or
         stored anywhere; this all happens in your browser.
       </p>
       <div class="mt-5 grid gap-4 sm:grid-cols-2">
@@ -933,11 +937,11 @@ tailwind.config = {
         </label>
       </div>
       <p class="mt-3 text-sm text-ink/55">
-        Leave them blank if you'd rather fill them in yourself later — the letter still works.
+        Leave them blank if you'd rather fill them in yourself later. The letter still works.
       </p>
     </div>
 
-    <!-- Step 2 — the email -->
+    <!-- Step 2, the email -->
     <div class="mt-6 overflow-hidden rounded-2xl border border-rule">
       <div class="flex flex-wrap items-center justify-between gap-3 border-b border-rule bg-paper px-5 py-3.5">
         <p class="text-sm text-ink/70">
@@ -953,28 +957,21 @@ tailwind.config = {
       </div>
       <pre id="email-body" class="max-h-[30rem] overflow-auto whitespace-pre-wrap bg-white px-5 py-6 font-sans text-[15px] leading-relaxed text-ink/85">Kia ora,
 
-I am one of your constituents, and I am writing about something I think is long overdue: there is currently almost no consequence in New Zealand for a politician who deliberately lies to the public.
+I am one of your constituents, and I am writing to ask you to support a Political Integrity (Misinformation Accountability) Bill.
 
-Inside the House, parliamentary privilege makes MPs immune. Outside it, section 199A of the Electoral Act only applies in the two days before an election. For the rest of the three-year term, an MP can say something they know to be untrue in a press conference or a social media post and face nothing at all.
+Right now there is almost no consequence in New Zealand for a politician who deliberately lies to the public. Inside the House, parliamentary privilege makes MPs immune. Outside it, section 199A of the Electoral Act only applies in the two days before an election. For the rest of the three-year term, an MP can say something they know to be untrue in a press conference or a social media post and face nothing at all.
 
-I would like you to support a Political Integrity (Misinformation Accountability) Bill. In outline it would:
+Every other job in this country works the other way around. A doctor who misleads a patient can be struck off. A lawyer can be disbarred. A public servant can be dismissed. Someone who lies to a bank, an insurer or IRD commits an offence. The people who advise you, and the people who work for you, are all required to be honest. You are not.
 
-  - create an independent Political Integrity Commissioner who can investigate and penalise politicians who knowingly make false statements of fact;
-  - give a 48-hour window to correct the record, so honest mistakes carry no penalty;
-  - require corrections to appear wherever the false claim appeared, and to stay up for a year;
-  - use graduated penalties, starting at a written warning, with prosecution reserved for persistent deception that causes real harm.
+I do not accept that. Neither, I think, do most of the people you represent.
 
-It deliberately protects genuine opinion, honest mistakes and satire. If you do not knowingly mislead people, it would never affect you.
+The bill would create an independent Political Integrity Commissioner able to investigate and penalise politicians who knowingly state something false. It gives a 48-hour window to correct the record, so honest mistakes carry no penalty. Corrections have to appear wherever the false claim appeared and stay up for a year. Penalties are graduated, starting at a written warning, with prosecution reserved for persistent deception that causes real harm. Genuine opinion, honest mistakes and satire are all expressly protected. If you do not knowingly mislead people, it would never affect you.
 
-This is not untested. In Wales, the Senedd Cymru (Member Accountability and Elections) Act 2026 passed 50-1 on 17 March 2026 and received Royal Assent on 27 April. A Westminster-tradition parliament has accepted, near-unanimously, that its members should answer for deliberate deception.
+This is not a fringe idea. In Wales, the Senedd Cymru (Member Accountability and Elections) Act 2026 passed 50 votes to 1 in March and received Royal Assent in April. A Westminster-tradition parliament has accepted, almost unanimously, that its members should answer for deliberate deception.
 
-My questions are simple:
+So my question is simply this: will you support it?
 
-  1. Do you think a politician who knowingly lies to the public should face any consequence?
-  2. Would you vote for a bill along these lines if it were drawn from the ballot?
-  3. Would you consider sponsoring it as a Member's Bill?
-
-I would appreciate a straight answer to each, and I intend to share the responses I receive.
+If you would consider sponsoring it as a Member's Bill, I would like to hear from you. If you would not support it, I would like to understand why.
 
 Nga mihi,
 [Your name]
@@ -983,7 +980,7 @@ Nga mihi,
     <p id="copy-status" class="mt-2 text-sm text-flame" role="status" aria-live="polite"></p>
     <p class="mt-3 text-sm text-ink/55">
       One sentence in your own words about why this bothers you is worth more than the rest of
-      the letter put together — form letters get counted, personal ones get read.
+      the letter put together. Form letters get counted, personal ones get read.
     </p>
 
     <!-- Who to send it to -->
@@ -991,7 +988,7 @@ Nga mihi,
     <p class="mt-3 max-w-prose-wide text-ink/75">
       Nearly every sitting MP can be reached at
       <code class="rounded bg-paper px-1.5 py-0.5 text-[13px]">firstname.lastname@parliament.govt.nz</code>.
-      Names, parties and portfolios are on the official directory, which stays current — worth
+      Names, parties and portfolios are on the official directory, which stays current. Worth
       checking against it rather than trusting any list, including this one.
     </p>
 
@@ -1031,7 +1028,7 @@ Nga mihi,
         <p class="display text-xl font-semibold">A sponsor for the bill</p>
         <p class="mt-2.5 text-ink/75">
           Someone has to lodge it. Opposition and crossbench MPs with a record on transparency
-          or democratic reform are the likeliest sponsors — and if 61 non-executive MPs back it,
+          or democratic reform are the likeliest sponsors, and if 61 non-executive MPs back it,
           it skips the ballot entirely. Grab a party's addresses below.
         </p>
         <a class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-flame underline-offset-4 hover:underline"
@@ -1058,7 +1055,7 @@ Nga mihi,
     <h3 id="addresses" class="display mt-16 scroll-mt-24 text-2xl font-semibold leading-tight">Copy-paste address lists</h3>
     <p class="mt-3 max-w-prose-wide text-ink/75">
       Every current MP, by party. Hit copy, paste into the <strong class="text-ink">Bcc</strong>
-      field, and send. Use Bcc rather than To &mdash; it keeps everyone's address private and stops
+      field, and send. Use Bcc rather than To: it keeps everyone's address private and stops
       the reply-all mess.
     </p>
     <p class="mt-2 max-w-prose-wide text-sm text-ink/60">
@@ -1071,14 +1068,14 @@ Nga mihi,
     <p class="mt-4 text-sm text-ink/55">
       Source: <a class="text-flame underline-offset-4 hover:underline" target="_blank" rel="noopener"
       href="https://catalogue.data.govt.nz/dataset/members-of-parliament">Parliament's published member contact details</a>
-      (data.govt.nz, as at 22 July 2025) &mdash; 122 members. A handful may have changed since;
+      (data.govt.nz, as at 22 July 2025): 122 members. A handful may have changed since;
       the pattern is <code class="rounded bg-paper px-1 py-0.5 text-[13px]">firstname.lastname@parliament.govt.nz</code>.
     </p>
 
     <p class="mt-8 rounded-xl border border-amber/40 bg-amber/[0.07] p-5 text-sm leading-relaxed text-ink/75">
       <strong class="text-ink">Timing.</strong> The general election is on 7 November 2026.
       Parliament dissolves several weeks beforehand, and once it does, sitting MPs stop being MPs
-      and parliamentary addresses stop being monitored — so send these while the House is still
+      and parliamentary addresses stop being monitored, so send these while the House is still
       sitting. After that, put the same three questions to candidates instead. They tend to
       answer during a campaign, and their answers are on the record.
     </p>
@@ -1159,7 +1156,7 @@ Nga mihi,
           var fallback = function () {
             var ta = d.querySelector('textarea');
             d.open = true; ta.select();
-            copyEl.textContent = 'Selected — press Ctrl+C'; restore();
+            copyEl.textContent = 'Selected, press Ctrl+C'; restore();
           };
           if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(addrs).then(function () {
@@ -1191,12 +1188,12 @@ Nga mihi,
           }).catch(function () {
             var sel = window.getSelection(), r = document.createRange();
             r.selectNodeContents(body); sel.removeAllRanges(); sel.addRange(r);
-            if (note) note.textContent = 'Text selected — press Ctrl+C to copy.';
+            if (note) note.textContent = 'Text selected, press Ctrl+C to copy.';
           });
         } else {
           var sel2 = window.getSelection(), r2 = document.createRange();
           r2.selectNodeContents(body); sel2.removeAllRanges(); sel2.addRange(r2);
-          if (note) note.textContent = 'Text selected — press Ctrl+C to copy.';
+          if (note) note.textContent = 'Text selected, press Ctrl+C to copy.';
         }
       });
     }
@@ -1209,14 +1206,14 @@ Nga mihi,
 <!-- ============================================================ -->
 <section id="support" class="border-t border-rule bg-ink text-paper">
   <div class="mx-auto max-w-6xl px-5 py-20 md:py-24">
-    <p class="text-xs uppercase tracking-widest text-amber">08 — How to support</p>
+    <p class="text-xs uppercase tracking-widest text-amber">08 / How to support</p>
     <h2 class="display-tight mt-3 max-w-3xl text-4xl font-semibold leading-tight md:text-5xl">
       The bill only moves forward if the public pushes for it.
     </h2>
 
     <div class="mt-12 grid gap-8 md:grid-cols-3">
       <div>
-        <p class="display text-xl font-semibold text-amber">1 — Share it</p>
+        <p class="display text-xl font-semibold text-amber">1. Share it</p>
         <p class="mt-2 text-paper/75">Send this page to people who'd want to read it. The more eyes on the bill, the more political weight it carries.</p>
         <div class="mt-4 flex flex-wrap gap-2">
           <a class="rounded-full border border-paper/30 px-3 py-1.5 text-sm hover:bg-paper/10" target="_blank" rel="noopener"
@@ -1227,19 +1224,19 @@ Nga mihi,
              href="https://www.linkedin.com/sharing/share-offsite/?url=">Share on LinkedIn</a>
           <button id="share-instagram" type="button"
              class="rounded-full border border-paper/30 px-3 py-1.5 text-sm hover:bg-paper/10">Share on Instagram</button>
-          <span id="share-instagram-toast" class="hidden self-center text-xs text-amber">Link copied — paste into your story, bio or a DM.</span>
+          <span id="share-instagram-toast" class="hidden self-center text-xs text-amber">Link copied, paste into your story, bio or a DM.</span>
         </div>
       </div>
       <div>
-        <p class="display text-xl font-semibold text-amber">2 — Petition Parliament</p>
+        <p class="display text-xl font-semibold text-amber">2. Petition Parliament</p>
         <p class="mt-2 text-paper/75">Anyone can lodge a petition to Parliament. It's the first formal step to get the issue on the parliamentary record. You'll need an MP to present it.</p>
         <a class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-amber px-4 py-1.5 text-sm font-medium text-ink hover:bg-amber/90"
            target="_blank" rel="noopener"
            href="https://www.parliament.nz/en/pb/petitions/">Start a petition →</a>
       </div>
       <div>
-        <p class="display text-xl font-semibold text-amber">3 — Write to MPs</p>
-        <p class="mt-2 text-paper/75">A Member's Bill needs a sympathetic MP to sponsor it. There's a ready-made email above, plus a list of who's worth sending it to — your own electorate MP first.</p>
+        <p class="display text-xl font-semibold text-amber">3. Write to MPs</p>
+        <p class="mt-2 text-paper/75">A Member's Bill needs a sympathetic MP to sponsor it. There's a ready-made email above, plus a list of who's worth sending it to, your own electorate MP first.</p>
         <a class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-amber px-4 py-1.5 text-sm font-medium text-ink hover:bg-amber/90"
            href="#email">Get the template email →</a>
       </div>
@@ -1254,7 +1251,7 @@ Nga mihi,
           <li><a class="hover:text-paper" target="_blank" rel="noopener" href="https://www.legislation.govt.nz/act/public/2025/0062/63.0/LMS803780.html">Parliament Act 2025</a></li>
           <li><a class="hover:text-paper" target="_blank" rel="noopener" href="https://www.legislation.govt.nz/act/public/1993/0087/latest/DLM310074.html">Electoral Act 1993, s 199A</a></li>
           <li><a class="hover:text-paper" target="_blank" rel="noopener" href="https://www.legislation.govt.nz/act/public/1990/0109/latest/DLM225513.html">NZ Bill of Rights Act 1990</a></li>
-          <li><a class="hover:text-paper" target="_blank" rel="noopener" href="https://www.dpmc.govt.nz/our-programmes/national-security/strengthening-resilience-disinformation">DPMC — Resilience to Disinformation</a></li>
+          <li><a class="hover:text-paper" target="_blank" rel="noopener" href="https://www.dpmc.govt.nz/our-programmes/national-security/strengthening-resilience-disinformation">DPMC: Resilience to Disinformation</a></li>
           <li><a class="hover:text-paper" target="_blank" rel="noopener" href="https://www.borrinfoundation.nz/content-regulation-and-disinformation-in-new-zealand/">Borrin Foundation report</a></li>
         </ul>
       </div>
@@ -1291,7 +1288,7 @@ Nga mihi,
     obs.observe(cusdisRoot, { childList: true });
   }
 
-  // Instagram has no web share URL — best UX is copy-to-clipboard so the user can paste anywhere on IG
+  // Instagram has no web share URL, best UX is copy-to-clipboard so the user can paste anywhere on IG
   const igBtn = document.getElementById('share-instagram');
   const igToast = document.getElementById('share-instagram-toast');
   if (igBtn && igToast) {
@@ -1307,7 +1304,7 @@ Nga mihi,
         igToast.classList.remove('hidden');
         setTimeout(() => igToast.classList.add('hidden'), 4000);
       } catch (err) {
-        // user dismissed share sheet or clipboard denied — fail quietly
+        // user dismissed share sheet or clipboard denied, fail quietly
       }
     });
   }
@@ -1321,7 +1318,7 @@ Nga mihi,
 
   // Cusdis iframe auto-resize fallback. Cusdis posts {from:'cusdis', event:'resize', height:N}
   // when its inner content changes height. Listen for those and resize the iframe so the form
-  // sits snugly when empty and grows when comments arrive — no internal scrollbar.
+  // sits snugly when empty and grows when comments arrive, no internal scrollbar.
   window.addEventListener('message', (e) => {
     if (e.origin !== 'https://cusdis.com') return;
     const d = e.data;
