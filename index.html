@@ -90,6 +90,7 @@ tailwind.config = {
       <a href="#bill"      class="text-ink/70 hover:text-ink">The bill</a>
       <a href="#overseas"  class="text-ink/70 hover:text-ink">Overseas</a>
       <a href="#comments"  class="text-ink/70 hover:text-ink">Comments</a>
+      <a href="#email"     class="font-medium text-flame hover:text-ink">Write to your MP</a>
       <a href="#support"   class="text-ink/70 hover:text-ink">Support</a>
     </nav>
     <a href="#comments" class="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-paper hover:bg-deep">
@@ -129,6 +130,7 @@ tailwind.config = {
       <a href="#bill"      class="inline-flex items-center rounded-full border border-ink/15 bg-white/60 px-4 py-2 text-sm font-medium text-ink/80 hover:bg-ink hover:text-paper hover:border-ink">The full bill</a>
       <a href="#overseas"  class="inline-flex items-center rounded-full border border-ink/15 bg-white/60 px-4 py-2 text-sm font-medium text-ink/80 hover:bg-ink hover:text-paper hover:border-ink">Overseas</a>
       <a href="#comments"  class="inline-flex items-center rounded-full border border-ink/15 bg-white/60 px-4 py-2 text-sm font-medium text-ink/80 hover:bg-ink hover:text-paper hover:border-ink">Comments</a>
+      <a href="#email"     class="inline-flex items-center rounded-full border border-flame bg-flame px-4 py-2 text-sm font-medium text-paper hover:bg-ink hover:border-ink">Write to your MP</a>
       <a href="#support"   class="inline-flex items-center rounded-full border border-ink/15 bg-white/60 px-4 py-2 text-sm font-medium text-ink/80 hover:bg-ink hover:text-paper hover:border-ink">Support</a>
     </div>
 
@@ -896,11 +898,196 @@ tailwind.config = {
 </section>
 
 <!-- ============================================================ -->
+<!-- WRITE TO YOUR MP                                             -->
+<!-- ============================================================ -->
+<section id="email" class="scroll-mt-20 border-t border-rule bg-white">
+  <div class="mx-auto max-w-5xl px-5 py-20 md:py-28">
+    <p class="text-xs uppercase tracking-widest text-flame">07 — Write to your MP</p>
+    <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
+      One email is worth more than a thousand shares.
+    </h2>
+    <p class="mt-5 max-w-prose-wide text-lg text-ink/75">
+      A Member's Bill needs an MP willing to put their name on it. MPs count the letters they
+      get from their own voters, and almost nobody writes. A handful of constituents asking the
+      same direct question is genuinely enough to make an office take notice.
+    </p>
+
+    <!-- The email -->
+    <div class="mt-10 overflow-hidden rounded-2xl border border-rule">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-rule bg-paper px-5 py-3.5">
+        <p class="text-sm text-ink/70">
+          <span class="font-medium text-ink">Subject:</span>
+          Please support a Political Integrity (Misinformation Accountability) Bill
+        </p>
+        <div class="flex gap-2">
+          <button id="copy-email" type="button"
+            class="rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-paper hover:bg-deep">Copy</button>
+          <a id="mailto-email" href="#"
+            class="rounded-full border border-ink/20 px-4 py-1.5 text-sm font-medium text-ink hover:bg-ink hover:text-paper">Open in mail app</a>
+        </div>
+      </div>
+      <pre id="email-body" class="max-h-[30rem] overflow-auto whitespace-pre-wrap bg-white px-5 py-6 font-sans text-[15px] leading-relaxed text-ink/85">Kia ora [MP's name],
+
+I live in [your suburb], in your electorate, and I am writing about something I think is long overdue: there is currently almost no consequence in New Zealand for a politician who deliberately lies to the public.
+
+Inside the House, parliamentary privilege makes MPs immune. Outside it, section 199A of the Electoral Act only applies in the two days before an election. For the rest of the three-year term, an MP can say something they know to be untrue in a press conference or a social media post and face nothing at all.
+
+I would like you to support a Political Integrity (Misinformation Accountability) Bill. In outline it would:
+
+  - create an independent Political Integrity Commissioner who can investigate and penalise politicians who knowingly make false statements of fact;
+  - give a 48-hour window to correct the record, so honest mistakes carry no penalty;
+  - require corrections to appear wherever the false claim appeared, and to stay up for a year;
+  - use graduated penalties, starting at a written warning, with prosecution reserved for persistent deception that causes real harm.
+
+It deliberately protects genuine opinion, honest mistakes and satire. If you do not knowingly mislead people, it would never affect you.
+
+This is not untested. In Wales, the Senedd Cymru (Member Accountability and Elections) Act 2026 passed 50-1 on 17 March 2026 and received Royal Assent on 27 April. A Westminster-tradition parliament has accepted, near-unanimously, that its members should answer for deliberate deception.
+
+My questions are simple:
+
+  1. Do you think a politician who knowingly lies to the public should face any consequence?
+  2. Would you vote for a bill along these lines if it were drawn from the ballot?
+  3. Would you consider sponsoring it as a Member's Bill?
+
+I would appreciate a straight answer to each, and I intend to share the responses I receive.
+
+Nga mihi,
+[Your name]
+[Your street address, so it is clear I am a constituent]</pre>
+    </div>
+    <p id="copy-status" class="mt-2 text-sm text-flame" role="status" aria-live="polite"></p>
+    <p class="mt-3 text-sm text-ink/55">
+      Change the bracketed parts. One sentence in your own words about why this bothers you is
+      worth more than the rest of the letter put together — form letters get counted, personal
+      ones get read.
+    </p>
+
+    <!-- Who to send it to -->
+    <h3 class="display mt-16 text-2xl font-semibold leading-tight">Who to send it to</h3>
+    <p class="mt-3 max-w-prose-wide text-ink/75">
+      Nearly every sitting MP can be reached at
+      <code class="rounded bg-paper px-1.5 py-0.5 text-[13px]">firstname.lastname@parliament.govt.nz</code>.
+      Names, parties and portfolios are on the official directory, which stays current — worth
+      checking against it rather than trusting any list, including this one.
+    </p>
+
+    <div class="mt-8 grid gap-5 md:grid-cols-2">
+
+      <div class="rounded-2xl border-2 border-flame/40 bg-flame/[0.04] p-6">
+        <div class="flex flex-wrap items-baseline gap-2.5">
+          <p class="display text-xl font-semibold">Your own electorate MP</p>
+          <span class="rounded-full bg-flame px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-wider text-paper">Start here</span>
+        </div>
+        <p class="mt-2.5 text-ink/75">
+          By a distance the highest-value email you can send. MPs weight correspondence from
+          their own voters far above anything else, because you are the person who can vote them
+          out. Say where you live in the first line.
+        </p>
+        <a class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-flame underline-offset-4 hover:underline"
+           target="_blank" rel="noopener"
+           href="https://www.parliament.nz/en/mps-and-electorates/electorate-maps/">Find who represents you →</a>
+      </div>
+
+      <div class="rounded-2xl border border-rule bg-paper p-6">
+        <p class="display text-xl font-semibold">The Justice Committee</p>
+        <p class="mt-2.5 text-ink/75">
+          A bill like this would be referred to the Justice Committee for public submissions.
+          Its members are the MPs who would go through it clause by clause.
+        </p>
+        <p class="mt-3 text-sm text-ink/70">
+          Chairperson: <strong class="text-ink">Hon Andrew Bayly</strong><br>
+          <a class="text-flame underline-offset-4 hover:underline" href="mailto:andrew.bayly@parliament.govt.nz">andrew.bayly@parliament.govt.nz</a>
+        </p>
+        <a class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-flame underline-offset-4 hover:underline"
+           target="_blank" rel="noopener"
+           href="https://www.parliament.nz/en/pb/sc/scl/justice/">Current committee membership →</a>
+      </div>
+
+      <div class="rounded-2xl border border-rule bg-paper p-6">
+        <p class="display text-xl font-semibold">A sponsor for the bill</p>
+        <p class="mt-2.5 text-ink/75">
+          Someone has to lodge it. Opposition and crossbench MPs with a record on transparency
+          or democratic reform are the likeliest sponsors — and if 61 non-executive MPs back it,
+          it skips the ballot entirely.
+        </p>
+        <a class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-flame underline-offset-4 hover:underline"
+           target="_blank" rel="noopener"
+           href="https://www.parliament.nz/en/mps-and-electorates/members-of-parliament/">All MPs, by party →</a>
+      </div>
+
+      <div class="rounded-2xl border border-rule bg-paper p-6">
+        <p class="display text-xl font-semibold">Petition Parliament</p>
+        <p class="mt-2.5 text-ink/75">
+          A petition puts the issue formally on Parliament's record. It runs alongside the
+          emails rather than replacing them, and still needs an MP to present it.
+        </p>
+        <p class="mt-3 text-sm text-ink/70">
+          <a class="text-flame underline-offset-4 hover:underline" href="mailto:petitions@parliament.govt.nz">petitions@parliament.govt.nz</a>
+        </p>
+        <a class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-flame underline-offset-4 hover:underline"
+           target="_blank" rel="noopener"
+           href="https://www.parliament.nz/en/pb/petitions/">How petitions work →</a>
+      </div>
+
+    </div>
+
+    <p class="mt-8 rounded-xl border border-amber/40 bg-amber/[0.07] p-5 text-sm leading-relaxed text-ink/75">
+      <strong class="text-ink">Timing.</strong> The general election is on 7 November 2026.
+      Parliament dissolves several weeks beforehand, and once it does, sitting MPs stop being MPs
+      and parliamentary addresses stop being monitored — so send these while the House is still
+      sitting. After that, put the same three questions to candidates instead. They tend to
+      answer during a campaign, and their answers are on the record.
+    </p>
+  </div>
+
+  <script>
+  (function () {
+    var body = document.getElementById('email-body');
+    var btn  = document.getElementById('copy-email');
+    var link = document.getElementById('mailto-email');
+    var note = document.getElementById('copy-status');
+    if (!body) return;
+    var subject = 'Please support a Political Integrity (Misinformation Accountability) Bill';
+    if (link) {
+      link.href = 'mailto:?subject=' + encodeURIComponent(subject) +
+                  '&body=' + encodeURIComponent(body.textContent || '');
+    }
+    if (btn) {
+      btn.addEventListener('click', function () {
+        var text = body.textContent || '';
+        var done = function (msg) {
+          btn.textContent = 'Copied';
+          if (note) note.textContent = msg;
+          setTimeout(function () {
+            btn.textContent = 'Copy';
+            if (note) note.textContent = '';
+          }, 4000);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            done('Email copied to your clipboard.');
+          }).catch(function () {
+            var sel = window.getSelection(), r = document.createRange();
+            r.selectNodeContents(body); sel.removeAllRanges(); sel.addRange(r);
+            if (note) note.textContent = 'Text selected — press Ctrl+C to copy.';
+          });
+        } else {
+          var sel2 = window.getSelection(), r2 = document.createRange();
+          r2.selectNodeContents(body); sel2.removeAllRanges(); sel2.addRange(r2);
+          if (note) note.textContent = 'Text selected — press Ctrl+C to copy.';
+        }
+      });
+    }
+  })();
+  </script>
+</section>
+
+<!-- ============================================================ -->
 <!-- SUPPORT                                                      -->
 <!-- ============================================================ -->
 <section id="support" class="border-t border-rule bg-ink text-paper">
   <div class="mx-auto max-w-6xl px-5 py-20 md:py-24">
-    <p class="text-xs uppercase tracking-widest text-amber">07 — How to support</p>
+    <p class="text-xs uppercase tracking-widest text-amber">08 — How to support</p>
     <h2 class="display-tight mt-3 max-w-3xl text-4xl font-semibold leading-tight md:text-5xl">
       The bill only moves forward if the public pushes for it.
     </h2>
@@ -930,10 +1117,9 @@ tailwind.config = {
       </div>
       <div>
         <p class="display text-xl font-semibold text-amber">3 — Write to MPs</p>
-        <p class="mt-2 text-paper/75">A Member's Bill needs a sympathetic MP to sponsor it. Opposition and crossbench MPs with a track record on transparency are the most likely supporters.</p>
-        <a class="mt-4 inline-flex items-center gap-1.5 rounded-full border border-paper/30 px-4 py-1.5 text-sm font-medium hover:bg-paper/10"
-           target="_blank" rel="noopener"
-           href="https://www.parliament.nz/en/mps-and-electorates/members-of-parliament/">Find your MP →</a>
+        <p class="mt-2 text-paper/75">A Member's Bill needs a sympathetic MP to sponsor it. There's a ready-made email above, plus a list of who's worth sending it to — your own electorate MP first.</p>
+        <a class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-amber px-4 py-1.5 text-sm font-medium text-ink hover:bg-amber/90"
+           href="#email">Get the template email →</a>
       </div>
     </div>
 
