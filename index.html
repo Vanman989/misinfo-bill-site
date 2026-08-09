@@ -56,6 +56,19 @@ tailwind.config = {
   h1, h2, h3 { text-wrap: balance; }
   p { text-wrap: pretty; }
   .pad-rule { background-image: linear-gradient(to right, #E7E2D6 50%, transparent 50%); background-size: 14px 1px; background-repeat: repeat-x; background-position: bottom; }
+  /* --- legislative document motif ------------------------------------ */
+  /* section number sits in the margin like a clause reference */
+  .doc-grid { display:grid; grid-template-columns:1fr; gap:1.25rem; }
+  @media (min-width:960px){ .doc-grid { grid-template-columns:6rem 1fr; gap:2.75rem; } }
+  .doc-num { font-family:'Newsreader',Georgia,serif; font-variant-numeric:lining-nums tabular-nums;
+             font-size:.9rem; letter-spacing:.14em; padding-top:.4rem; align-self:start;
+             border-top:2px solid currentColor; }
+  /* hairline entries in place of boxed cards */
+  .entry { border-top:1px solid #E7E2D6; padding-block:1.85rem; }
+  .entry:last-child { border-bottom:1px solid #E7E2D6; }
+  .entry-lede { display:grid; grid-template-columns:1fr; gap:.4rem; }
+  @media (min-width:760px){ .entry-lede { grid-template-columns:12rem 1fr; gap:2rem; align-items:baseline; } }
+  .status { font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; }
   details > summary { list-style: none; cursor: pointer; }
   details > summary::-webkit-details-marker { display: none; }
   details[open] .chev { transform: rotate(90deg); }
@@ -171,10 +184,13 @@ tailwind.config = {
   <div class="mx-auto max-w-6xl px-5 py-20 md:py-24">
     <div class="grid gap-12 md:grid-cols-12">
       <div class="md:col-span-4">
-        <p class="text-xs uppercase tracking-widest text-flame">01 / The problem</p>
-        <h2 class="display-tight mt-3 text-3xl font-semibold leading-tight md:text-4xl">
-          Right now, MPs can lie to you almost without consequence.
-        </h2>
+        <div class="doc-grid">
+        <div class="doc-num text-flame">01</div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-flame">The problem</p>
+          <h2 class="display-tight mt-2 text-3xl font-semibold leading-tight md:text-4xl">
+            Right now, MPs can lie to you almost without consequence.
+          </h2>
       </div>
       <div class="md:col-span-8 space-y-5 text-lg leading-relaxed text-ink/80">
         <p><strong>Inside Parliament</strong>: parliamentary privilege gives MPs absolute immunity for anything they say in the House. The existing rule against "deliberately misleading Parliament" has such a high bar it's almost never enforced. MPs can simply "correct" the record afterwards.</p>
@@ -183,6 +199,8 @@ tailwind.config = {
       </div>
     </div>
   </div>
+        </div>
+      </div>
 </section>
 
 <!-- ============================================================ -->
@@ -191,10 +209,13 @@ tailwind.config = {
 <section id="integrity" class="scroll-mt-20">
   <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
     <div class="max-w-3xl">
-      <p class="text-xs uppercase tracking-widest text-flame">02 / Integrity is the standard</p>
-      <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
-        In every other job, lying has consequences. Politicians are the one exception.
-      </h2>
+      <div class="doc-grid">
+        <div class="doc-num text-flame">02</div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-flame">Integrity is the standard</p>
+          <h2 class="display-tight mt-2 text-4xl font-semibold leading-tight md:text-5xl">
+            In every other job, lying has consequences. Politicians are the one exception.
+          </h2>
       <p class="mt-5 text-lg text-ink/75">
         New Zealand law is built on the idea that when other people rely on your word: your patients, your clients, your employer, the court, the shareholders, dishonesty carries real consequences. Right across the workforce, integrity isn't optional. It's the baseline.
       </p>
@@ -261,6 +282,8 @@ tailwind.config = {
       The public servants who work for MPs are required to be honest. The lawyers, doctors and accountants who advise them are required to be honest. The shareholders' meetings, the boardrooms, the courtrooms, all required to be honest. <strong class="not-italic text-ink">Why should the politicians at the top of all of it be the only ones who aren't?</strong>
     </p>
   </div>
+        </div>
+      </div>
 </section>
 
 <!-- ============================================================ -->
@@ -269,10 +292,13 @@ tailwind.config = {
 <section id="tldr" class="scroll-mt-20 border-t border-rule">
   <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
     <div class="max-w-3xl">
-      <p class="text-xs uppercase tracking-widest text-flame">03 / What's changing</p>
-      <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
-        Four Acts. Targeted amendments. No new powers anyone doesn't already need.
-      </h2>
+      <div class="doc-grid">
+        <div class="doc-num text-flame">03</div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-flame">What's changing</p>
+          <h2 class="display-tight mt-2 text-4xl font-semibold leading-tight md:text-5xl">
+            Four Acts. Targeted amendments. No new powers anyone doesn't already need.
+          </h2>
       <p class="mt-5 text-lg text-ink/70">
         The bill makes narrow, carefully-drawn changes to four existing laws. Below: what each one says today, and what it would say if this passes.
       </p>
@@ -281,7 +307,7 @@ tailwind.config = {
     <div class="mt-14 space-y-6">
 
       <!-- Parliament Act -->
-      <article class="rounded-2xl border border-rule bg-white overflow-hidden">
+      <article class="entry overflow-hidden">
         <header class="border-b border-rule bg-paper px-6 py-4 md:px-8">
           <h3 class="display text-xl font-semibold md:text-2xl">Parliament Act 2025: parliamentary privilege</h3>
         </header>
@@ -302,7 +328,7 @@ tailwind.config = {
       </article>
 
       <!-- Imperial Laws -->
-      <article class="rounded-2xl border border-rule bg-white overflow-hidden">
+      <article class="entry overflow-hidden">
         <header class="border-b border-rule bg-paper px-6 py-4 md:px-8">
           <h3 class="display text-xl font-semibold md:text-2xl">Imperial Laws Application Act 1988: Article 9</h3>
         </header>
@@ -323,7 +349,7 @@ tailwind.config = {
       </article>
 
       <!-- Electoral Act -->
-      <article class="rounded-2xl border border-rule bg-white overflow-hidden">
+      <article class="entry overflow-hidden">
         <header class="border-b border-rule bg-paper px-6 py-4 md:px-8">
           <h3 class="display text-xl font-semibold md:text-2xl">Electoral Act 1993, s 199A: false statements to influence voters</h3>
         </header>
@@ -344,7 +370,7 @@ tailwind.config = {
       </article>
 
       <!-- NZBORA -->
-      <article class="rounded-2xl border border-rule bg-white overflow-hidden">
+      <article class="entry overflow-hidden">
         <header class="border-b border-rule bg-paper px-6 py-4 md:px-8">
           <h3 class="display text-xl font-semibold md:text-2xl">NZ Bill of Rights Act 1990: freedom of expression</h3>
         </header>
@@ -366,6 +392,8 @@ tailwind.config = {
 
     </div>
   </div>
+        </div>
+      </div>
 </section>
 
 <!-- ============================================================ -->
@@ -374,10 +402,13 @@ tailwind.config = {
 <section id="how" class="scroll-mt-20 border-y border-rule bg-deep text-paper">
   <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
     <div class="max-w-3xl">
-      <p class="text-xs uppercase tracking-widest text-amber">03 / How it works</p>
-      <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight text-paper md:text-5xl">
-        An independent watchdog. A 48-hour out for honest mistakes. A graduated response.
-      </h2>
+      <div class="doc-grid">
+        <div class="doc-num text-amber">04</div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-amber">How it works</p>
+          <h2 class="display-tight mt-2 text-4xl font-semibold leading-tight text-paper md:text-5xl">
+            An independent watchdog. A 48-hour out for honest mistakes. A graduated response.
+          </h2>
     </div>
 
     <div class="mt-14 grid gap-px overflow-hidden rounded-2xl bg-paper/15 md:grid-cols-2">
@@ -460,6 +491,8 @@ tailwind.config = {
       </div>
     </div>
   </div>
+        </div>
+      </div>
 </section>
 
 <!-- ============================================================ -->
@@ -474,7 +507,7 @@ tailwind.config = {
     <p class="mt-3 text-sm text-ink/60">Draft for discussion · 2026 · Government Bill format</p>
 
     <!-- Explanatory note -->
-    <div class="mt-10 rounded-2xl border border-rule bg-white p-6 md:p-8 bill-text">
+    <div class="mt-10 entry bill-text">
       <p class="display text-sm uppercase tracking-widest text-flame">Explanatory note</p>
       <h3>General policy statement</h3>
       <p>This Bill establishes a framework to hold members of Parliament accountable for deliberately making false or misleading statements to the public. It creates the office of the Political Integrity Commissioner, an independent statutory officer with the power to investigate complaints, make findings, and impose graduated penalties. It also establishes a Political Integrity Committee to provide ongoing parliamentary oversight.</p>
@@ -485,7 +518,7 @@ tailwind.config = {
     </div>
 
     <!-- Preliminary clauses -->
-    <details class="mt-6 group rounded-2xl border border-rule bg-white">
+    <details class="mt-6 group entry">
       <summary class="flex items-center justify-between gap-4 px-6 py-5 md:px-8">
         <span class="display text-lg font-semibold md:text-xl">Preliminary · Title, Commencement, Purpose, Interpretation</span>
         <span class="chev text-flame" aria-hidden="true">▸</span>
@@ -527,7 +560,7 @@ tailwind.config = {
     </details>
 
     <!-- Part 1 -->
-    <details class="mt-6 group rounded-2xl border border-rule bg-white">
+    <details class="mt-6 group entry">
       <summary class="flex items-center justify-between gap-4 px-6 py-5 md:px-8">
         <span class="display text-lg font-semibold md:text-xl">Part 1 · The Political Integrity Commissioner</span>
         <span class="chev text-flame" aria-hidden="true">▸</span>
@@ -634,7 +667,7 @@ tailwind.config = {
     </details>
 
     <!-- Part 2 -->
-    <details class="mt-6 group rounded-2xl border border-rule bg-white">
+    <details class="mt-6 group entry">
       <summary class="flex items-center justify-between gap-4 px-6 py-5 md:px-8">
         <span class="display text-lg font-semibold md:text-xl">Part 2 · The Political Integrity Committee</span>
         <span class="chev text-flame" aria-hidden="true">▸</span>
@@ -666,7 +699,7 @@ tailwind.config = {
     </details>
 
     <!-- Part 3 -->
-    <details class="mt-6 group rounded-2xl border border-rule bg-white">
+    <details class="mt-6 group entry">
       <summary class="flex items-center justify-between gap-4 px-6 py-5 md:px-8">
         <span class="display text-lg font-semibold md:text-xl">Part 3 · Offences and penalties</span>
         <span class="chev text-flame" aria-hidden="true">▸</span>
@@ -707,7 +740,7 @@ tailwind.config = {
     </details>
 
     <!-- Part 4 -->
-    <details class="mt-6 group rounded-2xl border border-rule bg-white">
+    <details class="mt-6 group entry">
       <summary class="flex items-center justify-between gap-4 px-6 py-5 md:px-8">
         <span class="display text-lg font-semibold md:text-xl">Part 4 · Amendments to other enactments</span>
         <span class="chev text-flame" aria-hidden="true">▸</span>
@@ -731,7 +764,7 @@ tailwind.config = {
     </details>
 
     <!-- Part 5 -->
-    <details class="mt-6 group rounded-2xl border border-rule bg-white">
+    <details class="mt-6 group entry">
       <summary class="flex items-center justify-between gap-4 px-6 py-5 md:px-8">
         <span class="display text-lg font-semibold md:text-xl">Part 5 · Safeguards, appeals, review, sunset</span>
         <span class="chev text-flame" aria-hidden="true">▸</span>
@@ -778,10 +811,13 @@ tailwind.config = {
 <section id="overseas" class="scroll-mt-20 border-y border-rule bg-white/60">
   <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
     <div class="max-w-3xl">
-      <p class="text-xs uppercase tracking-widest text-flame">05 / What's happening overseas</p>
-      <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
-        New Zealand wouldn't be doing this alone.
-      </h2>
+      <div class="doc-grid">
+        <div class="doc-num text-flame">05</div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-flame">What's happening overseas</p>
+          <h2 class="display-tight mt-2 text-4xl font-semibold leading-tight md:text-5xl">
+            New Zealand wouldn't be doing this alone.
+          </h2>
       <p class="mt-5 text-lg text-ink/70">
         Several democracies have tried, are trying, or have already enacted laws holding politicians accountable for misinformation. Some are good models. Some are cautionary tales. Honest assessment of each:
       </p>
@@ -790,7 +826,7 @@ tailwind.config = {
     <div class="mt-14 grid gap-6 lg:grid-cols-2">
 
       <!-- Wales: passed, now law -->
-      <article class="rounded-2xl border-2 border-flame/40 bg-paper p-7 md:p-9 lg:col-span-2">
+      <article class="entry-hero lg:col-span-2">
         <div class="flex items-center justify-between gap-4">
           <p class="display text-sm uppercase tracking-widest text-flame">🏴󠁧󠁢󠁷󠁬󠁳󠁿 &nbsp; Wales: first in the Westminster world</p>
           <span class="pill rounded-full bg-flame px-2.5 py-0.5 text-xs font-medium text-paper">Enacted · April 2026</span>
@@ -813,7 +849,7 @@ tailwind.config = {
       </article>
 
       <!-- UK -->
-      <article class="rounded-2xl border border-rule bg-paper p-7 md:p-9">
+      <article class="entry">
         <div class="flex items-center justify-between gap-4">
           <p class="display text-sm uppercase tracking-widest text-ink/55">🇬🇧 &nbsp; United Kingdom: Westminster</p>
           <span class="pill rounded-full px-2.5 py-0.5 text-xs font-medium text-ink/60">Petition / amendment stage</span>
@@ -832,7 +868,7 @@ tailwind.config = {
       </article>
 
       <!-- France -->
-      <article class="rounded-2xl border border-rule bg-paper p-7 md:p-9">
+      <article class="entry">
         <div class="flex items-center justify-between gap-4">
           <p class="display text-sm uppercase tracking-widest text-ink/55">🇫🇷 &nbsp; France</p>
           <span class="pill rounded-full px-2.5 py-0.5 text-xs font-medium text-deep">Enacted · narrow scope</span>
@@ -847,7 +883,7 @@ tailwind.config = {
       </article>
 
       <!-- Singapore -->
-      <article class="rounded-2xl border border-rule bg-paper p-7 md:p-9">
+      <article class="entry">
         <div class="flex items-center justify-between gap-4">
           <p class="display text-sm uppercase tracking-widest text-ink/55">🇸🇬 &nbsp; Singapore: a cautionary example</p>
           <span class="pill rounded-full px-2.5 py-0.5 text-xs font-medium text-flame">Enacted · widely criticised</span>
@@ -867,6 +903,8 @@ tailwind.config = {
       No federal bill in Australia, Canada, or the United States addresses this directly. In Australia, misleading a parliamentary committee is treated as contempt; there is no statutory offence for political misinformation more broadly. US First Amendment protections make any analogous federal law constitutionally implausible.
     </p>
   </div>
+        </div>
+      </div>
 </section>
 
 <!-- ============================================================ -->
@@ -874,10 +912,13 @@ tailwind.config = {
 <!-- ============================================================ -->
 <section id="comments" class="scroll-mt-20">
   <div class="mx-auto max-w-4xl px-5 py-20 md:py-28">
-    <p class="text-xs uppercase tracking-widest text-flame">06 / Public comments</p>
-    <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
-      What do you think?
-    </h2>
+    <div class="doc-grid">
+        <div class="doc-num text-flame">06</div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-flame">Public comments</p>
+          <h2 class="display-tight mt-2 text-4xl font-semibold leading-tight md:text-5xl">
+            What do you think?
+          </h2>
     <p class="mt-5 max-w-prose-wide text-lg text-ink/75">
       All comments are <strong>public</strong>, visible to every visitor. No sign-in needed. Be civil, anything abusive, defamatory, or off-topic will be removed.
     </p>
@@ -899,6 +940,8 @@ tailwind.config = {
     </div>
     <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
   </div>
+        </div>
+      </div>
 </section>
 
 <!-- ============================================================ -->
@@ -906,10 +949,13 @@ tailwind.config = {
 <!-- ============================================================ -->
 <section id="email" class="scroll-mt-20 border-t border-rule bg-white">
   <div class="mx-auto max-w-5xl px-5 py-20 md:py-28">
-    <p class="text-xs uppercase tracking-widest text-flame">07 / Write to your MP</p>
-    <h2 class="display-tight mt-3 text-4xl font-semibold leading-tight md:text-5xl">
-      One email is worth more than a thousand shares.
-    </h2>
+    <div class="doc-grid">
+        <div class="doc-num text-flame">07</div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-flame">Write to your MP</p>
+          <h2 class="display-tight mt-2 text-4xl font-semibold leading-tight md:text-5xl">
+            One email is worth more than a thousand shares.
+          </h2>
     <p class="mt-5 max-w-prose-wide text-lg text-ink/75">
       A Member's Bill needs an MP willing to put their name on it. MPs count the letters they
       get from their own voters, and almost nobody writes. A handful of constituents asking the
@@ -1009,7 +1055,7 @@ Ngā mihi,
            href="https://www.parliament.nz/en/mps-and-electorates/electorate-maps/">Find who represents you →</a>
       </div>
 
-      <div class="rounded-2xl border border-rule bg-paper p-6">
+      <div class="entry p-6">
         <p class="display text-xl font-semibold">The Justice Committee</p>
         <p class="mt-2.5 text-ink/75">
           A bill like this would be referred to the Justice Committee for public submissions.
@@ -1024,7 +1070,7 @@ Ngā mihi,
            href="https://www.parliament.nz/en/pb/sc/scl/justice/">Current committee membership →</a>
       </div>
 
-      <div class="rounded-2xl border border-rule bg-paper p-6">
+      <div class="entry p-6">
         <p class="display text-xl font-semibold">A sponsor for the bill</p>
         <p class="mt-2.5 text-ink/75">
           Someone has to lodge it. Opposition and crossbench MPs with a record on transparency
@@ -1035,7 +1081,7 @@ Ngā mihi,
            href="#addresses">Jump to the address lists →</a>
       </div>
 
-      <div class="rounded-2xl border border-rule bg-paper p-6">
+      <div class="entry p-6">
         <p class="display text-xl font-semibold">Petition Parliament</p>
         <p class="mt-2.5 text-ink/75">
           A petition puts the issue formally on Parliament's record. It runs alongside the
@@ -1199,6 +1245,8 @@ Ngā mihi,
     }
   })();
   </script>
+        </div>
+      </div>
 </section>
 
 <!-- ============================================================ -->
@@ -1206,10 +1254,13 @@ Ngā mihi,
 <!-- ============================================================ -->
 <section id="support" class="border-t border-rule bg-ink text-paper">
   <div class="mx-auto max-w-6xl px-5 py-20 md:py-24">
-    <p class="text-xs uppercase tracking-widest text-amber">08 / How to support</p>
-    <h2 class="display-tight mt-3 max-w-3xl text-4xl font-semibold leading-tight md:text-5xl">
-      The bill only moves forward if the public pushes for it.
-    </h2>
+    <div class="doc-grid">
+        <div class="doc-num text-amber">08</div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-amber">How to support</p>
+          <h2 class="display-tight mt-2 max-w-3xl text-4xl font-semibold leading-tight md:text-5xl">
+            The bill only moves forward if the public pushes for it.
+          </h2>
 
     <div class="mt-12 grid gap-8 md:grid-cols-3">
       <div>
@@ -1263,6 +1314,8 @@ Ngā mihi,
 
     <p class="mt-12 text-xs text-paper/40">© 2026. Public discussion document.</p>
   </div>
+        </div>
+      </div>
 </section>
 
 <script>
