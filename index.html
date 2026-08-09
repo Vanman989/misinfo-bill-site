@@ -110,8 +110,8 @@ tailwind.config = {
       <a href="#email"     class="font-medium text-flame hover:text-ink">Write to your MP</a>
       <a href="#support"   class="text-ink/70 hover:text-ink">Support</a>
     </nav>
-    <a href="#comments" class="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-paper hover:bg-deep">
-      Have your say <span aria-hidden="true">→</span>
+    <a href="#email" class="inline-flex items-center gap-1.5 rounded-full bg-flame px-4 py-1.5 text-sm font-medium text-paper hover:bg-ink">
+      Write to your MP <span aria-hidden="true">→</span>
     </a>
   </div>
 </header>
@@ -962,75 +962,8 @@ tailwind.config = {
       same direct question is genuinely enough to make an office take notice.
     </p>
 
-    <!-- Step 1, your details -->
-    <div class="mt-10 rounded-2xl border-2 border-flame/40 bg-flame/[0.04] p-6 md:p-7">
-      <p class="display text-xl font-semibold">Put your name and address in once</p>
-      <p class="mt-2 text-ink/75">
-        It fills them into the letter below automatically. Your address is what tells the office
-        you're one of their voters. That's the bit that makes them read it. Nothing is sent or
-        stored anywhere; this all happens in your browser.
-      </p>
-      <div class="mt-5 grid gap-4 sm:grid-cols-2">
-        <label class="block">
-          <span class="text-sm font-medium text-ink">Your name</span>
-          <input id="in-name" type="text" autocomplete="name" placeholder="Jane Smith"
-            class="mt-1.5 w-full rounded-lg border border-ink/20 bg-white px-3.5 py-2.5 text-ink placeholder:text-ink/35 focus:border-flame focus:outline-none focus:ring-2 focus:ring-flame/25" />
-        </label>
-        <label class="block">
-          <span class="text-sm font-medium text-ink">Your address</span>
-          <input id="in-addr" type="text" autocomplete="street-address" placeholder="12 Example Road, Whanganui"
-            class="mt-1.5 w-full rounded-lg border border-ink/20 bg-white px-3.5 py-2.5 text-ink placeholder:text-ink/35 focus:border-flame focus:outline-none focus:ring-2 focus:ring-flame/25" />
-        </label>
-      </div>
-      <p class="mt-3 text-sm text-ink/55">
-        Leave them blank if you'd rather fill them in yourself later. The letter still works.
-      </p>
-    </div>
-
-    <!-- Step 2, the email -->
-    <div class="mt-6 overflow-hidden rounded-2xl border border-rule">
-      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-rule bg-paper px-5 py-3.5">
-        <p class="text-sm text-ink/70">
-          <span class="font-medium text-ink">Subject:</span>
-          Please support a Political Integrity (Misinformation Accountability) Bill
-        </p>
-        <div class="flex gap-2">
-          <button id="copy-email" type="button"
-            class="rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-paper hover:bg-deep">Copy</button>
-          <a id="mailto-email" href="#"
-            class="rounded-full border border-ink/20 px-4 py-1.5 text-sm font-medium text-ink hover:bg-ink hover:text-paper">Open in mail app</a>
-        </div>
-      </div>
-      <pre id="email-body" class="max-h-[30rem] overflow-auto whitespace-pre-wrap bg-white px-5 py-6 font-sans text-[15px] leading-relaxed text-ink/85">Kia ora,
-
-I am one of your constituents, and I am writing to ask you to support a Political Integrity (Misinformation Accountability) Bill.
-
-Right now there is almost no consequence in New Zealand for a politician who deliberately lies to the public. Inside the House, parliamentary privilege makes MPs immune. Outside it, section 199A of the Electoral Act only applies in the two days before an election. For the rest of the three-year term, an MP can say something they know to be untrue in a press conference or a social media post and face nothing at all.
-
-Every other job in this country works the other way around. A doctor who misleads a patient can be struck off. A lawyer can be disbarred. A public servant can be dismissed. Someone who lies to a bank, an insurer or IRD commits an offence. The people who advise you, and the people who work for you, are all required to be honest. You are not.
-
-I do not accept that. Neither, I think, do most of the people you represent.
-
-The bill would create an independent Political Integrity Commissioner able to investigate and penalise politicians who knowingly state something false. It gives a 48-hour window to correct the record, so honest mistakes carry no penalty. Corrections have to appear wherever the false claim appeared and stay up for a year. Penalties are graduated, starting at a written warning, with prosecution reserved for persistent deception that causes real harm. Genuine opinion, honest mistakes and satire are all expressly protected. If you do not knowingly mislead people, it would never affect you.
-
-This is not a fringe idea. In Wales, the Senedd Cymru (Member Accountability and Elections) Act 2026 passed 50 votes to 1 in March and received Royal Assent in April. A Westminster-tradition parliament has accepted, almost unanimously, that its members should answer for deliberate deception.
-
-So my question is simply this: will you support it?
-
-If you would consider sponsoring it as a Member's Bill, I would like to hear from you. If you would not support it, I would like to understand why.
-
-Ngā mihi,
-[Your name]
-[Your address]</pre>
-    </div>
-    <p id="copy-status" class="mt-2 text-sm text-flame" role="status" aria-live="polite"></p>
-    <p class="mt-3 text-sm text-ink/55">
-      One sentence in your own words about why this bothers you is worth more than the rest of
-      the letter put together. Form letters get counted, personal ones get read.
-    </p>
-
     <!-- Who to send it to -->
-    <h3 class="display mt-16 text-2xl font-semibold leading-tight">Who to send it to</h3>
+    <h3 class="display mt-12 text-2xl font-semibold leading-tight">First, who to send it to</h3>
     <p class="mt-3 max-w-prose-wide text-ink/75">
       Nearly every sitting MP can be reached at
       <code class="rounded bg-paper px-1.5 py-0.5 text-[13px]">firstname.lastname@parliament.govt.nz</code>.
@@ -1116,6 +1049,73 @@ Ngā mihi,
       href="https://catalogue.data.govt.nz/dataset/members-of-parliament">Parliament's published member contact details</a>
       (data.govt.nz, as at 22 July 2025): 122 members. A handful may have changed since;
       the pattern is <code class="rounded bg-paper px-1 py-0.5 text-[13px]">firstname.lastname@parliament.govt.nz</code>.
+    </p>
+
+    <!-- Then: your details -->
+    <div class="mt-16 rounded-2xl border-2 border-flame/40 bg-flame/[0.04] p-6 md:p-7">
+      <p class="display text-xl font-semibold">Then put your name and address in once</p>
+      <p class="mt-2 text-ink/75">
+        It fills them into the letter below automatically. Your address is what tells the office
+        you're one of their voters. That's the bit that makes them read it. Nothing is sent or
+        stored anywhere; this all happens in your browser.
+      </p>
+      <div class="mt-5 grid gap-4 sm:grid-cols-2">
+        <label class="block">
+          <span class="text-sm font-medium text-ink">Your name</span>
+          <input id="in-name" type="text" autocomplete="name" placeholder="Jane Smith"
+            class="mt-1.5 w-full rounded-lg border border-ink/20 bg-white px-3.5 py-2.5 text-ink placeholder:text-ink/35 focus:border-flame focus:outline-none focus:ring-2 focus:ring-flame/25" />
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium text-ink">Your address</span>
+          <input id="in-addr" type="text" autocomplete="street-address" placeholder="12 Example Road, Whanganui"
+            class="mt-1.5 w-full rounded-lg border border-ink/20 bg-white px-3.5 py-2.5 text-ink placeholder:text-ink/35 focus:border-flame focus:outline-none focus:ring-2 focus:ring-flame/25" />
+        </label>
+      </div>
+      <p class="mt-3 text-sm text-ink/55">
+        Leave them blank if you'd rather fill them in yourself later. The letter still works.
+      </p>
+    </div>
+
+    <!-- Finally: the letter -->
+    <div class="mt-6 overflow-hidden rounded-2xl border border-rule">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-rule bg-paper px-5 py-3.5">
+        <p class="text-sm text-ink/70">
+          <span class="font-medium text-ink">Subject:</span>
+          Please support a Political Integrity (Misinformation Accountability) Bill
+        </p>
+        <div class="flex gap-2">
+          <button id="copy-email" type="button"
+            class="rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-paper hover:bg-deep">Copy</button>
+          <a id="mailto-email" href="#"
+            class="rounded-full border border-ink/20 px-4 py-1.5 text-sm font-medium text-ink hover:bg-ink hover:text-paper">Open in mail app</a>
+        </div>
+      </div>
+      <pre id="email-body" class="max-h-[30rem] overflow-auto whitespace-pre-wrap bg-white px-5 py-6 font-sans text-[15px] leading-relaxed text-ink/85">Kia ora,
+
+I am one of your constituents, and I am writing to ask you to support a Political Integrity (Misinformation Accountability) Bill.
+
+Right now there is almost no consequence in New Zealand for a politician who deliberately lies to the public. Inside the House, parliamentary privilege makes MPs immune. Outside it, section 199A of the Electoral Act only applies in the two days before an election. For the rest of the three-year term, an MP can say something they know to be untrue in a press conference or a social media post and face nothing at all.
+
+Every other job in this country works the other way around. A doctor who misleads a patient can be struck off. A lawyer can be disbarred. A public servant can be dismissed. Someone who lies to a bank, an insurer or IRD commits an offence. The people who advise you, and the people who work for you, are all required to be honest. You are not.
+
+I do not accept that. Neither, I think, do most of the people you represent.
+
+The bill would create an independent Political Integrity Commissioner able to investigate and penalise politicians who knowingly state something false. It gives a 48-hour window to correct the record, so honest mistakes carry no penalty. Corrections have to appear wherever the false claim appeared and stay up for a year. Penalties are graduated, starting at a written warning, with prosecution reserved for persistent deception that causes real harm. Genuine opinion, honest mistakes and satire are all expressly protected. If you do not knowingly mislead people, it would never affect you.
+
+This is not a fringe idea. In Wales, the Senedd Cymru (Member Accountability and Elections) Act 2026 passed 50 votes to 1 in March and received Royal Assent in April. A Westminster-tradition parliament has accepted, almost unanimously, that its members should answer for deliberate deception.
+
+So my question is simply this: will you support it?
+
+If you would consider sponsoring it as a Member's Bill, I would like to hear from you. If you would not support it, I would like to understand why.
+
+Ngā mihi,
+[Your name]
+[Your address]</pre>
+    </div>
+    <p id="copy-status" class="mt-2 text-sm text-flame" role="status" aria-live="polite"></p>
+    <p class="mt-3 text-sm text-ink/55">
+      One sentence in your own words about why this bothers you is worth more than the rest of
+      the letter put together. Form letters get counted, personal ones get read.
     </p>
 
     <p class="mt-8 rounded-xl border border-amber/40 bg-amber/[0.07] p-5 text-sm leading-relaxed text-ink/75">
