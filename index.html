@@ -912,8 +912,33 @@ tailwind.config = {
       same direct question is genuinely enough to make an office take notice.
     </p>
 
-    <!-- The email -->
-    <div class="mt-10 overflow-hidden rounded-2xl border border-rule">
+    <!-- Step 1 — your details -->
+    <div class="mt-10 rounded-2xl border-2 border-flame/40 bg-flame/[0.04] p-6 md:p-7">
+      <p class="display text-xl font-semibold">Put your name and address in once</p>
+      <p class="mt-2 text-ink/75">
+        It fills them into the letter below automatically. Your address is what tells the office
+        you're one of their voters — that's the bit that makes them read it. Nothing is sent or
+        stored anywhere; this all happens in your browser.
+      </p>
+      <div class="mt-5 grid gap-4 sm:grid-cols-2">
+        <label class="block">
+          <span class="text-sm font-medium text-ink">Your name</span>
+          <input id="in-name" type="text" autocomplete="name" placeholder="Jane Smith"
+            class="mt-1.5 w-full rounded-lg border border-ink/20 bg-white px-3.5 py-2.5 text-ink placeholder:text-ink/35 focus:border-flame focus:outline-none focus:ring-2 focus:ring-flame/25" />
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium text-ink">Your address</span>
+          <input id="in-addr" type="text" autocomplete="street-address" placeholder="12 Example Road, Whanganui"
+            class="mt-1.5 w-full rounded-lg border border-ink/20 bg-white px-3.5 py-2.5 text-ink placeholder:text-ink/35 focus:border-flame focus:outline-none focus:ring-2 focus:ring-flame/25" />
+        </label>
+      </div>
+      <p class="mt-3 text-sm text-ink/55">
+        Leave them blank if you'd rather fill them in yourself later — the letter still works.
+      </p>
+    </div>
+
+    <!-- Step 2 — the email -->
+    <div class="mt-6 overflow-hidden rounded-2xl border border-rule">
       <div class="flex flex-wrap items-center justify-between gap-3 border-b border-rule bg-paper px-5 py-3.5">
         <p class="text-sm text-ink/70">
           <span class="font-medium text-ink">Subject:</span>
@@ -926,9 +951,9 @@ tailwind.config = {
             class="rounded-full border border-ink/20 px-4 py-1.5 text-sm font-medium text-ink hover:bg-ink hover:text-paper">Open in mail app</a>
         </div>
       </div>
-      <pre id="email-body" class="max-h-[30rem] overflow-auto whitespace-pre-wrap bg-white px-5 py-6 font-sans text-[15px] leading-relaxed text-ink/85">Kia ora [MP's name],
+      <pre id="email-body" class="max-h-[30rem] overflow-auto whitespace-pre-wrap bg-white px-5 py-6 font-sans text-[15px] leading-relaxed text-ink/85">Kia ora,
 
-I live in [your suburb], in your electorate, and I am writing about something I think is long overdue: there is currently almost no consequence in New Zealand for a politician who deliberately lies to the public.
+I am one of your constituents, and I am writing about something I think is long overdue: there is currently almost no consequence in New Zealand for a politician who deliberately lies to the public.
 
 Inside the House, parliamentary privilege makes MPs immune. Outside it, section 199A of the Electoral Act only applies in the two days before an election. For the rest of the three-year term, an MP can say something they know to be untrue in a press conference or a social media post and face nothing at all.
 
@@ -953,13 +978,12 @@ I would appreciate a straight answer to each, and I intend to share the response
 
 Nga mihi,
 [Your name]
-[Your street address, so it is clear I am a constituent]</pre>
+[Your address]</pre>
     </div>
     <p id="copy-status" class="mt-2 text-sm text-flame" role="status" aria-live="polite"></p>
     <p class="mt-3 text-sm text-ink/55">
-      Change the bracketed parts. One sentence in your own words about why this bothers you is
-      worth more than the rest of the letter put together — form letters get counted, personal
-      ones get read.
+      One sentence in your own words about why this bothers you is worth more than the rest of
+      the letter put together — form letters get counted, personal ones get read.
     </p>
 
     <!-- Who to send it to -->
@@ -1008,11 +1032,10 @@ Nga mihi,
         <p class="mt-2.5 text-ink/75">
           Someone has to lodge it. Opposition and crossbench MPs with a record on transparency
           or democratic reform are the likeliest sponsors — and if 61 non-executive MPs back it,
-          it skips the ballot entirely.
+          it skips the ballot entirely. Grab a party's addresses below.
         </p>
         <a class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-flame underline-offset-4 hover:underline"
-           target="_blank" rel="noopener"
-           href="https://www.parliament.nz/en/mps-and-electorates/members-of-parliament/">All MPs, by party →</a>
+           href="#addresses">Jump to the address lists →</a>
       </div>
 
       <div class="rounded-2xl border border-rule bg-paper p-6">
@@ -1031,6 +1054,27 @@ Nga mihi,
 
     </div>
 
+    <!-- Copy-paste address lists -->
+    <h3 id="addresses" class="display mt-16 scroll-mt-24 text-2xl font-semibold leading-tight">Copy-paste address lists</h3>
+    <p class="mt-3 max-w-prose-wide text-ink/75">
+      Every current MP, by party. Hit copy, paste into the <strong class="text-ink">Bcc</strong>
+      field, and send. Use Bcc rather than To &mdash; it keeps everyone's address private and stops
+      the reply-all mess.
+    </p>
+    <p class="mt-2 max-w-prose-wide text-sm text-ink/60">
+      Send no more than about <strong class="text-ink">20 addresses at a time</strong>, or mail
+      providers are likely to treat it as spam and quietly bin it. One party per email works well.
+    </p>
+
+    <div id="mp-lists" class="mt-6 space-y-3"></div>
+
+    <p class="mt-4 text-sm text-ink/55">
+      Source: <a class="text-flame underline-offset-4 hover:underline" target="_blank" rel="noopener"
+      href="https://catalogue.data.govt.nz/dataset/members-of-parliament">Parliament's published member contact details</a>
+      (data.govt.nz, as at 22 July 2025) &mdash; 122 members. A handful may have changed since;
+      the pattern is <code class="rounded bg-paper px-1 py-0.5 text-[13px]">firstname.lastname@parliament.govt.nz</code>.
+    </p>
+
     <p class="mt-8 rounded-xl border border-amber/40 bg-amber/[0.07] p-5 text-sm leading-relaxed text-ink/75">
       <strong class="text-ink">Timing.</strong> The general election is on 7 November 2026.
       Parliament dissolves several weeks beforehand, and once it does, sitting MPs stop being MPs
@@ -1041,6 +1085,15 @@ Nga mihi,
   </div>
 
   <script>
+  var MPS=[
+    {p:"National Party",m:[["Miles Anderson", "Miles.Anderson@parliament.govt.nz"],["Carl Bates", "Carl.Bates@parliament.govt.nz"],["Andrew Bayly", "Andrew.Bayly@parliament.govt.nz"],["Daniel Bidois", "Dan.Bidois@parliament.govt.nz"],["Chris Bishop", "Chris.Bishop@parliament.govt.nz"],["Cameron Brewer", "Cameron.Brewer@parliament.govt.nz"],["Simeon Brown", "Simeon.Brown@parliament.govt.nz"],["Gerry Brownlee", "Gerry.Brownlee@parliament.govt.nz"],["Mike Butterick", "Mike.Butterick@parliament.govt.nz"],["Hamish Campbell", "Hamish.Campbell@parliament.govt.nz"],["Carlos Cheung", "Carlos.Cheung@parliament.govt.nz"],["Judith Collins", "Judith.Collins@parliament.govt.nz"],["Tim Costley", "Tim.Costley@parliament.govt.nz"],["Matt Doocey", "Matt.Doocey@parliament.govt.nz"],["Greg Fleming", "Greg.Fleming@parliament.govt.nz"],["Paulo Garcia", "Paulo.Garcia@parliament.govt.nz"],["Paul Goldsmith", "Paul.Goldsmith@parliament.govt.nz"],["Nicola Grigg", "Nicola.Grigg@parliament.govt.nz"],["Ryan Hamilton", "Ryan.Hamilton@parliament.govt.nz"],["Dana Kirkpatrick", "Dana.Kirkpatrick@parliament.govt.nz"],["Barbara Kuriger", "Barbara.Kuriger@parliament.govt.nz"],["Melissa Lee", "Melissa.Lee@parliament.govt.nz"],["Nancy Lu", "Nancy.Lu@parliament.govt.nz"],["Christopher Luxon", "Christopher.Luxon@parliament.govt.nz"],["David MacLeod", "David.MacLeod@parliament.govt.nz"],["Grant McCallum", "Grant.McCallum@parliament.govt.nz"],["Todd McClay", "Todd.McClay@parliament.govt.nz"],["James Meager", "James.Meager@parliament.govt.nz"],["Mark Mitchell", "Mark.Mitchell@parliament.govt.nz"],["Tim van de Molen", "Tim.vandeMolen@parliament.govt.nz"],["Joseph Mooney", "Joseph.Mooney@parliament.govt.nz"],["Rima Nakhle", "Rima.Nakhle@parliament.govt.nz"],["Katie Nimon", "Katie.Nimon@parliament.govt.nz"],["Chris Penk", "Chris.Penk@parliament.govt.nz"],["Tama Potaka", "Tama.Potaka@parliament.govt.nz"],["Maureen Pugh", "Maureen.Pugh@parliament.govt.nz"],["Suze Redmayne", "Suze.Redmayne@parliament.govt.nz"],["Shane Reti", "Shane.Reti@parliament.govt.nz"],["Tom Rutherford", "Tom.Rutherford@parliament.govt.nz"],["Penny Simmonds", "Penny.Simmonds@parliament.govt.nz"],["Scott Simpson", "Scott.Simpson@parliament.govt.nz"],["Stuart Smith", "Stuart.Smith@parliament.govt.nz"],["Erica Stanford", "Erica.Stanford@parliament.govt.nz"],["Sam Uffindell", "Sam.Uffindell@parliament.govt.nz"],["Louise Upston", "Louise.Upston@parliament.govt.nz"],["Simon Watts", "Simon.Watts@parliament.govt.nz"],["Catherine Wedd", "Catherine.Wedd@parliament.govt.nz"],["Vanessa Weenink", "Vanessa.Weenink@parliament.govt.nz"],["Nicola Willis", "Nicola.Willis@parliament.govt.nz"]]},
+    {p:"Labour Party",m:[["Ginny Andersen", "Ginny.Andersen@parliament.govt.nz"],["Camilla Belich", "Camilla.Belich@parliament.govt.nz"],["Glen Bennett", "Glen.Bennett@parliament.govt.nz"],["Rachel Boyack", "Rachel.Boyack@parliament.govt.nz"],["Rachel Brooking", "Rachel.Brooking@parliament.govt.nz"],["Reuben Davidson", "Reuben.Davidson@parliament.govt.nz"],["Barbara Edmonds", "Barbara.Edmonds@parliament.govt.nz"],["Shanan Halbert", "Shanan.Halbert@parliament.govt.nz"],["Peeni Henare", "Peeni.Henare@parliament.govt.nz"],["Chris Hipkins", "Chris.Hipkins@parliament.govt.nz"],["Willie Jackson", "Willie.Jackson@parliament.govt.nz"],["Ingrid Leary", "Ingrid.Leary@parliament.govt.nz"],["Jo-Anne Luxton", "Jo-Anne.Luxton@parliament.govt.nz"],["Kieran McAnulty", "Kieran.McAnulty@parliament.govt.nz"],["Tracey McLellan", "Tracey.McLellan@parliament.govt.nz"],["Damien O'Connor", "Damien.O'Connor@parliament.govt.nz"],["Greg O'Connor", "Greg.O'Connor@parliament.govt.nz"],["Willow-Jean Prime", "Willow-Jean.Prime@parliament.govt.nz"],["Priyanca Radhakrishnan", "Priyanca.Radhakrishnan@parliament.govt.nz"],["Adrian Rurawhe", "Adrian.Rurawhe@parliament.govt.nz"],["Deborah Russell", "Deborah.Russell@parliament.govt.nz"],["Jenny Salesa", "Jenny.Salesa@parliament.govt.nz"],["Carmel Sepuloni", "Carmel.Sepuloni@parliament.govt.nz"],["Lemauga Lydia Sosene", "Lemauga.Lydia.Sosene@parliament.govt.nz"],["Cushla Tangaere-Manuel", "Cushla.Tangaere-Manuel@parliament.govt.nz"],["Jan Tinetti", "Jan.Tinetti@parliament.govt.nz"],["Philip Twyford", "Philip.Twyford@parliament.govt.nz"],["Tangi Utikere", "Tangi.Utikere@parliament.govt.nz"],["Ayesha Verrall", "Ayesha.Verrall@parliament.govt.nz"],["Vanushi Walters", "Vanushi.Walters@parliament.govt.nz"],["Duncan Webb", "Duncan.Webb@parliament.govt.nz"],["Helen White", "Helen.White@parliament.govt.nz"],["Arena Williams", "Arena.Williams@parliament.govt.nz"],["Megan Woods", "Megan.Woods@parliament.govt.nz"]]},
+    {p:"Green Party",m:[["Steve Abel", "Steve.Abel@parliament.govt.nz"],["Kahurangi Carter", "Kahurangi.Carter@parliament.govt.nz"],["Marama Davidson", "Marama.Davidson@parliament.govt.nz"],["Benjamin Doyle", "Benjamin.Doyle@parliament.govt.nz"],["Julie Anne Genter", "JulieAnne.Genter@parliament.govt.nz"],["Francisco Hernandez", "Francisco.Hernandez@parliament.govt.nz"],["Hūhana Lyndon", "Huhana.Lyndon@parliament.govt.nz"],["Ricardo Menéndez March", "Ricardo.March@parliament.govt.nz"],["Tamatha Paul", "Tamatha.Paul@parliament.govt.nz"],["Lan Pham", "Lan.Pham@parliament.govt.nz"],["Chlöe Swarbrick", "Chloe.Swarbrick@parliament.govt.nz"],["Teanau Tuiono", "Teanau.Tuiono@parliament.govt.nz"],["Celia Wade-Brown", "Celia.Wade-Brown@parliament.govt.nz"],["Scott Willis", "Scott.Willis@parliament.govt.nz"],["Lawrence Xu-Nan", "Lawrence.Xu-Nan@parliament.govt.nz"]]},
+    {p:"ACT New Zealand",m:[["Mark Cameron", "Mark.Cameron@parliament.govt.nz"],["Karen Chhour", "Karen.Chhour@parliament.govt.nz"],["Simon Court", "Simon.Court@parliament.govt.nz"],["Andrew Hoggard", "Andrew.Hoggard@parliament.govt.nz"],["Cameron Luxton", "Cameron.Luxton@parliament.govt.nz"],["Laura McClure", "Laura.McClure@parliament.govt.nz"],["Nicole McKee", "Nicole.McKee@parliament.govt.nz"],["Parmjeet Parmar", "Parmjeet.Parmar@parliament.govt.nz"],["David Seymour", "David.Seymour@parliament.govt.nz"],["Todd Stephenson", "Todd.Stephenson@parliament.govt.nz"],["Brooke van Velden", "Brooke.vanVelden@parliament.govt.nz"]]},
+    {p:"NZ First",m:[["Jamie Arbuckle", "Jamie.Arbuckle@parliament.govt.nz"],["Casey Costello", "Casey.Costello@parliament.govt.nz"],["Andy Foster", "Andy.Foster@parliament.govt.nz"],["Shane Jones", "Shane.Jones@parliament.govt.nz"],["Jenny Marcroft", "Jenny.Marcroft@parliament.govt.nz"],["Mark Patterson", "Mark.Patterson@parliament.govt.nz"],["Winston Peters", "Winston.Peters@parliament.govt.nz"],["David Wilson", "David.WilsonMP@parliament.govt.nz"]]},
+    {p:"Te Pāti Māori",m:[["Tākuta Ferris", "Takuta.Ferris@parliament.govt.nz"],["Mariameno Kapa-Kingi", "Mariameno.Kapa-Kingi@parliament.govt.nz"],["Hana-Rawhiti Maipi-Clarke", "Hana-Rawhiti.Maipi-Clarke@parliament.govt.nz"],["Debbie Ngarewa-Packer", "Debbie.Ngarewa-Packer@parliament.govt.nz"],["Rawiri Waititi", "Rawiri.Waititi@parliament.govt.nz"]]}
+  ];
+
   (function () {
     var body = document.getElementById('email-body');
     var btn  = document.getElementById('copy-email');
@@ -1048,13 +1101,82 @@ Nga mihi,
     var note = document.getElementById('copy-status');
     if (!body) return;
     var subject = 'Please support a Political Integrity (Misinformation Accountability) Bill';
-    if (link) {
-      link.href = 'mailto:?subject=' + encodeURIComponent(subject) +
-                  '&body=' + encodeURIComponent(body.textContent || '');
+
+    // ---- live autofill: name + address drop into the letter -------------
+    var TEMPLATE = body.textContent || '';
+    var nameEl = document.getElementById('in-name');
+    var addrEl = document.getElementById('in-addr');
+
+    function currentText() {
+      var t = TEMPLATE;
+      var n = (nameEl && nameEl.value.trim()) || '';
+      var a = (addrEl && addrEl.value.trim()) || '';
+      if (n) t = t.replace('[Your name]', n);
+      if (a) t = t.replace('[Your address]', a);
+      return t;
     }
+    function refresh() {
+      body.textContent = currentText();
+      if (link) {
+        link.href = 'mailto:?subject=' + encodeURIComponent(subject) +
+                    '&body=' + encodeURIComponent(currentText());
+      }
+    }
+    if (nameEl) nameEl.addEventListener('input', refresh);
+    if (addrEl) addrEl.addEventListener('input', refresh);
+    refresh();
+
+    // ---- party address lists --------------------------------------------
+    var host = document.getElementById('mp-lists');
+    if (host && typeof MPS !== 'undefined') {
+      MPS.forEach(function (party) {
+        var addrs = party.m.map(function (x) { return x[1]; }).join(', ');
+        var names = party.m.map(function (x) { return x[0]; }).join(' · ');
+        var d = document.createElement('details');
+        d.className = 'rounded-2xl border border-rule bg-paper';
+        d.innerHTML =
+          '<summary class="flex flex-wrap items-center justify-between gap-3 px-5 py-4">' +
+            '<span class="flex items-center gap-2.5">' +
+              '<span class="chev text-flame" aria-hidden="true">▸</span>' +
+              '<span class="display text-lg font-semibold"></span>' +
+              '<span class="text-sm text-ink/55">' + party.m.length + ' MPs</span>' +
+            '</span>' +
+            '<span role="button" tabindex="0" class="shrink-0 cursor-pointer rounded-full bg-ink px-3.5 py-1.5 text-sm font-medium text-paper hover:bg-deep" data-copy>Copy addresses</span>' +
+          '</summary>' +
+          '<div class="border-t border-rule px-5 py-4">' +
+            '<p class="mb-3 text-sm text-ink/60" data-names></p>' +
+            '<textarea readonly rows="3" class="w-full rounded-lg border border-rule bg-white p-3 font-mono text-[12px] leading-relaxed text-ink/75"></textarea>' +
+          '</div>';
+        d.querySelector('.display').textContent = party.p;
+        d.querySelector('[data-names]').textContent = names;
+        d.querySelector('textarea').value = addrs;
+        host.appendChild(d);
+
+        var copyEl = d.querySelector('[data-copy]');
+        var doCopy = function (ev) {
+          ev.preventDefault(); ev.stopPropagation();
+          var restore = function () { setTimeout(function () { copyEl.textContent = 'Copy addresses'; }, 3000); };
+          var fallback = function () {
+            var ta = d.querySelector('textarea');
+            d.open = true; ta.select();
+            copyEl.textContent = 'Selected — press Ctrl+C'; restore();
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(addrs).then(function () {
+              copyEl.textContent = 'Copied ' + party.m.length + ' addresses'; restore();
+            }).catch(fallback);
+          } else { fallback(); }
+        };
+        copyEl.addEventListener('click', doCopy);
+        copyEl.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') doCopy(e);
+        });
+      });
+    }
+
     if (btn) {
       btn.addEventListener('click', function () {
-        var text = body.textContent || '';
+        var text = currentText();
         var done = function (msg) {
           btn.textContent = 'Copied';
           if (note) note.textContent = msg;
