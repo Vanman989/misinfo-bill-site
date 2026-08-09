@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Design preview: legislative direction</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  fontFamily: { serif:['Newsreader','Georgia','serif'], sans:['"Public Sans"','ui-sans-serif','system-ui','sans-serif'] },
+  colors: { ink:'#13161B', paper:'#FAF8F4', rule:'#E7E2D6', flame:'#D2541F', amber:'#E5A024', deep:'#1F2A33' },
+  maxWidth: { 'prose-wide':'72ch' },
+} } }
+</script>
+
+<style>
+  html { scroll-behavior:smooth; }
+  .display { font-family:'Newsreader',Georgia,serif; font-optical-sizing:auto; letter-spacing:-0.015em; }
+  .display-tight { font-family:'Newsreader',Georgia,serif; font-optical-sizing:auto; letter-spacing:-0.025em; }
+  h1,h2,h3 { text-wrap:balance; }
+  p { text-wrap:pretty; }
+
+  /* --- the document motif ------------------------------------------- */
+  /* a marginal section number, like a clause reference in a statute */
+  .doc-grid { display:grid; grid-template-columns:1fr; gap:1.25rem; }
+  @media (min-width:900px){ .doc-grid { grid-template-columns:6.5rem 1fr; gap:2.5rem; } }
+  .doc-num { font-family:'Newsreader',Georgia,serif; font-variant-numeric:lining-nums tabular-nums;
+             font-size:.95rem; letter-spacing:.14em; color:#D2541F; padding-top:.45rem;
+             border-top:2px solid #D2541F; align-self:start; }
+  /* hairline entries replace boxed cards */
+  .entry { border-top:1px solid #E7E2D6; padding-block:1.9rem; }
+  .entry:last-child { border-bottom:1px solid #E7E2D6; }
+  .entry-lede { display:grid; grid-template-columns:1fr; gap:.35rem; }
+  @media (min-width:760px){ .entry-lede { grid-template-columns:13rem 1fr; gap:2rem; align-items:baseline; } }
+  .status { font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; }
+  .rule-tick { background-image:linear-gradient(to right,#E7E2D6 50%,transparent 50%);
+               background-size:12px 1px; background-repeat:repeat-x; background-position:top; }
+</style>
+</head>
+
+<body class="bg-paper text-ink font-sans antialiased">
+
+<div class="border-b-2 border-flame bg-flame/[0.06]">
+  <div class="mx-auto max-w-5xl px-5 py-3 text-sm">
+    <strong class="text-flame">Design preview.</strong>
+    Same content, different treatment. Compare against
+    <a class="underline underline-offset-4" href="/">the live page</a>. Nothing here is published.
+  </div>
+</div>
+
+<main class="mx-auto max-w-5xl px-5 py-16 md:py-24">
+
+  <!-- ============ A. section header treatment ==================== -->
+  <section class="doc-grid">
+    <div class="doc-num">05</div>
+    <div>
+      <h2 class="display-tight text-4xl font-semibold leading-[1.08] md:text-5xl">
+        New Zealand wouldn't be doing this alone.
+      </h2>
+      <p class="mt-5 max-w-prose-wide text-lg leading-relaxed text-ink/70">
+        Several democracies have tried, are trying, or have already enacted laws holding
+        politicians accountable for misinformation. Some are good models. Some are cautionary
+        tales. An honest assessment of each.
+      </p>
+
+      <!-- ============ B. entries as ruled rows, not boxes ========== -->
+      <div class="mt-12">
+
+        <article class="entry">
+          <div class="entry-lede">
+            <div>
+              <p class="display text-lg font-semibold leading-tight">Wales</p>
+              <p class="status mt-1 font-medium text-flame">Enacted, April 2026</p>
+            </div>
+            <div>
+              <h3 class="display text-xl font-semibold leading-snug">
+                Senedd Cymru (Member Accountability and Elections) Act 2026
+              </h3>
+              <p class="mt-2.5 leading-relaxed text-ink/80">
+                Passed the Senedd <strong>50 votes to 1</strong> on 17 March 2026, Royal Assent
+                27 April. It introduces recall, reforms the standards regime, and requires Welsh
+                Ministers to create a criminal offence of false or misleading statements at
+                Senedd elections.
+              </p>
+              <p class="mt-2.5 text-[15px] leading-relaxed text-ink/60">
+                Narrower than this bill: scoped to election periods, and the offence itself is
+                still to be made by regulation. But the "no Western democracy has done this"
+                objection no longer holds.
+              </p>
+              <div class="mt-3.5 flex flex-wrap gap-x-5 gap-y-1 text-sm">
+                <a class="text-flame underline-offset-4 hover:underline" href="#">Senedd record</a>
+                <a class="text-flame underline-offset-4 hover:underline" href="#">Senedd Research</a>
+                <a class="text-flame underline-offset-4 hover:underline" href="#">Bangor analysis</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-lede">
+            <div>
+              <p class="display text-lg font-semibold leading-tight">United Kingdom</p>
+              <p class="status mt-1 text-ink/50">Amendment stage</p>
+            </div>
+            <div>
+              <h3 class="display text-xl font-semibold leading-snug">"Compassion in Politics" amendment</h3>
+              <p class="mt-2.5 leading-relaxed text-ink/80">
+                A cross-party amendment would create a standalone offence for MPs who
+                intentionally or recklessly mislead the public. No bill formally introduced. The
+                existing convention is that ministers who mislead Parliament resign, with no
+                legal sanction.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-lede">
+            <div>
+              <p class="display text-lg font-semibold leading-tight">Singapore</p>
+              <p class="status mt-1 text-ink/50">Cautionary</p>
+            </div>
+            <div>
+              <h3 class="display text-xl font-semibold leading-snug">POFMA 2019</h3>
+              <p class="mt-2.5 leading-relaxed text-ink/80">
+                Ministers can order corrections directly. Criticised internationally as a tool
+                used disproportionately against opposition and dissenters. A model of what to
+                avoid: this bill puts the power with an independent officer, not a minister.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ C. the penalty ladder: still a table, but typeset === -->
+  <section class="doc-grid mt-24">
+    <div class="doc-num">04</div>
+    <div>
+      <h2 class="display-tight text-4xl font-semibold leading-[1.08] md:text-5xl">
+        The penalty ladder.
+      </h2>
+      <p class="mt-5 max-w-prose-wide text-lg leading-relaxed text-ink/70">
+        Graduated, so a first slip is a warning and prison is reserved for people who keep
+        doing it on purpose.
+      </p>
+
+      <ol class="mt-10">
+        <li class="entry grid grid-cols-[2.5rem_1fr] gap-5 md:grid-cols-[3.5rem_1fr]">
+          <span class="display text-3xl font-semibold text-flame/30 md:text-4xl">1</span>
+          <div>
+            <p class="display text-lg font-semibold">Warning</p>
+            <p class="mt-1 text-ink/70">Formal, published. First finding.</p>
+          </div>
+        </li>
+        <li class="entry grid grid-cols-[2.5rem_1fr] gap-5 md:grid-cols-[3.5rem_1fr]">
+          <span class="display text-3xl font-semibold text-flame/40 md:text-4xl">2</span>
+          <div>
+            <p class="display text-lg font-semibold">Public censure</p>
+            <p class="mt-1 text-ink/70">Reported to the House. A correction is required.</p>
+          </div>
+        </li>
+        <li class="entry grid grid-cols-[2.5rem_1fr] gap-5 md:grid-cols-[3.5rem_1fr]">
+          <span class="display text-3xl font-semibold text-flame/60 md:text-4xl">3</span>
+          <div>
+            <p class="display text-lg font-semibold">Fine</p>
+            <p class="mt-1 text-ink/70">$10,000 to $50,000, escalating on repetition.</p>
+          </div>
+        </li>
+        <li class="entry grid grid-cols-[2.5rem_1fr] gap-5 md:grid-cols-[3.5rem_1fr]">
+          <span class="display text-3xl font-semibold text-flame/80 md:text-4xl">4</span>
+          <div>
+            <p class="display text-lg font-semibold">Enhanced fine</p>
+            <p class="mt-1 text-ink/70">$50,000 to $100,000 for a sustained pattern.</p>
+          </div>
+        </li>
+        <li class="entry grid grid-cols-[2.5rem_1fr] gap-5 md:grid-cols-[3.5rem_1fr]">
+          <span class="display text-3xl font-semibold text-flame md:text-4xl">5</span>
+          <div>
+            <p class="display text-lg font-semibold">Criminal prosecution</p>
+            <p class="mt-1 text-ink/70">
+              Referred to the Solicitor-General. On conviction: up to $200,000, up to 2 years,
+              possible disqualification from office.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ D. a pull quote, for rhythm ===================== -->
+  <section class="mt-24 rule-tick pt-10">
+    <blockquote class="display text-3xl font-medium leading-[1.25] text-ink md:text-[2.6rem] md:leading-[1.2]">
+      It is illegal to lie to your employer, your bank, your insurer, and the court.
+      <span class="text-flame">Not to the people who elect you.</span>
+    </blockquote>
+  </section>
+
+  <p class="mt-24 border-t border-rule pt-6 text-sm text-ink/50">
+    What changed: section numbers moved into the margin, boxed cards replaced with hairline
+    rules, one wide column instead of a two-up grid, and a pull quote to break the rhythm.
+    Same words, same palette.
+  </p>
+
+</main>
+</body>
+</html>
