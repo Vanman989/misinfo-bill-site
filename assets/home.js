@@ -24,7 +24,7 @@ function badge(c){ return '<span class="badge b-' + c + '">' + BADGE[c] + '</spa
     'Inheritances over $1 million taxed like income.',
     'Free GP visits, dental care and prescriptions. Free public transport, and more trains.',
     'Family homes on 99-year leases, with state home loans.',
-    'A public supermarket chain to break the duopoly.',
+    'A public supermarket selling only whole foods, nothing with added sugar.',
     'Every figure costed against Treasury’s own books.'
   ].map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('');
 })();
