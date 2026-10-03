@@ -154,6 +154,51 @@ const READING = [
   { title:'The Triumph of Injustice', who:'Saez and Zucman (2019)', took:'Read and weighed. Their yearly wealth tax was not chosen: we tax what you make, not what you have.', url:'https://eml.berkeley.edu/~saez/saez-zucman-wealthtax-warren-feb21.pdf' }
 ];
 
-/* MYTHS and AI_FACTS are filled in below once each source is verified. */
-const MYTHS = [];
-const AI_FACTS = [];
+/* ---------- Unbrainwashing: the myths ---------- */
+const SRC_TWG_INTERIM = ['Tax Working Group, Interim Report (2018)', 'https://taxworkinggroup.govt.nz/sites/default/files/2018-09/twg-interim-report-sep18.pdf'];
+const SRC_OECD_CGT = ['OECD Taxation Working Paper 72, Taxing capital gains (2025), Table 1', 'https://www.grantthornton.sa/globalassets/_markets_/sau/media/pdfs/oecd-taxing-capital-gains.pdf'];
+const MYTHS = [
+  { myth:'A capital gains tax taxes the same dollar twice.',
+    truth:'It taxes the new dollar the old one made.',
+    text:'The money you bought with was taxed once and is never taxed again. The gain is new money that has never been taxed at all. As Tax Working Group member Robin Oliver put it: “There is no double taxation.” The one real overlap, company profits and share gains, is largely handled by imputation credits.',
+    eg:'Buy a rental for $600,000 with taxed money. Sell it for $900,000. The $600,000 is never taxed again. Only the $300,000 gain is taxed, once.',
+    src:[['Robin Oliver, TWG note on double taxation (2018)', 'https://taxworkinggroup.govt.nz/sites/default/files/2019-02/twg-bg-4047874-double-taxation-and-option-b.pdf'], SRC_TWG_INTERIM] },
+  { myth:'The rich already pay most of the tax.',
+    truth:'They pay a lot of income tax because the law only sees part of their income.',
+    text:'Count everything they make, gains included, and New Zealand’s 311 wealthiest families pay 8.9%. A wage earner on $80,000 pays 22%. 80% of the families’ income is capital gains, which mostly go untaxed.',
+    src:[FACTS.rich311.src] },
+  { myth:'Cut taxes at the top and it trickles down.',
+    truth:'Fifty years of evidence says it doesn’t.',
+    text:'A London School of Economics study of 18 rich countries from 1965 to 2015 found that major tax cuts for the rich raised inequality and had no significant effect on economic growth or unemployment.',
+    src:[['Hope and Limberg, Socio-Economic Review (2022)', 'https://academic.oup.com/ser/article/20/2/539/6287898']] },
+  { myth:'Tax the rich and they’ll all leave.',
+    truth:'A few move. Most don’t, and the tax still pays.',
+    text:'Studies of US millionaire taxes found tax flight happens “only at the margins”. Norway’s 2022 wealth tax rise did push some of its richest abroad, which is one reason we tax gains when they are made rather than wealth every year. And land can’t leave: a gain on New Zealand property is taxed whoever owns it.',
+    src:[['Young et al, American Sociological Review (2016)', 'https://inequality.stanford.edu/node/7506'], ['Blandhol, Norway wealth tax study', 'https://cblandhol.github.io/JMP/blandhol_JMP.pdf']] },
+  { myth:'Everyone taxes like we do.',
+    truth:'Most rich countries tax capital gains. We mostly don’t.',
+    text:'In the OECD’s 2023 table of 38 countries, New Zealand is one of seven that don’t tax gains on long-held shares, and it has no general capital gains tax at all. Australia, the UK, the US and Canada all tax capital gains.',
+    src:[SRC_OECD_CGT, SRC_TWG_INTERIM] },
+  { myth:'They earned it.',
+    truth:'Most of it was owned, not worked for.',
+    text:'80% of the wealthiest families’ income is capital gains; only 7% is wages. Since 1986 the Rich List has grown 23 times over, from $5.3B to $129B, while average pay grew about 4 times.',
+    src:[FACTS.rich311.src, FACTS.richList.src] },
+  { myth:'GST is fair because everyone pays the same rate.',
+    truth:'Same rate, very different bite.',
+    text:'Someone on a low income spends everything they earn, so GST takes a bigger share of their income than it takes from someone who can save. Measured against yearly income, the Tax Working Group found GST looks regressive.',
+    src:[['Tax Working Group, GST background paper (2018)', 'https://taxworkinggroup.govt.nz/sites/default/files/2018-09/twg-bg-gst.pdf']] },
+  { myth:'We can’t afford better public services.',
+    truth:'The money is there. We just don’t tax it.',
+    text:'In 2021 New Zealand’s houses gained $370B in value, more than every wage, salary and business profit in the country ($268B). Tax on most of it: $0. That was a boom year, but the pattern holds: the biggest money is made by owning.',
+    src:[FACTS.houses2021.src, FACTS.houses2021.src2] }
+];
+
+/* ---------- Ready for AI ---------- */
+const AI_FACTS = [
+  { big:'60%', text:'of jobs in rich countries are exposed to AI, says the IMF. About half of those could be hurt by it.',
+    src:[['IMF Staff Discussion Note 2024/001, Gen-AI and the Future of Work', 'https://www.developmentaid.org/api/frontend/cms/file/2024/01/SDNEA2024001-1.pdf']] },
+  { big:'51%', text:'of all New Zealand’s tax is income tax on people: $67.9b of $133.0b. If AI shrinks wages, that is the money that disappears.',
+    src:[BUDGET_SRC] },
+  { big:'IMF', text:'says taxes on capital income “should be strengthened” to protect the tax base as AI shifts income from workers to owners.',
+    src:[['IMF Staff Discussion Note 2024/002, Broadening the Gains from Generative AI', 'https://key4biz.it/wp-content/uploads/2024/06/SDNEA2024002.pdf']] }
+];

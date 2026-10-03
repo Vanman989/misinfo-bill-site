@@ -43,6 +43,18 @@ const POSTS = [
     short:'In 2021 NZ houses gained $370B in value. That’s more than every wage, salary and business profit in the country ($268B). Tax on most of it: $0.',
     long:'In 2021, New Zealand’s houses gained $370 billion in value.\n\nEvery wage, salary and business profit in the country combined came to $268 billion.\n\nTax on most of those gains: $0. (2021 was a boom year, and these are paper gains. But the point stands: the biggest money in NZ is made by owning, and it’s the money we don’t tax.)' },
 
+  { id:'ai', title:'When AI takes the jobs',
+    lines:[['When AI takes', 130, C.paper], ['the jobs, who', 130, C.paper], ['pays for the', 130, C.paper], ['hospital?', 130, C.flame]],
+    sub:['51% of all tax is income tax on people.', 'Tax every kind of income, not just work.'],
+    short:'When AI takes the jobs, who pays for the hospital? 51% of NZ’s tax is income tax on people. The IMF says taxes on capital income should be strengthened. We agree.',
+    long:'When AI takes the jobs, who pays for the hospital?\n\n51% of New Zealand’s tax comes from income tax on people. The IMF says about 60% of jobs in rich countries are exposed to AI, and that taxes on capital income “should be strengthened” as income shifts from workers to owners.\n\nMoney earned is money taxed, whether a person or a machine did the work.' },
+
+  { id:'trickle', title:'Myth: it trickles down',
+    lines:[['“It trickles', 140, C.muted], ['down.”', 140, C.muted], ['It doesn’t.', 140, C.flame]],
+    sub:['18 countries, 50 years of tax cuts for the rich:', 'no significant effect on growth or jobs.'],
+    short:'“Tax cuts at the top trickle down.” A study of 18 rich countries over 50 years found they raised inequality and had no significant effect on growth or jobs.',
+    long:'Myth: “Cut taxes at the top and it trickles down.”\n\nA London School of Economics study of 18 rich countries from 1965 to 2015 found major tax cuts for the rich raised inequality and had no significant effect on economic growth or unemployment.\n\nIt doesn’t trickle down. It stays up.' },
+
   { id:'1950', title:'76.5% in 1950',
     lines:[['76.5%', 300, C.green], ['NZ’s top tax rate', 64, C.paper], ['in 1950.', 64, C.paper]],
     sub:['NZ was one of the five', 'richest countries on Earth.'],
