@@ -89,6 +89,6 @@ const METHOD_NOTES = [
   'The bracket cost uses IRD’s count of people in each $5,000 band, each person taken at their band’s average income, grown to 2025 totals. It checks out: applied to today’s IRD figures it reproduces income tax within 0.3%. Incomes are higher again by 2026/27, so the real cost is a few percent more.',
   'Capital gains on homes is our estimate, not an official one: about $10b a year of resale gains on owner-occupied homes, taxed at 28%. It ignores the cost of improvements, so treat it as a ceiling. Spreading gains over the years owned lowers it a little.',
   'In the first years the capital gains tax raises far less, about $1.7b a year for everything except homes, while gains build up. The tax-free amount and the new services phase in only as that money arrives, so nothing is paid for by borrowing.',
-  'Not yet costed: extra public transport services to carry more people, the family home building programme, and taxing gains at death.',
+  'Not yet costed: the extra trains, the family home building programme, and taxing gains at death.',
   'No allowance is made for people changing what they do because of the tax. Official costings would add that.'
 ];

@@ -22,7 +22,7 @@ function badge(c){ return '<span class="badge b-' + c + '">' + BADGE[c] + '</spa
     'Every capital gain taxed like wages, family homes included.',
     'Lower income tax, most of all for lower earners.',
     'Inheritances over $1 million taxed like income.',
-    'Free GP visits, dental care, prescriptions and public transport.',
+    'Free GP visits, dental care and prescriptions. Free public transport, and more trains.',
     'Family homes on 99-year leases, with state home loans.',
     'A public supermarket chain to break the duopoly.',
     'Every figure costed against Treasury’s own books.'
