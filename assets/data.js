@@ -136,7 +136,7 @@ const POLICIES = [
          ['CPF Board, HDB loan', 'https://www.cpf.gov.sg/member/infohub/educational-resources/3-differences-between-hdb-loan-and-bank-loan'],
          ['Queenstown Lakes Community Housing Trust, Secure Home', 'https://www.qlcht.org.nz/assets/Uploads/PDFs/Secure-Home-Brochure-Sep24.pdf']] },
   { id:'supermarket', title:'A public supermarket chain',
-    plain:'A state-owned chain of supermarkets that sells only whole foods and nothing with added sugar, run to cover its costs rather than for maximum profit, to break the duopoly.',
+    plain:'A state-owned chain of supermarkets that sells only whole foods and nothing with added sugar, run to cover its costs rather than for maximum profit. It breaks the duopoly and improves health outcomes.',
     evidence:'The Commerce Commission found the big two make about $1 million a day in excess profit. When Mexico opened state milk shops, private milk got 2.4% cheaper nearby. The US military’s 235 supermarkets sell about 25% below normal prices. Not every attempt works: a small town-run store in Florida closed on weak sales.',
     b:0, costLabel:'Investment: $2.8b to set up',
     working:'Green Party costing (Parliamentary Library modelling) for 120 stores and 2 distribution centres: $1.3b, plus $1.5b of capital. Critics say it is too low. That costing is for a full-range chain; a whole-food range will change it.',
