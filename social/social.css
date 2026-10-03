@@ -1,0 +1,40 @@
+/* social posts page, on top of /assets/party.css */
+.wrap{max-width:980px}
+.promoBox{margin:0 0 18px;padding:14px 16px;border-radius:14px;background:var(--panel);border:1px solid var(--rule)}
+.promoBox label{display:block;font:700 13px var(--sans);color:var(--sec);margin-bottom:6px}
+.promoBox input{width:100%;height:44px;padding:0 12px;border-radius:10px;border:1px solid var(--rule);background:var(--paper);font:500 15px var(--sans);color:var(--txt)}
+.promoBox input:focus{outline:2px solid var(--flame);outline-offset:1px}
+.fine{margin:8px 0 0;font-size:12.5px;color:var(--sec)}
+.plats{display:flex;flex-wrap:wrap;gap:6px}
+.plats button{padding:8px 14px;border-radius:18px;border:1px solid var(--rule);background:var(--panel);font:700 13.5px var(--sans);color:var(--txt);cursor:pointer}
+.plats button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.platInfo{margin:10px 0 0;font-size:13.5px;color:var(--sec)}
+.bulk{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 22px}
+.btnGhostInk{background:none;border:1.5px solid var(--ink);color:var(--ink)}
+.bulk .btn{min-height:44px;font-size:14px}
+.posts{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.post{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;padding:14px;border-radius:16px;background:var(--panel);border:1px solid var(--rule);box-shadow:var(--shad)}
+.postImg{width:100%;max-width:420px;border-radius:10px;overflow:hidden;line-height:0;background:#13161B}
+.postImg svg{width:100%;height:100%;display:block}
+.postBody h3{display:flex;align-items:center;gap:10px;margin:0 0 8px;font:700 19px/1.25 var(--serif)}
+.postBody h3 span{display:grid;place-items:center;flex:none;width:26px;height:26px;border-radius:50%;background:var(--flame);color:#fff;font:800 12px var(--sans)}
+.postBody textarea{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--rule);background:var(--paper);font:400 14px/1.45 var(--sans);color:var(--txt);resize:vertical}
+.count{margin-top:4px;font:600 12px var(--sans);color:var(--muted);text-align:right}
+.count.over{color:var(--red)}
+.acts{display:flex;gap:6px;margin-top:8px}
+.acts button{flex:1;height:40px;border-radius:20px;border:1px solid var(--rule);background:var(--paper);font:700 13px var(--sans);color:var(--txt);cursor:pointer}
+.acts button.fill{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+@media (min-width:760px){ .post{grid-template-columns:minmax(0,380px) minmax(0,1fr);align-items:start} }
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);padding:9px 16px;border-radius:18px;background:var(--ink);color:var(--paper);font:600 13.5px var(--sans);opacity:0;transition:opacity .25s;pointer-events:none;z-index:80}
+.toast.on{opacity:1}
+/* how-to guide */
+.how h3{margin:26px 0 8px;font:700 22px/1.2 var(--serif)}
+.how p,.how li{font-size:15.5px;color:var(--sec)}
+.how ol,.how ul{padding-left:20px}
+.how li{margin:6px 0}
+.how table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+.how th,.how td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--rule);vertical-align:top}
+.how th{font:800 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.how .warn{padding:12px 14px;border-radius:12px;background:#FBEFEC;border:1px solid rgba(178,58,43,.35);color:var(--txt)}
+.how code{background:var(--paper);padding:1px 5px;border-radius:4px;font-size:13px}
+.how .scroll{overflow-x:auto}

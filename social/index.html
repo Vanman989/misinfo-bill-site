@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#13161B">
+<meta name="robots" content="noindex">
+<title>Honest Politics Party: posts to share</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23D2541F'/%3E%3Ctext x='50' y='68' font-family='Arial' font-weight='700' font-size='52' text-anchor='middle' fill='%23FAF8F4'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600;6..72,700&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/party.css">
+<link rel="stylesheet" href="/social/social.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="topIn">
+    <a class="brand" href="/"><span class="mark">H</span>Honest Politics Party</a>
+    <nav class="nav"><a href="/#plan">Plan</a><a href="/#myths">Myths</a><a href="/" class="navCta">Home</a></nav>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="kick">Posts to share</div>
+    <h1 class="h2">Every post, sized for every platform.</h1>
+    <p class="lead">Pick a platform. Each post has its image at the right size and a caption written for that platform. Copy, save, share, or download everything at once for a scheduler.</p>
+
+    <div class="promoBox">
+      <label for="promoIn">Promoter statement: your name and contact details</label>
+      <input id="promoIn" autocomplete="off" placeholder="e.g. Your Name, PO Box 123, Town">
+      <p class="fine" id="promoNote"></p>
+    </div>
+
+    <div class="plats" id="plats" role="tablist" aria-label="Platform"></div>
+    <p class="platInfo" id="platInfo"></p>
+
+    <div class="bulk">
+      <button type="button" class="btn btnInk" id="dlAll">Download all images + captions (.zip)</button>
+      <button type="button" class="btn btnGhostInk" id="dlCsv">Schedule file (.csv)</button>
+    </div>
+
+    <div class="posts" id="posts"></div>
+  </div>
+</section>
+
+<section class="sec secAlt" id="automate">
+  <div class="wrap">
+    <div class="kick">Automate it</div>
+    <h2 class="h2">How to schedule and automate posting.</h2>
+    <div id="howTo"></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap"><p class="promoter" id="promoter"></p></div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="/assets/data.js"></script>
+<script src="/assets/posts.js"></script>
+<script src="/social/howto.js"></script>
+<script src="/social/social.js"></script>
+</body>
+</html>
