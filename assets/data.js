@@ -16,7 +16,7 @@ const VALUES = [
     text:'Most New Zealanders get ahead by working. The tax system should reward work, not just ownership.' },
   { id:'earned', title:'Money earned is money taxed',
     text:'A dollar from a rising house price or a share sale is income, just like a dollar in your pay packet. We tax all of it the same way, and use it to bring the tax on work down.' },
-  { id:'giveback', title:'Give back to the country that made you',
+  { id:'giveback', title:'No more laundering money from the society you earn it in',
     text:'Roads, schools, hospitals, courts and skilled workers make every fortune possible. Using all of that and paying 8.9% is not giving back.' },
   { id:'family', title:'The rise of the family',
     text:'A home you can afford, a doctor when you need one, and time with your kids. That is what a good economy is for.' },
