@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23D2541F'/%3E%3Ctext x='50' y='68' font-family='Arial' font-weight='700' font-size='52' text-anchor='middle' fill='%23FAF8F4'%3EH%3C/text%3E%3C/svg%3E">
+<script>/* data-theme hook: set before CSS paints so ?theme=dark doesn't flash paper */
+try{if(new URLSearchParams(location.search).get('theme')==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+<title>Tax River: Honest Politics Party</title>
+<meta name="description" content="How money flows through New Zealand's tax system, who really pays, who doesn't, across 185 years of history and under each party's 2026 policy. Every number sourced.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500;1,6..72,600;1,6..72,700&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="topIn">
+    <a class="brand" href="/"><span class="mark">H</span>Honest Politics Party</a>
+    <nav class="nav">
+      <a href="/#plan">Plan</a>
+      <a href="/finance/">Costings</a>
+      <a href="/#myths">Myths</a>
+      <a href="/social/" class="navCta">Share</a>
+    </nav>
+  </div>
+</header>
+
+<div class="app">
+
+  <!-- ============ 1. HERO ============ -->
+  <header class="hero">
+    <div class="overline">An NZ tax story · every number sourced</div>
+    <h1 class="title">NZ Tax River</h1>
+    <p class="slogan" id="slogan" aria-label="Questions about tax fairness"><span>Why should having more mean you contribute&nbsp;<em>less</em>?</span></p>
+    <div class="faceoff" id="heroStat"></div>
+    <div class="kicker">Stop systematic inequality before it’s too late for the average family</div>
+  </header>
+
+  <!-- ============ 2. THE RIVER ============ -->
+  <section class="riverSec" aria-label="The tax river">
+    <!-- one bordered panel: the river, the selection that drives it, and the
+         info that changes, all visibly the same instrument -->
+    <div class="riverPanel" id="riverPanel">
+      <div class="stage" id="stage"
+        aria-label="Animated river of New Zealand tax flows: income-tax brackets, GST and company tax stream into the IRD, which funds health, welfare, superannuation, education and more, while the wealthiest families’ untaxed capital gains flow past the IRD, back to themselves.">
+        <canvas id="cv" aria-hidden="true"></canvas>
+        <div class="overlay" id="overlay"></div>
+      </div>
+      <h2 class="secTitle panelTitle">185 years of the river</h2>
+      <nav class="chips" id="eraChips" aria-label="Choose an era"></nav>
+      <p class="pdivider"><span>…and under each party’s 2026 policy</span></p>
+      <nav class="chips chipsP" id="partyChips" aria-label="Choose a party’s 2026 tax policy"></nav>
+      <p class="caveat">Modern eras use audited $ figures; historical stream widths are structural illustrations.</p>
+      <div class="eraCard" id="modeCard" aria-live="polite"></div>
+    </div>
+    <div class="slideCard" id="slideCard"></div>
+    <div class="untaxedCard" id="untaxedCard"></div>
+  </section>
+
+  <!-- ============ 4. WHO OWNS NEW ZEALAND ============ -->
+  <section class="wealthSec">
+    <h2 class="secTitle">Who owns New Zealand</h2>
+    <div class="wcard" id="wPool"></div>
+    <div class="wcard" id="wShift"></div>
+    <div class="wcard" id="wRich"></div>
+    <div class="wcard" id="wWorld"></div>
+  </section>
+
+  <!-- ============ 5. FOOTER ============ -->
+  <footer class="foot" id="foot"></footer>
+
+</div>
+<script src="./data.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

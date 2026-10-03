@@ -11,6 +11,24 @@ function srcLinks(list){ return list.map(function(s){ return '<a href="' + esc(s
 var BADGE = { official:'official source', party:'party costing', estimate:'estimate' };
 function badge(c){ return '<span class="badge b-' + c + '">' + BADGE[c] + '</span>'; }
 
+/* the plan in one minute */
+(function(){
+  var med = 71800, saved = taxOn(med, SCHEDULES.today) - taxOn(med, SCHEDULES.ours);
+  $('ovNums').innerHTML =
+    '<div><b>' + money(saved) + '</b><span>more a year for the median earner</span></div>' +
+    '<div><b>' + bn(FIN.totalIn) + '</b><span>a year from taxing every gain</span></div>' +
+    '<div><b>' + bn(FIN.net, true) + '</b><span>a year better for the books</span></div>';
+  $('ovList').innerHTML = [
+    'Every capital gain taxed like wages, family homes included.',
+    'Lower income tax, most of all for lower earners.',
+    'Inheritances over $1 million taxed like income.',
+    'Free GP visits, dental care, prescriptions and public transport.',
+    'Family homes on 99-year leases, with state home loans.',
+    'A public supermarket chain to break the duopoly.',
+    'Every figure costed against Treasury’s own books.'
+  ].map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('');
+})();
+
 /* values */
 $('valuesList').innerHTML = VALUES.map(function(v, i){
   return '<div class="value"><span class="n">' + (i + 1) + '</span><h3>' + esc(v.title) + '</h3><p>' + esc(v.text) + '</p></div>';
@@ -41,7 +59,12 @@ $('valuesList').innerHTML = VALUES.map(function(v, i){
     '<p class="src">Source: ' + srcLinks([BUDGET_SRC]) + ', 2026/27 forecast. Treasury’s September update lifted total tax to $' + BOOKS.taxB + 'b.</p>';
 })();
 
-/* the plan */
+/* the plan: the brackets card takes its numbers from the finance model */
+TAX_PLAN.forEach(function(t){
+  if (t.id !== 'brackets') return;
+  t.plain = OUR_BANDS_LEAD; t.b = -FIN.cut.b; t.src = [INCOME_DIST.src];
+  t.money = 'About $' + FIN.cut.b.toFixed(1) + 'b a year. ' + Math.round(FIN.cut.sharePeopleBetter * 100) + '% of taxpayers pay less; nobody pays more income tax on their wages.';
+});
 $('taxCards').innerHTML = TAX_PLAN.map(function(t){
   return '<article class="card">' +
     '<div class="cardTop"><h3>' + esc(t.title) + '</h3><span class="amt ' + (t.b >= 0 ? 'amtUp' : 'amtDown') + '">' + bn(t.b, true) + '<small>a year</small></span></div>' +
@@ -52,18 +75,13 @@ $('taxCards').innerHTML = TAX_PLAN.map(function(t){
 $('notChosen').innerHTML = '<h3>' + esc(NOT_CHOSEN.title) + '</h3><p>' + esc(NOT_CHOSEN.text) + '</p><p class="src">' + srcLinks(NOT_CHOSEN.src) + '</p>';
 
 /* your tax */
-var PLAN_BANDS = [[5000,0]].concat(TODAY_BANDS);
-function taxOn(inc, bands){
-  var t = 0, lo = 0;
-  for (var i = 0; i < bands.length; i++){ var hi = bands[i][0]; if (inc > lo) t += (Math.min(inc, hi) - lo) * bands[i][1] / 100; lo = hi; }
-  return t;
-}
+var PLAN_BANDS = SCHEDULES.ours;
 function updateCalc(inc){
   var now = taxOn(inc, TODAY_BANDS), plan = taxOn(inc, PLAN_BANDS), d = now - plan;
   $('calcOut').innerHTML =
     '<div class="cmp"><div><span>Income tax today</span><b>' + money(now) + '</b></div><div><span>Under our plan</span><b class="g">' + money(plan) + '</b></div></div>' +
-    '<div class="keep">' + (inc > 0 ? 'You keep <b>' + money(d) + '</b> more a year, from day one.' : 'Enter your income.') + '</div>' +
-    '<p class="body">And if you sell anything for more than you paid, the gain is added to your income for that year and taxed at your normal rate, the same as wages.</p>' +
+    '<div class="keep">' + (inc > 0 ? (d > 0.5 ? 'You keep <b>' + money(d) + '</b> more a year.' : 'Your income tax stays the same.') : 'Enter your income.') + '</div>' +
+    '<p class="body">If you sell anything for more than you paid, your home included, the gain is spread over the years you owned it and taxed at your normal rate, the same as wages. <a href="/finance/#who">See worked examples</a>.</p>' +
     '<p class="src">Today: IRD rates from 1 April 2025, before ACC levy and tax credits.</p>';
 }
 (function(){
@@ -112,24 +130,15 @@ $('famCards').innerHTML = POLICIES.map(function(p){
     '<p class="body">Net debt is <b>$' + B.netDebtB + 'b</b>, ' + B.netDebtPctGdp + '% of everything New Zealand produces in a year. Fees, investment returns and other income cover part of the difference between tax and spending, leaving the official deficit of $' + Math.abs(B.obegalB) + 'b.</p>' +
     '<p class="src">Source: ' + srcLinks([B.source]) + ', Table 2.1</p>';
 
-  var rows = TAX_PLAN.map(function(t){ return [t.title, t.b]; })
-    .concat(POLICIES.filter(function(p){ return p.b && !p.longRun; }).map(function(p){ return [p.title, p.b]; }));
-  var net = rows.reduce(function(a, r){ return a + r[1]; }, 0);
-  var sup = POLICIES.filter(function(p){ return p.longRun; })[0];
-  var gap = Math.abs(BOOKS.obegalB);
-  var cgtEarly = 8.3 / 5, early = net - TAX_PLAN[0].b + cgtEarly;
   $('ledger').innerHTML =
-    '<table class="ledger"><tbody>' + rows.map(function(r){
-      return '<tr><td>' + esc(r[0]) + '</td><td class="' + (r[1] >= 0 ? 'up' : 'down') + '">' + bn(r[1], true) + '</td></tr>';
-    }).join('') +
-    '<tr class="tot"><td>Every year, at full strength</td><td class="up">' + bn(net, true) + '</td></tr>' +
-    '<tr><td>Later: linking the pension age to life expectancy</td><td class="up">' + bn(sup.b, true) + '</td></tr>' +
+    '<table class="ledger"><tbody>' +
+    '<tr><td>New money in, from taxing every gain</td><td class="up">' + bn(FIN.totalIn, true) + '</td></tr>' +
+    '<tr><td>Lower income tax on work</td><td class="down">' + bn(-FIN.cut.b, true) + '</td></tr>' +
+    '<tr><td>Free health care, transport, family incomes</td><td class="down">' + bn(-FIN.services, true) + '</td></tr>' +
+    '<tr class="tot"><td>Better for the books, every year</td><td class="up">' + bn(FIN.net, true) + '</td></tr>' +
+    '<tr><td>Later: linking the pension age to life expectancy</td><td class="up">' + bn(FIN.superLater, true) + '</td></tr>' +
     '</tbody></table>' +
-    '<div class="gap"><div class="gapLbl">This year’s $' + gap + 'b deficit, and how much of it the plan closes</div>' +
-      '<div class="gapTrack"><div class="gapA" style="width:' + (net / gap * 100).toFixed(1) + '%"></div><div class="gapB" style="width:' + (sup.b / gap * 100).toFixed(1) + '%"></div></div>' +
-      '<div class="gapKey"><span><i class="kA"></i>full-strength plan ' + bn(net) + '</span><span><i class="kB"></i>pension age link, later ' + bn(sup.b) + '</span></div></div>' +
-    '<p class="body">At full strength the plan adds about <b>' + bn(net) + '</b> a year to the books while cutting income tax for every worker. In the first years, while the capital gains tax builds up (about $' + cgtEarly.toFixed(1) + 'b a year), it comes out at about ' + bn(early) + ': roughly break-even, so the tax cut is never paid for by borrowing.</p>' +
-    '<p class="src">Sums of the costings above, each with its own source. GDP of about $' + BOOKS.gdpB + 'b is derived from Treasury’s own tax-to-GDP ratio.</p>';
+    '<p class="body">At full strength. In the first years the capital gains tax raises less while gains build up, so the tax cut and new services phase in as the money arrives.</p>';
 })();
 
 /* bills */

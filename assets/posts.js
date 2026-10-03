@@ -31,11 +31,11 @@ const POSTS = [
     short:'NZ’s 311 wealthiest families pay 8.9% tax on everything they make. A nurse on $80k pays 22%. (IRD, 2023)',
     long:'NZ’s 311 wealthiest families pay an effective tax rate of 8.9% on everything they make. A nurse on $80,000 pays 22%.\n\nWhy? 80% of those families’ income is capital gains, and New Zealand mostly doesn’t tax them.\n\nSource: Inland Revenue’s High-Wealth Individuals study, 2023.' },
 
-  { id:'525', title:'$525 for every worker',
-    lines:[['$525', 330, C.green], ['back for every worker,', 64, C.paper], ['every year.', 64, C.paper]],
-    sub:['First $5,000 tax-free,', 'paid for by taxing capital gains.'],
-    short:'$525 back for every worker, every year. First $5,000 of income tax-free, paid for by taxing capital gains.',
-    long:'$525 back in every worker’s pocket, every year.\n\nUnder our plan nobody pays income tax on their first $5,000. It’s paid for by taxing capital gains like wages, and as that tax grows, every extra dollar goes into lifting the tax-free amount further.\n\nTry your own numbers on our site.' },
+  { id:'1260', title:'$1,260 for every worker',
+    lines:[['$1,260', 300, C.green], ['back for every worker,', 64, C.paper], ['every year.', 64, C.paper]],
+    sub:['First $12,000 tax-free,', 'paid for by taxing capital gains.'],
+    short:'$1,260 back for every worker, every year. First $12,000 of income tax-free, paid for by taxing every capital gain like wages.',
+    long:'$1,260 back in every worker’s pocket, every year.\n\nUnder our plan nobody pays income tax on their first $12,000. Someone on $20,000 goes from paying 12% of their income in tax to under 6%. It’s paid for by taxing every capital gain like wages, homes included.\n\nTry your own numbers on our site.' },
 
   { id:'houses', title:'$370B of untaxed gains',
     lines:[['$370B', 300, C.amber], ['NZ houses gained', 64, C.paper], ['in value in 2021.', 64, C.paper]],
