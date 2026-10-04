@@ -178,7 +178,7 @@ function detailHTML(c){
     (c.list ? '<table class="shList"><caption>' + esc(c.list.head) + '</caption>' + c.list.rows.map(function(r){ return '<tr><td>' + esc(r[0]) + '</td><td>' + esc(r[1]) + '</td></tr>'; }).join('') + '</table>' : '') +
     c.paras.filter(Boolean).map(function(p){ return '<p class="shP">' + esc(p) + '</p>'; }).join('') +
     '<p class="src">Sources: ' + c.src.map(link).join(' · ') + '</p>' +
-    '<div class="shFoot"><a class="btn btnFlame" href="/finance/">See every figure</a><a class="btn btnGhostInk" href="/#plan" style="border:1.5px solid var(--rule);color:var(--ink)">Read the plan</a></div>' +
+    '<div class="shFoot"><a class="btn btnFlame" href="/finance/">See every figure</a><a class="btn btnGhostInk" href="/plan/" style="border:1.5px solid var(--rule);color:var(--ink)">Read the plan</a></div>' +
     '<p class="src">' + promoterHTML + '</p>';
 }
 
@@ -191,7 +191,7 @@ function showFallback(reason){
   body.classList.remove('is3d', 'scrollMode'); body.classList.add('fbMode');
   var fb = $('fallback'); fb.hidden = false;
   if (!CH){
-    fb.innerHTML = '<div class="fbWrap"><div class="tKick">One town: now vs with us</div><h1 class="fbH">The figures did not load.</h1><p class="fbNote"><a href="/#plan">Read the plan</a> or <a href="/finance/">see every figure</a>.</p></div>';
+    fb.innerHTML = '<div class="fbWrap"><div class="tKick">One town: now vs with us</div><h1 class="fbH">The figures did not load.</h1><p class="fbNote"><a href="/plan/">Read the plan</a> or <a href="/finance/">see every figure</a>.</p></div>';
     return;
   }
   var notes = {

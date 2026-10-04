@@ -280,3 +280,28 @@ p{text-wrap:pretty}
 .townArt{display:block;width:100%;max-width:330px;height:auto;justify-self:center;filter:drop-shadow(0 10px 22px rgba(19,22,27,.12))}
 @media (min-width:700px){ .townGrid{grid-template-columns:minmax(0,1fr) 280px} }
 @media (prefers-reduced-motion:reduce){ .tdTrack::before,.tdTrack i{animation:none} }
+
+/* ---------- pages and the explore grid ---------- */
+.wrapWide{max-width:1080px}
+.heroPage{padding:40px 0 34px}
+.heroPage .heroTitle{font-size:clamp(38px,10vw,64px)}
+.exH{margin:0 0 16px;font:700 clamp(28px,7.4vw,40px)/1.1 var(--serif);letter-spacing:-.015em}
+.exGrid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.exTile{position:relative;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;padding:18px 18px;border-radius:18px;background:#fff;border:1px solid var(--rule);
+  box-shadow:var(--shad);text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s;overflow:hidden}
+.exTile::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px}
+.exTile:hover,.exTile:focus-visible{transform:translateY(-2px);box-shadow:0 2px 4px rgba(19,22,27,.05),0 12px 28px rgba(19,22,27,.12)}
+.exBig{display:grid;place-items:center;min-width:72px;height:72px;padding:0 10px;border-radius:16px;font:700 24px/1 var(--serif);letter-spacing:-.02em}
+.exBody b{display:block;font:700 21px/1.2 var(--serif)}
+.exBody span{display:block;margin-top:4px;font-size:14.5px;line-height:1.45;color:var(--sec)}
+.exGo{font:700 22px var(--sans);color:var(--flame)}
+.ex-flame::before{background:var(--flame)}.ex-flame .exBig{background:#FDE7DC;color:var(--flame)}
+.ex-green::before{background:var(--green)}.ex-green .exBig{background:#E2F3EA;color:var(--green)}
+.ex-amber::before{background:var(--amber)}.ex-amber .exBig{background:#FBEFD6;color:#8A5A0B}
+.ex-red::before{background:var(--red)}.ex-red .exBig{background:#FBEFEC;color:var(--red)}
+.ex-blue::before{background:var(--blue)}.ex-blue .exBig{background:#E3EDF6;color:var(--blue)}
+.exFeature{background:linear-gradient(120deg,#FFF6EC,#fff 60%);border-color:#F1DCC6}
+.exFeature .exBig{min-width:88px;height:88px;font-size:30px}
+.exFeature .exBody b{font-size:25px}
+@media (min-width:700px){ .exGrid{grid-template-columns:repeat(2,minmax(0,1fr))} .exFeature{grid-column:1 / -1} }
+@media (min-width:1000px){ .exGrid{grid-template-columns:repeat(3,minmax(0,1fr))} }

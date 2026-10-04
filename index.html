@@ -32,12 +32,11 @@
   <div class="topIn">
     <a class="brand" href="/"><span class="mark">H</span>Honest Politics Party</a>
     <nav class="nav">
-      <a href="#plan">Plan</a>
+      <a href="/plan/">Plan</a>
+      <a href="/tax/">Your tax</a>
       <a href="/finance/">Costings</a>
-      <a href="#myths">Myths</a>
+      <a href="/myths/">Myths</a>
       <a href="/history/">History</a>
-      <a href="/river/">Tax River</a>
-      <a href="#bills">Bills</a>
       <a href="/social/" class="navCta">Share</a>
     </nav>
   </div>
@@ -49,8 +48,8 @@
     <h1 class="heroTitle">We value labour <em>over wealth.</em></h1>
     <p class="heroSub">Money earned is money taxed, whether you earned it working or owning. Every dollar we raise from wealth goes into lower tax on work and more for New Zealand.</p>
     <div class="heroCta">
-      <a class="btn btnFlame" href="#plan">Our plan</a>
-      <a class="btn btnGhost" href="#myths">Bust the myths</a>
+      <a class="btn btnFlame" href="/plan/">Our plan</a>
+      <a class="btn btnGhost" href="/tax/">What you keep</a>
     </div>
     <a class="billBand" href="/bill/"><span><b>Our first bill:</b> make knowingly lying to voters an offence for MPs.</span><span>Read it →</span></a>
   </div>
@@ -109,19 +108,9 @@
     </div>
   </section>
 
-  <section class="sec" id="gains">
-    <div class="wrap">
-      <div class="kick">Follow the money</div>
-      <h2 class="h2">The richest got 24 times. Everyone else got peanuts.</h2>
-      <div id="gainsViz"></div>
-    </div>
-  </section>
-
-  <section class="sec secAlt" id="flow">
-    <div class="wrap">
-      <div class="kick">Where the money flows</div>
-      <h2 class="h2">Today it flows to the top. Our plan sends it back.</h2>
-      <div id="moneyFlow"></div>
+  <section class="sec secAlt" id="explore">
+    <div class="wrap wrapWide">
+      <div class="explore" data-title="Explore everything"></div>
     </div>
   </section>
 
@@ -131,91 +120,6 @@
       <h2 class="h2">Every New Zealander deserves to live with dignity.</h2>
       <p class="lead">A home, a doctor when you need one, and time with your kids. Five values get us there.</p>
       <div class="values" id="valuesList"></div>
-    </div>
-  </section>
-
-  <section class="sec secAlt" id="how">
-    <div class="wrap">
-      <div class="kick">How tax works today</div>
-      <h2 class="h2">Work and spending are taxed. Wealth mostly isn’t.</h2>
-      <div class="steps" id="steps"></div>
-      <div id="flowViz"></div>
-    </div>
-  </section>
-
-  <section class="sec" id="plan">
-    <div class="wrap">
-      <div class="kick">The plan</div>
-      <h2 class="h2">Money earned is money taxed.</h2>
-      <p class="lead">Three changes reach the money that escapes tax today. The fourth hands it back to everyone who works.</p>
-      <div class="cards" id="taxCards"></div>
-      <div class="notChosen" id="notChosen"></div>
-    </div>
-  </section>
-
-  <section class="sec secAlt" id="you">
-    <div class="wrap">
-      <div class="kick">Your tax</div>
-      <h2 class="h2">What it means for you.</h2>
-      <div class="calc">
-        <label class="calcLbl" for="inc">Your income before tax, a year</label>
-        <div class="calcRow"><span>$</span><input id="inc" inputmode="numeric" autocomplete="off" value="60,000"></div>
-        <input type="range" id="incR" min="0" max="200000" step="1000" value="60000" aria-label="Slide to set your income">
-        <div id="calcOut" aria-live="polite"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="myths">
-    <div class="wrap">
-      <div class="kick">Unbrainwashing</div>
-      <h2 class="h2">The myths you’ve been sold.</h2>
-      <p class="lead">These lines are repeated so often they sound like common sense. Here is what the evidence says.</p>
-      <div class="myths" id="mythList"></div>
-    </div>
-  </section>
-
-  <section class="sec secInk" id="ai">
-    <div class="wrap">
-      <div class="kick">Ready for AI</div>
-      <h2 class="h2">When AI takes the jobs, who pays for the hospital?</h2>
-      <p class="lead">Our tax system leans on wages. As machines do more of the work, that base shrinks while the owners of the machines gain. Taxing every kind of income is how schools, hospitals and Super stay funded.</p>
-      <div class="aiStats" id="aiStats"></div>
-    </div>
-  </section>
-
-  <section class="sec" id="families">
-    <div class="wrap">
-      <div class="kick">More for New Zealand</div>
-      <h2 class="h2">A home. A doctor. A bus. Time together.</h2>
-      <div class="cards" id="famCards"></div>
-    </div>
-  </section>
-
-  <section class="sec secAlt" id="adds">
-    <div class="wrap">
-      <div class="kick">Does it add up?</div>
-      <h2 class="h2">Yes. Every figure is on one page.</h2>
-      <div id="booksViz"></div>
-      <div id="ledger" style="margin-top:28px"></div>
-      <p class="body"><a class="btn btnInk" href="/finance/">Open the costings</a></p>
-    </div>
-  </section>
-
-  <section class="sec" id="bills">
-    <div class="wrap">
-      <div class="kick">Our bills</div>
-      <h2 class="h2">Ideas written into law.</h2>
-      <div class="bills" id="billList"></div>
-    </div>
-  </section>
-
-  <section class="sec secAlt" id="reading">
-    <div class="wrap">
-      <div class="kick">Where this comes from</div>
-      <h2 class="h2">The books behind the plan.</h2>
-      <div class="reading" id="readingList"></div>
-      <p class="body" style="margin-top:24px"><a class="btn btnInk" href="/social/">Share it: posts for every platform</a></p>
     </div>
   </section>
 </main>
@@ -232,5 +136,6 @@
 <script src="/assets/finance.js"></script>
 <script src="/assets/home.js"></script>
 <script src="/assets/flows.js"></script>
+<script src="/assets/explore.js"></script>
 </body>
 </html>

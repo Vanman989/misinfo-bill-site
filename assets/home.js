@@ -3,7 +3,7 @@
 (function(){
 'use strict';
 
-function $(id){ return document.getElementById(id); }
+function $(id){ return document.getElementById(id) || document.createElement('div'); }  // sections live on different pages
 function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
 function money(n){ return '$' + Math.round(n).toLocaleString('en-NZ'); }
 function bn(b, sign){ return (sign && b > 0 ? '+' : b < 0 ? '−' : '') + '$' + Math.abs(b).toFixed(1).replace(/\.0$/, '') + 'b'; }
