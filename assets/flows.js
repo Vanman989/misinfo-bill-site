@@ -43,12 +43,12 @@ var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: red
     $('gvHead').innerHTML = m.head;
     el.querySelectorAll('.gvBar').forEach(function(b){
       var v = m[b.dataset.k];
-      b.style.transform = 'scaleY(' + (shown ? Math.max(0.012, v / max) : 0) + ')';
+      b.style.transform = 'scaleY(' + (shown ? Math.max(0.012, v / max * 0.85) : 0) + ')';
     });
     el.querySelectorAll('.gvVal').forEach(function(b){
       var v = m[b.dataset.k];
       b.textContent = (v >= 10 ? Math.round(v) : v.toFixed(1)) + '×';
-      b.style.bottom = 'calc(' + (shown ? Math.max(0.012, v / max) * 100 : 0) + '% + 6px)';
+      b.style.bottom = 'calc(' + (shown ? Math.max(0.012, v / max * 0.85) * 100 : 0) + '% + 6px)';
     });
     el.querySelectorAll('.seg2 button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.m === mode)); });
   }

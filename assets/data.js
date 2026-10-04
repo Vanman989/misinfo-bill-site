@@ -104,7 +104,18 @@ const TAX_PLAN = [
     b:0, money:'', working:'Worked out on IRD’s count of how many people earn what.',
     why:'Money from wealth should come back to the people who work. Lower earners get the biggest cut as a share of their pay.',
     confidence:'estimate',
-    src:[] }  // filled from INCOME_DIST in income-dist.js
+    src:[] },  // filled from INCOME_DIST in income-dist.js
+  { id:'farms', title:'Farms and family businesses carry on',
+    plain:'A working farm or family business pays nothing extra while it keeps going. When it passes to the family it goes at its original cost, so no tax is due on the handover. The gain is taxed when it is finally sold outside the family, spread over all the years the family owned it.',
+    who:'Working farms and family businesses passed to the next generation.',
+    b:0, amtLabel:'Same tax, paid later',
+    money:'Any inheritance tax due on a working farm can be paid over 10 years, interest-free, or put off for as long as the family keeps farming it.',
+    working:'Guards stop it becoming a loophole: the person who inherits must keep farming or running the business, and the relief is clawed back if it is sold within 10 years. In the UK the biggest 7% of farm relief claims took 40% of its cost, often from wealthy buyers of farmland.',
+    why:'Canada passes farms to children this way, the UK spreads farm inheritance tax over 10 years, and New Zealand’s own 2019 Tax Working Group recommended rollover on death so nobody is forced to sell to pay the tax.',
+    confidence:'official',
+    src:[['Tax Working Group 2019, Final Report Vol II', 'https://taxworkinggroup.govt.nz/resources/future-tax-final-report-vol-ii-html'],
+         ['Canada Revenue Agency, farm property passed to a child', 'https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4002/t4002-9.html'],
+         ['UK Government, farm and business relief changes', 'https://www.gov.uk/government/publications/changes-to-agricultural-property-relief-and-business-property-relief/agricultural-property-relief-and-business-property-relief-changes']] }
 ];
 const NOT_CHOSEN = {
   title:'Why tax income, not wealth?',

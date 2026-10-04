@@ -67,7 +67,7 @@ TAX_PLAN.forEach(function(t){
 });
 $('taxCards').innerHTML = TAX_PLAN.map(function(t){
   return '<article class="card">' +
-    '<div class="cardTop"><h3>' + esc(t.title) + '</h3><span class="amt ' + (t.b >= 0 ? 'amtUp' : 'amtDown') + '">' + bn(t.b, true) + '<small>a year</small></span></div>' +
+    '<div class="cardTop"><h3>' + esc(t.title) + '</h3>' + (t.amtLabel ? '<span class="amt amtZero">' + esc(t.amtLabel) + '</span>' : '<span class="amt ' + (t.b >= 0 ? 'amtUp' : 'amtDown') + '">' + bn(t.b, true) + '<small>a year</small></span>') + '</div>' +
     '<p class="plain">' + esc(t.plain) + '</p>' +
     '<dl><dt>Who</dt><dd>' + esc(t.who) + '</dd><dt>Why</dt><dd>' + esc(t.why) + '</dd><dt>Money</dt><dd>' + esc(t.money) + ' ' + esc(t.working) + ' ' + badge(t.confidence) + '</dd></dl>' +
     '<p class="src">' + srcLinks(t.src) + '</p></article>';
