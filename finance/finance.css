@@ -25,9 +25,9 @@
 .chartKey{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--sec);margin-top:6px}
 .chartKey i{display:inline-block;width:14px;height:3px;margin-right:6px;vertical-align:4px}
 .netGrid{display:grid;gap:10px}
-.netRow{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #2A2E36;font-size:15.5px;color:#C9C4B8}
-.netRow b{font:700 21px var(--serif);color:var(--paper);white-space:nowrap}
-.netRow.big b{font-size:30px;color:var(--greenL)}
+.netRow{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #F1DCC6;font-size:15.5px;color:var(--sec)}
+.netRow b{font:700 21px var(--serif);color:var(--ink);white-space:nowrap}
+.netRow.big b{font-size:30px;color:var(--green)}
 .people{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
 .person{padding:16px 18px;border-radius:16px;background:var(--panel);border:1px solid var(--rule);box-shadow:var(--shad)}
 .person h3{margin:0;font:700 19px/1.25 var(--serif)}

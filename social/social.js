@@ -58,17 +58,17 @@ function cardSVG(p, w, h){
   });
   var ry = h - 250 * k, promo = promoter.trim() ? 'Promoted by ' + promoter.trim() : 'Promoted by ADD NAME AND CONTACT DETAILS';
   return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + w + ' ' + h + '" width="' + w + '" height="' + h + '">' +
-    '<rect width="' + w + '" height="' + h + '" fill="#13161B"/>' +
-    '<circle cx="' + (w - 40 * k) + '" cy="' + (40 * k) + '" r="' + (300 * k) + '" fill="#D2541F" opacity=".16"/>' +
+    '<rect width="' + w + '" height="' + h + '" fill="#FAF8F4"/>' +
+    '<circle cx="' + (w - 40 * k) + '" cy="' + (40 * k) + '" r="' + (300 * k) + '" fill="#E5A024" opacity=".14"/>' +
     '<rect x="' + m + '" y="' + (80 * k) + '" width="' + (72 * k) + '" height="' + (72 * k) + '" rx="' + (16 * k) + '" fill="#D2541F"/>' +
     '<text x="' + (m + 36 * k) + '" y="' + (131 * k) + '" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="' + (42 * k) + '" fill="#FAF8F4">H</text>' +
-    '<text x="' + (m + 96 * k) + '" y="' + (127 * k) + '" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="' + (27 * k) + '" letter-spacing="' + (5 * k) + '" fill="#FAF8F4">HONEST POLITICS PARTY</text>' +
+    '<text x="' + (m + 96 * k) + '" y="' + (127 * k) + '" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="' + (27 * k) + '" letter-spacing="' + (5 * k) + '" fill="#13161B">HONEST POLITICS PARTY</text>' +
     big.join('') +
-    '<rect x="' + m + '" y="' + ry + '" width="' + (w - 2 * m) + '" height="' + (2 * k) + '" fill="#3A3E47"/>' +
-    '<text x="' + m + '" y="' + (ry + 66 * k) + '" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="' + (38 * k) + '" fill="#FAF8F4">' + esc(p.sub[0]) + '</text>' +
-    '<text x="' + m + '" y="' + (ry + 116 * k) + '" font-family="Arial, Helvetica, sans-serif" font-size="' + (38 * k) + '" fill="#B9B4AA">' + esc(p.sub[1]) + '</text>' +
-    '<text x="' + m + '" y="' + (h - 56 * k) + '" font-family="Arial, Helvetica, sans-serif" font-size="' + (22 * k) + '" fill="' + (promoter.trim() ? '#8A857B' : '#FF6B5B') + '">' + esc(promo) + '</text>' +
-    '<text x="' + (w - m) + '" y="' + (h - 56 * k) + '" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="' + (22 * k) + '" fill="#E5A024">honestpoliticsnz.pages.dev</text>' +
+    '<rect x="' + m + '" y="' + ry + '" width="' + (w - 2 * m) + '" height="' + (2 * k) + '" fill="#D9D2C0"/>' +
+    '<text x="' + m + '" y="' + (ry + 66 * k) + '" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="' + (38 * k) + '" fill="#13161B">' + esc(p.sub[0]) + '</text>' +
+    '<text x="' + m + '" y="' + (ry + 116 * k) + '" font-family="Arial, Helvetica, sans-serif" font-size="' + (38 * k) + '" fill="#5C5749">' + esc(p.sub[1]) + '</text>' +
+    '<text x="' + m + '" y="' + (h - 56 * k) + '" font-family="Arial, Helvetica, sans-serif" font-size="' + (22 * k) + '" fill="' + (promoter.trim() ? '#857F72' : '#B23A2B') + '">' + esc(promo) + '</text>' +
+    '<text x="' + (w - m) + '" y="' + (h - 56 * k) + '" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="' + (22 * k) + '" fill="#D2541F">honestpoliticsnz.pages.dev</text>' +
     '</svg>';
 }
 function toPng(svg, w, h){

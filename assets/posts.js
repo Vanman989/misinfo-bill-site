@@ -3,7 +3,7 @@
    1080px wide, colour]); sub = two small lines under the rule;
    short = caption for X, Bluesky, Threads, TikTok; long = caption for
    Instagram, Facebook, LinkedIn. Every claim matches /assets/data.js. */
-const C = { paper:'#FAF8F4', flame:'#E0652E', amber:'#E5A024', green:'#6FD3A6', muted:'#B9B4AA' };
+const C = { paper:'#13161B', flame:'#D2541F', amber:'#A86B12', green:'#1E7A55', muted:'#857F72' };  // 'paper' is the main text colour on the light card
 const TAGS = ['#NZPol', '#NZElection2026', '#TaxFairness', '#CapitalGainsTax', '#HonestPolitics'];
 
 const POSTS = [
