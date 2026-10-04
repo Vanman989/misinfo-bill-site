@@ -47,10 +47,10 @@ try {
   var R311 = FACTS.rich311;
 
   CH = [
-    { id:'mansion', name:'Untaxed assets',
-      now: bn(GAINS) + ' a year laundered into assets, untaxed', us: bn(GAINS) + ' a year taxed like wages',
-      title:'Money earned is money taxed',
-      nowLong:'Every year about ' + bn(GAINS) + ' in capital gains, big inheritances and rezoning windfalls goes untaxed. Counting everything they make, New Zealand’s ' + R311.families + ' wealthiest families pay ' + R311.rate + '% tax. A nurse pays ' + R311.nurse + '%.',
+    { id:'mansion', name:'Money made from our society',
+      now: bn(GAINS) + ' a year earned from our society, never given back', us: bn(GAINS) + ' a year given back, taxed like wages',
+      title:'No more laundering money from the society you earn it in',
+      nowLong:'Every year about ' + bn(GAINS) + ' in capital gains, big inheritances and rezoning windfalls is made from our society, from our roads, our workers, our schools and our councils’ decisions, and none of it is given back. Counting everything they make, New Zealand’s ' + R311.families + ' wealthiest families pay ' + R311.rate + '% tax. A nurse pays ' + R311.nurse + '%.',
       usLong:'Every capital gain is taxed like wages, homes included, spread over the years it was owned. Inheritances over $1 million are taxed like income. Half of every rezoning windfall is taxed. Together that is ' + bn(GAINS) + ' a year.',
       figs:[[bn(GAINS), 'a year, taxed instead of escaping'], [R311.rate + '%', 'what the ' + R311.families + ' wealthiest families pay today, on everything they make']],
       list:{ head:'Where the ' + bn(GAINS) + ' comes from', rows: FIN.moneyIn.map(function(m){ return [m.label, bn(m.b)]; }) },
@@ -685,8 +685,8 @@ function start3D(THREE, OrbitControls){
       n.box(g[0], 0.2, g[1], 0.9, 0.36, 0.5, '#F2B53A', GLOW);
       n.box(g[0] + 0.1, 0.56, g[1], 0.7, 0.3, 0.42, '#F2B53A', GLOW);
     });
-    n.sign('UNTAXED', -2.6, 1.9, 5.8, 0.5, ST.amber, { posts: true });
-    u.sign('TAXED LIKE WAGES', -2.0, 1.55, 6.0, 0.5, ST.green, { posts: true });
+    n.sign('NOT GIVEN BACK', -2.6, 1.9, 5.8, 0.5, ST.amber, { posts: true });
+    u.sign('GIVEN BACK', -2.0, 1.55, 6.0, 0.5, ST.green, { posts: true });
     unit('mansion', 22, HY + 3, -21);
     blockCircle(22, -21, 9.2);
     PTS.mansion = s.local(-3.0, 1.6, 4.0);
