@@ -205,3 +205,54 @@ p{text-wrap:pretty}
 .ovList{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:8px}
 .ovList li{position:relative;padding-left:26px;font:600 16.5px/1.4 var(--sans)}
 .ovList li::before{content:'';position:absolute;left:0;top:.42em;width:12px;height:12px;border-radius:3px;background:var(--flame)}
+
+/* ---------- follow the money ---------- */
+.seg2{display:inline-flex;padding:4px;border-radius:22px;background:var(--alt);border:1px solid var(--rule);margin-bottom:14px}
+.secAlt .seg2{background:var(--panel)}
+.seg2 button{border:0;background:none;padding:9px 16px;border-radius:18px;font:700 13.5px var(--sans);color:var(--sec);cursor:pointer}
+.seg2 button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.gvHead,.fvHead{margin:0 0 18px;font:500 17px/1.5 var(--sans);color:var(--sec)}
+.gvHead b,.fvHead b{color:var(--ink)}
+.gvChart{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:end;padding:16px 14px 12px;border-radius:16px;background:var(--panel);border:1px solid var(--rule);box-shadow:var(--shad)}
+.gvCol{display:flex;flex-direction:column;align-items:center;text-align:center;min-width:0}
+.gvBarWrap{position:relative;width:100%;max-width:120px;height:260px;border-bottom:2px solid var(--ink)}
+.gvBar{position:absolute;left:8%;right:8%;bottom:0;height:100%;border-radius:8px 8px 0 0;transform-origin:bottom;transform:scaleY(0);transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.gv-rich{background:var(--amber)}
+.gv-prices{background:#B9B4AA}
+.gv-pay{background:var(--green)}
+.gvVal{position:absolute;left:0;right:0;font:700 clamp(20px,6vw,30px)/1 var(--serif);color:var(--ink);transition:bottom 1.1s cubic-bezier(.2,.7,.2,1)}
+.gvCol{position:relative}
+.gvCol .gvVal{bottom:6px}
+.gvName{margin-top:8px;font:800 13.5px var(--sans)}
+.gvCol small{font-size:11.5px;color:var(--muted);line-height:1.3}
+.gvFoot{margin:16px 0 0;font:500 17px/1.45 var(--sans)}
+.gvFoot b{color:var(--flame)}
+.fvStage{position:relative;padding:14px 10px;border-radius:16px;background:var(--panel);border:1px solid var(--rule);box-shadow:var(--shad)}
+.fvStage canvas{position:absolute;inset:0;pointer-events:none}
+.fvCols{position:relative;display:grid;grid-template-columns:minmax(0,96px) minmax(0,66px) minmax(0,1fr);column-gap:30px;align-items:stretch}
+.fvSrcCol,.fvMidCol{display:flex;align-items:center}
+.fvDest{display:grid;gap:8px}
+.fchip{position:relative;z-index:1;padding:8px 10px;border-radius:10px;background:var(--paper);border:1px solid var(--rule);box-shadow:0 1px 3px rgba(19,22,27,.06);transition:opacity .4s}
+.fchip span{display:block;font:600 12px/1.3 var(--sans);color:var(--txt)}
+.fchip b{display:block;margin-top:2px;font:700 18px/1.1 var(--serif);color:var(--txt)}
+.fvSrc{width:100%;padding:12px 10px;background:#F6EBD9;border-color:rgba(168,118,60,.5)}
+.fvSrc b{font-size:24px;color:#7A5405}
+.fvPurse{width:100%;text-align:center;background:var(--ink);border-color:var(--ink)}
+.fvPurse span{color:#C9C4B8}
+.fvPurse b{color:var(--amber)}
+.fchip.off{opacity:.35}
+.fvPurse.off{opacity:.45}
+.d-owner{border-left:5px solid #C08A3E}
+.d-cut{border-left:5px solid #1E7A55}
+.d-svc{border-left:5px solid #2F5E8C}
+.d-def{border-left:5px solid #6F6A5E}
+.fvYou{margin-top:14px;padding:14px 16px;border-radius:14px;background:var(--panel);border:1px solid var(--rule)}
+.fvYou label{font:700 12.5px var(--sans);color:var(--muted)}
+.fvYouRow{display:flex;align-items:baseline;gap:4px;font:700 26px var(--serif)}
+.fvYouRow input{flex:1;min-width:0;border:0;background:none;font:700 26px var(--serif);color:var(--txt);padding:0}
+.fvYouRow input:focus{outline:none;border-bottom:2px solid var(--flame)}
+.fvYou p{margin:6px 0 0;font-size:15px;color:var(--sec)}
+.fvYou p b{color:var(--green)}
+@media (min-width:700px){ .fvCols{grid-template-columns:minmax(0,170px) minmax(0,110px) minmax(0,1fr);column-gap:70px} .fchip span{font-size:13.5px} }
+@media (prefers-reduced-motion:reduce){ .gvBar,.gvVal{transition:none} }
+.d-owner:not(.off){background:#F6EBD9;border-color:rgba(168,118,60,.5)}
