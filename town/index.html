@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" class="townPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FAF8F4">
+<title>One town: now vs with us. Honest Politics Party</title>
+<meta name="description" content="Drag one slider and watch a whole town change, from how New Zealand works now to how it works with us. Lower tax on work, free GP and dental, free trains, a public supermarket and family homes. Every figure costed.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Honest Politics Party">
+<meta property="og:title" content="One town: now vs with us">
+<meta property="og:description" content="Drag from now to with us and watch the whole town change. Every figure costed against Treasury's books.">
+<meta property="og:url" content="https://honestpoliticsnz.pages.dev/town/">
+<meta property="og:locale" content="en_NZ">
+<meta property="og:image" content="https://honestpoliticsnz.pages.dev/og-party.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://honestpoliticsnz.pages.dev/og-party.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23D2541F'/%3E%3Ctext x='50' y='68' font-family='Arial' font-weight='700' font-size='52' text-anchor='middle' fill='%23FAF8F4'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,600&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/party.css">
+<link rel="stylesheet" href="/town/town.css">
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body class="townBody is3d">
+
+<header class="top">
+  <div class="topIn">
+    <a class="brand" href="/"><span class="mark">H</span>Honest Politics Party</a>
+    <nav class="nav">
+      <a href="/#plan">Plan</a>
+      <a href="/finance/">Costings</a>
+      <a href="/#myths">Myths</a>
+      <a href="/river/">Tax River</a>
+      <a href="/#bills">Bills</a>
+      <a href="/social/" class="navCta">Share</a>
+    </nav>
+  </div>
+</header>
+
+<div id="stage">
+  <div id="gl" aria-hidden="true"></div>
+  <div id="sweep" aria-hidden="true"><i></i></div>
+  <div id="cards" role="list" aria-label="What changes in the town"></div>
+
+  <div id="hud">
+    <div class="hudIn" id="hudIn">
+      <div class="tKick">One town: now vs with us</div>
+      <h1 class="tHead" id="tHead"><span class="hNow" id="hNow"></span><span class="hUs" id="hUs"></span></h1>
+      <div class="tLeg" id="tLeg" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <aside class="you" id="you" aria-label="Your income"></aside>
+
+  <div id="scrollHint" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    Scroll to change the town
+  </div>
+
+  <div id="ctrl">
+    <div class="ctrlTop">
+      <button class="pillBtn pulse" id="play" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,.22)"/><path id="playIcon" d="M9.5 7.5v9l7.5-4.5z" fill="#fff"/></svg>
+        <span id="playTxt">Watch it change</span>
+      </button>
+      <div class="ctrlLeg" id="ctrlLeg" aria-hidden="true"></div>
+      <span class="spacer"></span>
+      <button class="ghostBtn" id="youBtn" type="button" aria-controls="you" aria-expanded="false">Your income</button>
+      <button class="ghostBtn" id="reset" type="button" aria-label="Reset the view">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="2.2"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg>
+      </button>
+    </div>
+    <div class="sliderBox">
+      <input id="slider" type="range" min="0" max="1000" step="1" value="0" aria-label="Slide from now to with us" aria-valuetext="Now">
+      <div class="ends" aria-hidden="true">
+        <span class="eNow">Now<small>how it works today</small></span>
+        <span class="eUs">With us<small>how it works with the plan</small></span>
+      </div>
+    </div>
+    <p class="hint" id="hint">Drag the town to turn it. Scroll to zoom. Tap any building for the detail.</p>
+  </div>
+
+  <div id="loading">
+    <div class="ldIn">
+      <div class="tKick">One town: now vs with us</div>
+      <h2>Building the town</h2>
+      <div class="ldBar"><i></i></div>
+      <p id="ldMsg">Laying the roads</p>
+    </div>
+  </div>
+</div>
+<div id="scroller" aria-hidden="true"></div>
+
+<div id="sheetBack" hidden></div>
+<section id="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle" aria-hidden="true">
+  <div class="shGrip" aria-hidden="true"></div>
+  <button class="shX" id="shX" type="button" aria-label="Close">×</button>
+  <div id="shBody"></div>
+</section>
+
+<div id="fallback" hidden></div>
+
+<noscript>
+  <div style="padding:90px 18px 40px;max-width:720px;margin:0 auto;font:600 17px/1.5 'Public Sans',sans-serif">
+    This page needs JavaScript to show the town. <a href="/#plan">Read the plan</a> or <a href="/finance/">see every figure</a>.
+  </div>
+</noscript>
+
+<script src="/assets/data.js"></script>
+<script src="/assets/income-dist.js"></script>
+<script src="/assets/finance.js"></script>
+<script src="/town/town.js"></script>
+</body>
+</html>

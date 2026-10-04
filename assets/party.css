@@ -256,3 +256,27 @@ p{text-wrap:pretty}
 @media (min-width:700px){ .fvCols{grid-template-columns:minmax(0,170px) minmax(0,110px) minmax(0,1fr);column-gap:70px} .fchip span{font-size:13.5px} }
 @media (prefers-reduced-motion:reduce){ .gvBar,.gvVal{transition:none} }
 .d-owner:not(.off){background:#F6EBD9;border-color:rgba(168,118,60,.5)}
+
+/* ---------- one town: the call to action under the hero ---------- */
+.townBand{position:relative;overflow:hidden;border-bottom:1px solid var(--rule);
+  background:linear-gradient(100deg,#FFF6E9 0%,#FFF0DC 50%,#F1EEE8 50.2%,#ECEAE5 100%)}
+.townBandIn{display:block;padding:34px 0 38px;text-decoration:none;color:var(--ink)}
+.townGrid{display:grid;gap:20px;align-items:center}
+.townCopy{display:block}
+.townKick{display:block;font:800 11.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--flame)}
+.townH{display:block;margin:8px 0 0;font:700 clamp(30px,7.6vw,46px)/1.06 var(--serif);letter-spacing:-.022em;text-wrap:balance}
+.townH em{font-style:normal;color:var(--flame)}
+.townDemo{display:flex;align-items:center;gap:10px;margin:20px 0 22px;max-width:440px;font:800 11.5px var(--sans);letter-spacing:.14em;text-transform:uppercase}
+.tdNow{color:#7C776C}
+.tdUs{color:var(--flame)}
+.tdTrack{position:relative;flex:1;height:12px;border-radius:8px;background:#DAD5CB}
+.tdTrack::before{content:'';position:absolute;left:0;top:0;bottom:0;width:62%;border-radius:8px;background:linear-gradient(90deg,var(--amber),var(--flame));animation:tdFill 4.4s ease-in-out infinite}
+.tdTrack i{position:absolute;top:50%;left:62%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:#fff;border:3.5px solid var(--flame);box-shadow:0 3px 10px rgba(210,84,31,.35);animation:tdThumb 4.4s ease-in-out infinite}
+@keyframes tdFill{0%,14%{width:6%}50%,64%{width:94%}100%{width:6%}}
+@keyframes tdThumb{0%,14%{left:6%}50%,64%{left:94%}100%{left:6%}}
+.townBtn{min-height:52px;padding:0 24px;font-size:16px;box-shadow:0 8px 22px rgba(210,84,31,.3);transition:transform .15s,box-shadow .2s}
+.townBandIn:hover .townBtn,.townBandIn:focus-visible .townBtn{transform:translateY(-1px);box-shadow:0 10px 26px rgba(210,84,31,.38)}
+.townBandIn:focus-visible{outline:3px solid var(--amber);outline-offset:-3px}
+.townArt{display:block;width:100%;max-width:330px;height:auto;justify-self:center;filter:drop-shadow(0 10px 22px rgba(19,22,27,.12))}
+@media (min-width:700px){ .townGrid{grid-template-columns:minmax(0,1fr) 280px} }
+@media (prefers-reduced-motion:reduce){ .tdTrack::before,.tdTrack i{animation:none} }
