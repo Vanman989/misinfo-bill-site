@@ -47,8 +47,8 @@ try {
   var R311 = FACTS.rich311;
 
   CH = [
-    { id:'mansion', name:'The mansion',
-      now: bn(GAINS) + ' a year in gains, untaxed', us: bn(GAINS) + ' a year taxed like wages',
+    { id:'mansion', name:'Untaxed assets',
+      now: bn(GAINS) + ' a year laundered into assets, untaxed', us: bn(GAINS) + ' a year taxed like wages',
       title:'Money earned is money taxed',
       nowLong:'Every year about ' + bn(GAINS) + ' in capital gains, big inheritances and rezoning windfalls goes untaxed. Counting everything they make, New Zealand’s ' + R311.families + ' wealthiest families pay ' + R311.rate + '% tax. A nurse pays ' + R311.nurse + '%.',
       usLong:'Every capital gain is taxed like wages, homes included, spread over the years it was owned. Inheritances over $1 million are taxed like income. Half of every rezoning windfall is taxed. Together that is ' + bn(GAINS) + ' a year.',
@@ -660,30 +660,36 @@ function start3D(THREE, OrbitControls){
     PTS.purse = new THREE.Vector3(0, 11.2, -0.9);
   })();
 
-  // the mansion on its hill, and the vault behind it
+  // untaxed assets on the hill: a share tower, rentals, a land parcel and piled gold, with the vault behind
   var HY = terrainH(22, -21);
   (function(){
     var ry = -Math.PI / 4;
     var s = new Bld('static', 22, -21, ry, HY), n = new Bld('mansion:now', 22, -21, ry, HY), u = new Bld('mansion:us', 22, -21, ry, HY);
     s.box(0, -1.4, 0, 15, 1.6, 11, '#E7DDCB');
-    s.box(0, 0.2, -0.6, 12, 3.6, 7, '#FBF8F2');
-    s.box(-1.4, 3.8, -1.3, 8.2, 3.0, 5.6, '#FBF8F2');
-    s.box(0, 3.8, -0.6, 12.6, 0.35, 7.6, '#4F5761');
-    s.box(-1.4, 6.8, -1.3, 8.8, 0.35, 6.2, '#4F5761');
-    s.box(0, 0.7, 2.93, 10.4, 2.4, 0.1, '#9CC3DA');
-    s.box(-1.4, 4.3, 1.53, 7.2, 2.0, 0.1, '#9CC3DA');
-    s.box(4.9, 0.2, 2.6, 0.5, 3.6, 0.5, '#E5A024'); s.box(-4.9, 0.2, 2.6, 0.5, 3.6, 0.5, '#E5A024');
-    s.box(3.4, 0.2, 5.0, 6.6, 0.25, 3.6, '#EADFC6');
-    s.box(3.4, 0.27, 5.0, 5.2, 0.2, 2.4, '#63C3DC');
-    s.box(-4.0, 0.2, 4.7, 3.4, 0.7, 2.6, '#79B262');
-    s.box(6.9, 0.2, -1.4, 3.2, 2.6, 4.6, '#F1ECE2'); s.box(6.9, 2.8, -1.4, 3.5, 0.3, 4.9, '#4F5761');
-    s.car(-6.6, 1.6, 0.2, '#E5A024');
-    // now: gold piled on the lawn
-    [[-3.2, 6.8], [-2.2, 7.3], [-4.2, 7.4]].forEach(function(g){ n.box(g[0], 0.2, g[1], 0.9, 0.36, 0.5, '#F2B53A', GLOW); n.box(g[0] + 0.1, 0.56, g[1], 0.7, 0.3, 0.42, '#F2B53A', GLOW); });
-    u.sign('TAXED LIKE WAGES', -0.6, 1.55, 7.2, 0.5, ST.green, { posts: true });
+    // a glass tower: shares and businesses
+    s.box(-4.4, 0.2, -2.4, 4.0, 10.5, 4.0, '#9CC3DA');
+    for (var f = 1.4; f < 10; f += 1.6) s.box(-4.4, 0.2 + f, -2.4, 4.08, 0.18, 4.08, '#7FA9C2');
+    s.box(-4.4, 10.7, -2.4, 4.4, 0.35, 4.4, '#4F5761');
+    // rental houses
+    [[1.6, -2.8, '#F1ECE2'], [4.8, -2.8, '#EFE4D2']].forEach(function(h){
+      s.box(h[0], 0.2, h[1], 2.8, 2.4, 3.0, h[2]);
+      s.gable(h[0], 2.6, h[1], 3.1, 1.4, 3.2, '#8A6F5A');
+    });
+    s.sign('RENTALS', 3.2, 1.0, -0.9, 0.45, ST.civic, { posts: true });
+    // a fenced land parcel
+    s.box(3.6, 0.2, 3.0, 5.2, 0.12, 3.4, '#9BC37E');
+    [[1.0, 1.3], [6.2, 1.3], [1.0, 4.7], [6.2, 4.7]].forEach(function(q){ s.box(q[0], 0.2, q[1], 0.18, 1.0, 0.18, '#8D7A5E'); });
+    s.sign('LAND', 3.6, 1.2, 1.4, 0.45, ST.civic, { posts: true });
+    // now: gold piling up, untaxed
+    [[-3.2, 3.2], [-2.0, 3.8], [-4.2, 4.0], [-3.0, 4.6]].forEach(function(g){
+      n.box(g[0], 0.2, g[1], 0.9, 0.36, 0.5, '#F2B53A', GLOW);
+      n.box(g[0] + 0.1, 0.56, g[1], 0.7, 0.3, 0.42, '#F2B53A', GLOW);
+    });
+    n.sign('UNTAXED', -2.6, 1.9, 5.8, 0.5, ST.amber, { posts: true });
+    u.sign('TAXED LIKE WAGES', -2.0, 1.55, 6.0, 0.5, ST.green, { posts: true });
     unit('mansion', 22, HY + 3, -21);
     blockCircle(22, -21, 9.2);
-    PTS.mansion = s.local(-1.4, 7.4, -1.3);
+    PTS.mansion = s.local(-3.0, 1.6, 4.0);
   })();
   (function(){
     var vx = 33.5, vz = -13.5, hy = terrainH(vx, vz) - 0.6, ry = 0.35;
