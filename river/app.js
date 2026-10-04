@@ -803,10 +803,10 @@ function updateWealthStrip(mode){
     sub.textContent = 'late-1930s point, land tax, death duties and high top rates did this';
   } else if (eraId === 'muldoon'){
     top.textContent = 'Top 1%: no verified 1970s figure, last sourced ' + s1938.range + ' (1930s)';
-    sub.textContent = 'after 1986 the Rich List grows 23×, the re-widening starts here';
+    sub.textContent = 'after 1986 the Rich List grows 24×, the re-widening starts here';
   } else {
     top.textContent = 'Top 1% hold ≈' + Math.round(WEALTH.now.top1) + '% · top 10% hold ≈' + Math.round(WEALTH.now.top10) + '% of NZ’s ≈$' + WEALTH.totalHouseholdNetWorth.t + 'T';
-    sub.textContent = 'the other 90% share a third · bottom half: ' + WEALTH.now.bottom50 + '% · Rich List 23× since 1986 · full story below ↓';
+    sub.textContent = 'the other 90% share a third · bottom half: ' + WEALTH.now.bottom50 + '% · Rich List 24× since 1986 · full story below ↓';
   }
 }
 

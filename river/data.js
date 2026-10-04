@@ -441,17 +441,17 @@ const WEALTH = {
   richList: [
     { year: 1986, totalB: 5.3, note: 'First NBR Rich List, 55 individuals + 12 families' },
     { year: 2025, totalB: 102.1, billionaires: 18 },
-    { year: 2026, totalB: 129, billionaires: 26, note: '23× growth in 40 years; average individual lister $78M → $984M' }
+    { year: 2026, totalB: 129, billionaires: 26, note: '24× growth in 40 years; average individual lister $78M → $984M' }
   ],
   /* Same 40 years, ordinary pay: ≈$400/wk (1986, interpolated between the
      sourced $285/wk 1984 and $529/wk 1989, estimate) → $1,679/wk (Stats NZ
      QES June 2025, solid). CPI 1986→2025: 3.09× (triangulated). Real wage
      growth ~0.5–0.9%/yr corroborated by NZIER. */
   payCompare: {
-    richMult: '23×', richRealMult: '≈7.4×',
+    richMult: '24×', richRealMult: '≈7.9×',
     payMult: '≈4×', payRealMult: '≈1.2–1.4×',
     pay1986: '≈$400/wk', payNow: '$1,679/wk', cpiMult: '3.09×',
-    line: 'Their pile grew 23×, more than sevenfold after inflation. The average pay packet grew ≈4×, barely a quarter more, in real terms, after 40 years.',
+    line: 'Their pile grew 24×, nearly eightfold after inflation. The average pay packet grew ≈4×, barely a quarter more, in real terms, after 40 years.',
     caveat: 'Pay: ≈$400/wk 1986 (interpolated between sourced 1984/1989 figures, estimate) → $1,679/wk (Stats NZ, June 2025). Prices themselves rose 3.09× over the period.'
   },
   sources: [

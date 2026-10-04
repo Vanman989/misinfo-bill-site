@@ -61,11 +61,11 @@ const POSTS = [
     short:'In 1950 NZ’s top tax rate was 76.5%, and New Zealand was one of the five richest countries on Earth. Taxing wealth built the state houses, hospitals and dams.',
     long:'In 1950 New Zealand’s top tax rate was 76.5%.\n\nAnd New Zealand was one of the five richest countries on Earth. Taxing wealth built the state houses, the free hospitals and the hydro dams.\n\nMany things drove that ranking. But a high top rate clearly didn’t stop it.' },
 
-  { id:'richlist', title:'Rich List 23×',
-    lines:[['23×', 330, C.amber], ['Rich List growth', 64, C.paper], ['since 1986.', 64, C.paper]],
+  { id:'richlist', title:'Rich List 24×',
+    lines:[['24×', 330, C.amber], ['Rich List growth', 64, C.paper], ['since 1986.', 64, C.paper]],
     sub:['Average pay: about 4×.', 'Who did the work?'],
-    short:'Since 1986 NZ’s Rich List grew 23 times over, from $5.3B to $129B. Average pay grew about 4 times. Who did the work?',
-    long:'Since 1986, New Zealand’s Rich List has grown 23 times over: from $5.3 billion to $129 billion.\n\nThe average pay packet grew about 4 times, barely a quarter more after inflation.\n\nWe value labour over wealth. The tax system should too.' },
+    short:'Since 1986 NZ’s Rich List grew 24 times over, from $5.3B to $129B. Average pay grew about 4 times. Who did the work?',
+    long:'Since 1986, New Zealand’s Rich List has grown 24 times over: from $5.3 billion to $129 billion.\n\nThe average pay packet grew about 4 times, barely a quarter more after inflation.\n\nWe value labour over wealth. The tax system should too.' },
 
   { id:'family', title:'The rise of the family',
     lines:[['A home.', 150, C.paper], ['A doctor.', 150, C.paper], ['Time with', 150, C.paper], ['your kids.', 150, C.flame]],
