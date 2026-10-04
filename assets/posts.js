@@ -31,11 +31,11 @@ const POSTS = [
     short:'NZ’s 311 wealthiest families pay 8.9% tax on everything they make. A nurse on $80k pays 22%. (IRD, 2023)',
     long:'NZ’s 311 wealthiest families pay an effective tax rate of 8.9% on everything they make. A nurse on $80,000 pays 22%.\n\nWhy? 80% of those families’ income is capital gains, and New Zealand mostly doesn’t tax them.\n\nSource: Inland Revenue’s High-Wealth Individuals study, 2023.' },
 
-  { id:'1260', title:'$1,260 for every worker',
-    lines:[['$1,260', 300, C.green], ['back for every worker,', 64, C.paper], ['every year.', 64, C.paper]],
-    sub:['First $12,000 tax-free,', 'paid for by taxing capital gains.'],
-    short:'$1,260 back for every worker, every year. First $12,000 of income tax-free, paid for by taxing every capital gain like wages.',
-    long:'$1,260 back in every worker’s pocket, every year.\n\nUnder our plan nobody pays income tax on their first $12,000. Someone on $20,000 goes from paying 12% of their income in tax to under 6%. It’s paid for by taxing every capital gain like wages, homes included.\n\nTry your own numbers on our site.' },
+  { id:'2073', title:'$2,073 for the median earner',
+    lines:[['$2,073', 300, C.green], ['back for the median', 64, C.paper], ['earner, every year.', 64, C.paper]],
+    sub:['First $12,000 tax-free, wider brackets,', 'paid for by taxing every gain.'],
+    short:'$2,073 back for the median earner, every year. First $12,000 of income tax-free and wider middle brackets, paid for by taxing every capital gain like wages.',
+    long:'$2,073 back for the median earner, every year.\n\nUnder our plan nobody pays income tax on their first $12,000, and the middle brackets are wider. Everyone earning over $12,000 keeps at least $1,260 more. Someone on $20,000 goes from paying 12% of their income in tax to under 6%.\n\nIt’s paid for by taxing every capital gain like wages, homes included. Try your own numbers on our site.' },
 
   { id:'houses', title:'$370B of untaxed gains',
     lines:[['$370B', 300, C.amber], ['NZ houses gained', 64, C.paper], ['in value in 2021.', 64, C.paper]],

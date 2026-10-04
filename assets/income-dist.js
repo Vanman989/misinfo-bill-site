@@ -77,12 +77,13 @@ const INCOME_DIST = {
   ]
 };
 
-/* Our brackets: the first $12,000 tax-free, everything else as today.
-   Costed on the table above at $5.05b a year; it starts at $5,000
-   ($2.16b) in year one and rises as the capital gains tax builds up. */
-const OUR_BANDS = [[12000,0],[15600,10.5],[53500,17.5],[78100,30],[180000,33],[Infinity,39]];
-const OUR_BANDS_LEAD = 'Nobody pays income tax on their first $12,000. That is $1,260 more a year for everyone earning over $12,000, and it is worth most to lower earners: someone on $20,000 goes from paying 12.0% of their income to 5.7%.';
-const OUR_BANDS_NOTE = 'Why this shape: a tax-free amount gives everyone the same dollars, so it cuts the rate most for the lowest paid, and it is the simplest change to explain and run. It starts at $5,000 in year one (about $2.2b) and rises to $12,000 as the capital gains tax builds up. Every dollar the capital gains tax raises beyond our costing goes into lifting it further. The top rates stay as they are: people at the top now pay through the capital gains tax.';
+/* Our brackets: the first $12,000 tax-free, and the 17.5% and 30% bands
+   widened (to $60,000 and $85,000). Costed on the table above at $6.82b a
+   year. The tax-free amount starts at $5,000 ($2.16b) in year one and the
+   rest phases in as the capital gains tax builds up. */
+const OUR_BANDS = [[12000,0],[15600,10.5],[60000,17.5],[85000,30],[180000,33],[Infinity,39]];
+const OUR_BANDS_LEAD = 'Nobody pays income tax on their first $12,000, and the middle brackets are wider. Everyone earning over $12,000 keeps at least $1,260 more a year, the median earner $2,073. It cuts the rate most for lower earners: someone on $20,000 goes from paying 12.0% of their income to 5.7%, the median earner from 19.2% to 16.3%.';
+const OUR_BANDS_NOTE = 'Why this shape: a tax-free amount gives everyone the same dollars, so it cuts the rate most for the lowest paid. Widening the 17.5% band to $60,000 and the 30% band to $85,000 lifts the middle, where most people earn. The tax-free amount starts at $5,000 in year one (about $2.2b) and the rest phases in as the capital gains tax builds up. The top rates stay as they are: people at the top now pay through the capital gains tax.';
 
 const METHOD_NOTES = [
   'Every figure is a full year at full strength unless it says otherwise, with its source and how sure it is (official source, party costing or our estimate) shown beside it.',
