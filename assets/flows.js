@@ -15,13 +15,13 @@ var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: red
 /* ======================= 1. who got the gains ======================= */
 (function(){
   var el = $('gainsViz'); if (!el) return;
-  var R = FACTS.richList, P = FACTS.pay;
-  var rich = R.to / R.from, pay = P.to / P.from, cpi = P.cpi;
+  var R = FACTS.richList, P = FACTS.pay, H = FACTS.houses;
+  var rich = R.to / R.from, pay = P.to / P.from, cpi = P.cpi, house = H.to / H.from;
   var M = {
-    nom:  { rich: rich, prices: cpi, pay: pay,
-            head: 'Every $1 the Rich List had in 1986 is now <b>' + money(rich) + '</b>. Every $1 of weekly pay is now <b>$' + pay.toFixed(2) + '</b>.' },
-    real: { rich: rich / cpi, prices: 1, pay: pay / cpi,
-            head: 'After inflation, the Rich List grew <b>' + (rich / cpi).toFixed(1) + ' times</b>. Average pay grew about <b>' + (pay / cpi).toFixed(1) + ' times</b>: barely a third more in 40 years.' }
+    nom:  { rich: rich, houses: house, prices: cpi, pay: pay,
+            head: 'Every $1 the Rich List had in 1986 is now <b>' + money(rich) + '</b>. Every $1 of weekly pay is now <b>$' + pay.toFixed(2) + '</b>. A house costs <b>' + house.toFixed(1) + ' times</b> as much.' },
+    real: { rich: rich / cpi, houses: house / cpi, prices: 1, pay: pay / cpi,
+            head: 'After inflation, the Rich List grew <b>' + (rich / cpi).toFixed(1) + ' times</b>. Average pay grew about <b>' + (pay / cpi).toFixed(1) + ' times</b>: barely a third more in 40 years. Houses grew <b>' + (house / cpi).toFixed(1) + ' times</b>.' }
   };
   var mode = 'nom';
   el.innerHTML =
@@ -29,11 +29,12 @@ var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: red
     '<p class="gvHead" id="gvHead"></p>' +
     '<div class="gvChart">' +
       col('rich', 'Rich List', '$' + R.from + 'b → $' + R.to + 'b') +
-      col('prices', 'Prices', 'what things cost') +
+      col('houses', 'Houses', '$' + Math.round(H.from / 1000) + 'k → $' + Math.round(H.to / 1000) + 'k median') +
+      col('prices', 'Prices', 'shopping basket (CPI), not houses') +
       col('pay', 'Average pay', '$' + P.from + ' → ' + money(P.to) + ' a week') +
     '</div>' +
     '<p class="gvFoot">If average pay had grown like the Rich List, it would be <b>' + money(Math.round(P.from * rich / 100) * 100) + ' a week</b>. It is ' + money(P.to) + '.</p>' +
-    '<p class="src">' + link(R.src) + ' · ' + link(P.src) + ' · ' + link(P.src2) + '. 1986 pay and the price rise (×' + cpi + ') are estimates.</p>';
+    '<p class="src">' + link(R.src) + ' · ' + link(H.src) + ' · ' + link(H.src2) + ' · ' + link(P.src) + ' · ' + link(P.src2) + '. 1986 pay and the price rise (×' + cpi + ') are estimates. House prices: 1986 annual median, September 2026 median.</p>';
   function col(k, name, sub){
     return '<div class="gvCol"><div class="gvBarWrap"><div class="gvBar gv-' + k + '" data-k="' + k + '"></div><b class="gvVal" data-k="' + k + '"></b></div><span class="gvName">' + name + '</span><small>' + sub + '</small></div>';
   }
@@ -47,7 +48,7 @@ var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: red
     });
     el.querySelectorAll('.gvVal').forEach(function(b){
       var v = m[b.dataset.k];
-      b.textContent = (v >= 10 ? Math.round(v) : v.toFixed(1)) + '×';
+      b.textContent = (v >= 20 ? Math.round(v) : v.toFixed(1)) + '×';
       b.style.bottom = 'calc(' + (shown ? Math.max(0.012, v / max * 0.85) * 100 : 0) + '% + 6px)';
     });
     el.querySelectorAll('.seg2 button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.m === mode)); });
