@@ -29,9 +29,9 @@ var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: red
     '<p class="gvHead" id="gvHead"></p>' +
     '<div class="gvChart">' +
       col('rich', 'Rich List', '$' + R.from + 'b → $' + R.to + 'b') +
+      col('pay', 'Average pay', '$' + P.from + ' → ' + money(P.to) + ' a week') +
       col('houses', 'Houses', '$' + Math.round(H.from / 1000) + 'k → $' + Math.round(H.to / 1000) + 'k median') +
       col('prices', 'Prices', 'shopping basket (CPI), not houses') +
-      col('pay', 'Average pay', '$' + P.from + ' → ' + money(P.to) + ' a week') +
     '</div>' +
     '<p class="gvFoot">If average pay had grown like the Rich List, it would be <b>' + money(Math.round(P.from * rich / 100) * 100) + ' a week</b>. It is ' + money(P.to) + '.</p>' +
     '<p class="src">' + link(R.src) + ' · ' + link(H.src) + ' · ' + link(H.src2) + ' · ' + link(P.src) + ' · ' + link(P.src2) + '. 1986 pay and the price rise (×' + cpi + ') are estimates. House prices: 1986 annual median, September 2026 median.</p>';
