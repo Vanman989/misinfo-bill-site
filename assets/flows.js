@@ -34,7 +34,7 @@ var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: red
       col('prices', 'Prices', 'shopping basket (CPI), not houses') +
     '</div>' +
     '<p class="gvFoot">If average pay had grown like the Rich List, it would be <b>' + money(Math.round(P.from * rich / 100) * 100) + ' a week</b>. It is ' + money(P.to) + '.</p>' +
-    '<p class="src">' + link(R.src) + ' · ' + link(H.src) + ' · ' + link(H.src2) + ' · ' + link(P.src) + ' · ' + link(P.src2) + '. 1986 pay and the price rise (×' + cpi + ') are estimates. House prices: 1986 annual median, September 2026 median.</p>';
+    '<p class="src">' + link(R.src) + ' · ' + link(H.src) + ' · ' + link(H.src2) + ' · ' + link(P.src) + ' · ' + link(P.srcCpi) + ' · ' + link(P.src2) + '. 1986 pay is an estimate. Prices: 1986 average to June 2026 (×' + cpi.toFixed(2) + '). Houses: 1986 annual median to September 2026.</p>';
   function col(k, name, sub){
     return '<div class="gvCol"><div class="gvBarWrap"><div class="gvBar gv-' + k + '" data-k="' + k + '"></div><b class="gvVal" data-k="' + k + '"></b></div><span class="gvName">' + name + '</span><small>' + sub + '</small></div>';
   }
